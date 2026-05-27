@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>AlpNAS Drives</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../script/semantic/semantic.min.css">
+    <link rel="stylesheet" href="../../script/ao.css">
+    <script src="../../script/jquery.min.js"></script>
+    <script src="../../script/semantic/semantic.min.js"></script>
+    <script src="../../script/ao_module.js"></script>
+    <style>
+        :root {
+            --panel-bg: #f6f8fb;
+            --panel-border: #dbe3ec;
+            --hero-bg: linear-gradient(135deg, #16324f 0%, #214e73 48%, #2b6b87 100%);
+            --hero-text: #f7fbff;
+            --accent: #1f7a8c;
+            --accent-soft: #dff1f4;
+            --good: #287d3c;
+            --warn: #bf7b14;
+            --muted: #67809a;
+        }
+
+        html, body {
+            height: 100%;
+            margin: 0;
+            background: radial-gradient(circle at top left, #eef6ff 0%, #f7fbfd 45%, #eef2f7 100%);
+            color: #1d2731;
+        }
+
+        body {
+            font-family: "Segoe UI", "Noto Sans", sans-serif;
+        }
+
+        .page {
+            min-height: 100%;
+            padding: 20px;
+        }
+
+        .hero {
+            background: var(--hero-bg);
+            color: var(--hero-text);
+            border-radius: 22px;
+            padding: 26px 28px;
+            box-shadow: 0 24px 56px rgba(16, 38, 64, 0.24);
+        }
+
+        .hero-top {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .hero h1 {
+            margin: 0 0 10px 0;
+            font-size: 2.2em;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+        }
+
+        .hero p {
+            max-width: 720px;
+            margin: 0;
+            opacity: 0.92;
+            line-height: 1.5;
+        }
+
+        .hero-actions .ui.button {
+            margin-left: 8px;
+            border-radius: 999px;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 14px;
+            margin-top: 22px;
+        }
+
+        .stat {
+            background: rgba(255, 255, 255, 0.13);
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            border-radius: 18px;
+            padding: 16px 18px;
+        }
+
+        .stat-label {
+            opacity: 0.8;
+            font-size: 0.9em;
+            margin-bottom: 6px;
+        }
+
+        .stat-value {
+            font-size: 1.5em;
+            font-weight: 700;
+        }
+
+        .statusbar {
+            margin-top: 16px;
+            display: none;
+        }
+
+        .workspace {
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: 360px 1fr;
+            gap: 20px;
+        }
+
+        .panel {
+            background: rgba(255, 255, 255, 0.92);
+            border: 1px solid var(--panel-border);
+            border-radius: 22px;
+            box-shadow: 0 16px 40px rgba(28, 53, 87, 0.08);
+            overflow: hidden;
+        }
+
+        .panel-header {
+            padding: 18px 20px 12px 20px;
+            border-bottom: 1px solid #ebf0f4;
+            background: linear-gradient(180deg, rgba(248, 251, 255, 0.95) 0%, rgba(242, 247, 252, 0.95) 100%);
+        }
+
+        .panel-header h2, .panel-header h3 {
+            margin: 0;
+            font-size: 1.08em;
+        }
+
+        .panel-header p {
+            margin: 6px 0 0 0;
+            color: var(--muted);
+        }
+
+        .drive-list {
+            max-height: calc(100vh - 250px);
+            overflow-y: auto;
+            padding: 10px;
+            background: var(--panel-bg);
+        }
+
+        .drive-item {
+            background: #fff;
+            border: 1px solid #e5edf4;
+            border-radius: 18px;
+            padding: 14px 14px 12px 14px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
+        }
+
+        .drive-item:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 10px 22px rgba(25, 49, 81, 0.08);
+            border-color: #cfdbe7;
+        }
+
+        .drive-item.active {
+            border-color: #6fb6c4;
+            box-shadow: 0 14px 28px rgba(31, 122, 140, 0.14);
+            background: linear-gradient(180deg, #ffffff 0%, #f4fbfc 100%);
+        }
+
+        .drive-title {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .drive-name {
+            font-weight: 700;
+            font-size: 1.02em;
+            line-height: 1.3;
+        }
+
+        .drive-sub {
+            margin-top: 6px;
+            color: var(--muted);
+            font-size: 0.92em;
+        }
+
+        .drive-tags {
+            margin-top: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            border-radius: 999px;
+            padding: 5px 10px;
+            font-size: 0.82em;
+            border: 1px solid #d8e2eb;
+            background: #f8fafc;
+            color: #476176;
+        }
+
+        .tag.good {
+            color: var(--good);
+            border-color: #bfe0c8;
+            background: #edf8f0;
+        }
+
+        .tag.warn {
+            color: var(--warn);
+            border-color: #edd7ac;
+            background: #fff6e3;
+        }
+
+        .tag.system {
+            color: #35506b;
+            border-color: #bfd1e4;
+            background: #edf4fb;
+        }
+
+        .detail {
+            display: flex;
+            flex-direction: column;
+            min-height: 640px;
+        }
+
+        .detail-body {
+            padding: 22px;
+            display: grid;
+            grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+            gap: 18px;
+        }
+
+        .detail-card {
+            background: var(--panel-bg);
+            border: 1px solid #e3ebf3;
+            border-radius: 20px;
+            padding: 18px;
+        }
+
+        .detail-card h3 {
+            margin-top: 0;
+            margin-bottom: 12px;
+            font-size: 1em;
+        }
+
+        .detail-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+        }
+
+        .field {
+            background: #fff;
+            border: 1px solid #e5edf3;
+            border-radius: 16px;
+            padding: 12px;
+        }
+
+        .field-label {
+            font-size: 0.78em;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #7c8fa1;
+            margin-bottom: 6px;
+        }
+
+        .field-value {
+            word-break: break-word;
+            font-size: 0.98em;
+        }
+
+        .action-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .action-stack .ui.button {
+            border-radius: 14px;
+        }
+
+        .empty {
+            padding: 40px 24px;
+            color: var(--muted);
+        }
+
+        .admin-note {
+            margin-top: 10px;
+            color: var(--muted);
+            font-size: 0.93em;
+        }
+
+        @media (max-width: 1080px) {
+            .workspace {
+                grid-template-columns: 1fr;
+            }
+
+            .drive-list {
+                max-height: 340px;
+            }
+
+            .detail-body {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <section class="hero">
+            <div class="hero-top">
+                <div>
+                    <h1>AlpNAS Drives</h1>
+                    <p>
+                        Zentrale Laufwerksverwaltung fuer AlpNAS im Stil eines nativen Linux-Dateimanagers:
+                        lokale Datentraeger erkennen, mounten, aushängen und direkt im ArozOS File Manager oeffnen.
+                    </p>
+                </div>
+                <div class="hero-actions">
+                    <button class="ui basic inverted button" onclick="loadDrives(true)">
+                        <i class="refresh icon"></i> Aktualisieren
+                    </button>
+                    <button id="rescanBtn" class="ui teal button" onclick="rescanDrives()">
+                        <i class="sync alternate icon"></i> Neu scannen
+                    </button>
+                </div>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-label">Erkannte Laufwerke</div>
+                    <div id="statTotal" class="stat-value">0</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-label">Eingehaengt</div>
+                    <div id="statMounted" class="stat-value">0</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-label">Mit Dateimanager verknuepft</div>
+                    <div id="statOpenable" class="stat-value">0</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-label">Administrator</div>
+                    <div id="statAdmin" class="stat-value">Nein</div>
+                </div>
+            </div>
+            <div id="statusbar" class="ui floating compact message statusbar"></div>
+        </section>
+
+        <section class="workspace">
+            <div class="panel">
+                <div class="panel-header">
+                    <h2>Laufwerke</h2>
+                    <p>Hotplug, interne Datentraeger und bereits gemountete Volumes.</p>
+                </div>
+                <div id="driveList" class="drive-list">
+                    <div class="empty">Laufwerke werden geladen ...</div>
+                </div>
+            </div>
+
+            <div class="panel detail">
+                <div class="panel-header">
+                    <h2>Details</h2>
+                    <p>Mount-Status, Zielpfad und direkter Zugriff auf den ArozOS-Dateimanager.</p>
+                </div>
+                <div id="detailRoot" class="detail-body">
+                    <div class="empty">Waehle links ein Laufwerk aus.</div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        let driveState = {
+            isAdmin: false,
+            devices: [],
+            selectedDevice: ""
+        };
+
+        function showStatus(message, type = "info"){
+            const bar = $("#statusbar");
+            bar.removeClass("positive negative warning info");
+            bar.addClass(type);
+            bar.html(message);
+            bar.stop(true, true).fadeIn(120);
+        }
+
+        function clearStatus(){
+            $("#statusbar").stop(true, true).fadeOut(120);
+        }
+
+        function escapeHtml(text){
+            return $("<div>").text(text == null ? "" : String(text)).html();
+        }
+
+        function formatBytes(bytes){
+            const value = Number(bytes || 0);
+            if (!value) return "0 B";
+            const units = ["B", "KB", "MB", "GB", "TB", "PB"];
+            let size = value;
+            let index = 0;
+            while (size >= 1024 && index < units.length - 1){
+                size /= 1024;
+                index++;
+            }
+            const precision = size >= 100 ? 0 : size >= 10 ? 1 : 2;
+            return `${size.toFixed(precision)} ${units[index]}`;
+        }
+
+        function statusTag(device){
+            if (device.bootMedium) return '<span class="tag system">Bootmedium</span>';
+            if (device.systemStorage) return '<span class="tag system">System</span>';
+            if (device.mounted) return '<span class="tag good">Gemountet</span>';
+            if (device.mountable) return '<span class="tag warn">Bereit</span>';
+            return '<span class="tag">Beobachtet</span>';
+        }
+
+        function loadDrives(quiet = false){
+            if (!quiet){
+                showStatus("Laufwerksinformationen werden geladen ...");
+            }
+
+            $.get("../../system/disk/alpnas/list", function(data){
+                if (data && data.error){
+                    throw new Error(data.error);
+                }
+                driveState = data;
+                if (typeof driveState !== "object" || driveState == null){
+                    throw new Error("ungueltige_antwort");
+                }
+                if (!Array.isArray(driveState.devices)){
+                    driveState.devices = [];
+                }
+                if (!Array.isArray(driveState.userGroups)){
+                    driveState.userGroups = [];
+                }
+                if (!driveState.isAdmin){
+                    const loweredGroups = driveState.userGroups.map(group => String(group || "").trim().toLowerCase());
+                    driveState.isAdmin = loweredGroups.includes("administrator") || loweredGroups.includes("administrators") || loweredGroups.includes("administratoren") || loweredGroups.includes("admin");
+                }
+
+                if (!driveState.selectedDevice && driveState.devices.length > 0){
+                    driveState.selectedDevice = driveState.devices[0].device;
+                }
+
+                if (!driveState.devices.find(device => device.device === driveState.selectedDevice) && driveState.devices.length > 0){
+                    driveState.selectedDevice = driveState.devices[0].device;
+                }
+
+                renderStats();
+                renderDriveList();
+                renderDetail();
+                updateAdminState();
+                if (!quiet){
+                    showStatus("Laufwerksliste aktualisiert.", "positive");
+                }
+            }).fail(function(xhr){
+                let message = xhr.responseText || "Laufwerksliste konnte nicht geladen werden.";
+                if (xhr.responseJSON && xhr.responseJSON.error){
+                    message = xhr.responseJSON.error;
+                }
+                showStatus(escapeHtml(message), "negative");
+                $("#driveList").html('<div class="empty">Die Laufwerksliste konnte nicht geladen werden.</div>');
+                $("#detailRoot").html('<div class="empty">Keine Daten verfuegbar.</div>');
+            }).catch(function(error){
+                const message = error && error.message ? error.message : "Laufwerksliste konnte nicht geladen werden.";
+                showStatus(escapeHtml(message), "negative");
+                $("#driveList").html('<div class="empty">Die Laufwerksliste konnte nicht geladen werden.</div>');
+                $("#detailRoot").html('<div class="empty">Keine Daten verfuegbar.</div>');
+            });
+        }
+
+        function renderStats(){
+            const devices = driveState.devices || [];
+            const mounted = devices.filter(device => device.mounted).length;
+            const openable = devices.filter(device => device.openPath).length;
+            $("#statTotal").text(devices.length);
+            $("#statMounted").text(mounted);
+            $("#statOpenable").text(openable);
+            $("#statAdmin").text(driveState.isAdmin ? "Ja" : "Nein");
+        }
+
+        function renderDriveList(){
+            const root = $("#driveList");
+            root.empty();
+
+            if (!driveState.devices.length){
+                root.html('<div class="empty">Keine passenden Laufwerke gefunden.</div>');
+                return;
+            }
+
+            driveState.devices.forEach(device => {
+                const active = device.device === driveState.selectedDevice ? " active" : "";
+                const mountText = device.mountpoint ? escapeHtml(device.mountpoint) : "Nicht eingehängt";
+                const fsText = device.filesystem ? escapeHtml(device.filesystem.toUpperCase()) : "Unbekannt";
+                const name = escapeHtml(device.name || device.device);
+                const detail = escapeHtml(device.device);
+                root.append(`
+                    <div class="drive-item${active}" data-device="${escapeHtml(device.device)}" onclick="selectDrive('${encodeURIComponent(device.device)}')">
+                        <div class="drive-title">
+                            <div class="drive-name">${name}</div>
+                            ${statusTag(device)}
+                        </div>
+                        <div class="drive-sub">${detail}</div>
+                        <div class="drive-sub">${fsText} · ${formatBytes(device.size)} · ${escapeHtml(mountText)}</div>
+                        <div class="drive-tags">
+                            ${device.removable ? '<span class="tag">Wechselmedium</span>' : ''}
+                            ${device.hotplug ? '<span class="tag">Hotplug</span>' : ''}
+                            ${device.readOnly ? '<span class="tag warn">Readonly</span>' : ''}
+                            ${device.bootMedium ? '<span class="tag system">Startmedium</span>' : ''}
+                            ${device.transport ? `<span class="tag">${escapeHtml(device.transport)}</span>` : ''}
+                        </div>
+                    </div>
+                `);
+            });
+        }
+
+        function selectDrive(encodedDevice){
+            driveState.selectedDevice = decodeURIComponent(encodedDevice);
+            renderDriveList();
+            renderDetail();
+        }
+
+        function currentDevice(){
+            return (driveState.devices || []).find(device => device.device === driveState.selectedDevice) || null;
+        }
+
+        function renderField(label, value){
+            return `
+                <div class="field">
+                    <div class="field-label">${escapeHtml(label)}</div>
+                    <div class="field-value">${escapeHtml(value || "—")}</div>
+                </div>
+            `;
+        }
+
+        function renderDetail(){
+            const device = currentDevice();
+            const root = $("#detailRoot");
+
+            if (!device){
+                root.html('<div class="empty">Waehle links ein Laufwerk aus.</div>');
+                return;
+            }
+
+            const adminHint = driveState.isAdmin
+                ? "Mounten, Aushängen und erneutes Scannen sind fuer Administratoren direkt hier moeglich."
+                : "Du kannst Laufwerke oeffnen, aber fuer Mount- und Unmount-Aktionen sind Administratorrechte noetig.";
+            const effectiveHint = device.bootMedium
+                ? "Dieses Laufwerk ist als Bootmedium erkannt und wird von AlpNAS bewusst nicht erneut gemountet."
+                : adminHint;
+
+            root.html(`
+                <div class="detail-card">
+                    <h3>${escapeHtml(device.name || device.device)}</h3>
+                    <div class="detail-grid">
+                        ${renderField("Gerät", device.device)}
+                        ${renderField("Dateisystem", device.filesystem ? device.filesystem.toUpperCase() : "Unbekannt")}
+                        ${renderField("Groesse", formatBytes(device.size))}
+                        ${renderField("Mountpoint", device.mountpoint || "Nicht eingehängt")}
+                        ${renderField("UUID", device.uuid || "Nicht erkannt")}
+                        ${renderField("Typ", device.type || "—")}
+                        ${renderField("Transport", device.transport || "—")}
+                        ${renderField("Modell", device.model || "—")}
+                    </div>
+                    <div class="admin-note">${escapeHtml(effectiveHint)}</div>
+                </div>
+                <div class="detail-card">
+                    <h3>Aktionen</h3>
+                    <div class="action-stack">
+                        <button class="ui primary button" ${device.openPath ? "" : "disabled"} onclick="openInFileManager()">
+                            <i class="folder open outline icon"></i> Im File Manager öffnen
+                        </button>
+                        <button class="ui teal button" ${device.mountable && driveState.isAdmin && !device.bootMedium ? "" : "disabled"} onclick="mountSelectedDrive()">
+                            <i class="download icon"></i> Mounten
+                        </button>
+                        <button class="ui orange button" ${device.unmountable && driveState.isAdmin ? "" : "disabled"} onclick="unmountSelectedDrive()">
+                            <i class="eject icon"></i> Aushängen
+                        </button>
+                        <button class="ui basic button" onclick="loadDrives(true)">
+                            <i class="refresh icon"></i> Nur Ansicht erneuern
+                        </button>
+                    </div>
+                    <div style="margin-top:16px;">
+                        ${renderField("ArozOS Storage", device.storageName ? `${device.storageName} (${device.storageUUID})` : "Noch nicht in ArozOS verbunden")}
+                        ${renderField("Bootmedium", device.bootMedium ? "Ja" : "Nein")}
+                        ${renderField("Status", device.status || "—")}
+                        ${renderField("Open Path", device.openPath || "Noch kein ArozOS-Pfad verfügbar")}
+                    </div>
+                </div>
+            `);
+        }
+
+        function updateAdminState(){
+            $("#rescanBtn").prop("disabled", !driveState.isAdmin);
+        }
+
+        function openInFileManager(){
+            const device = currentDevice();
+            if (!device || !device.openPath){
+                showStatus("Fuer dieses Laufwerk ist noch kein ArozOS-Pfad verfuegbar.", "warning");
+                return;
+            }
+            ao_module_openPath(device.openPath);
+        }
+
+        function performDriveAction(url, successMessage){
+            $.get(url, function(data){
+                const message = data && data.message ? data.message : successMessage;
+                showStatus(escapeHtml(message), "positive");
+                loadDrives(true);
+            }).fail(function(xhr){
+                const message = xhr.responseText || "Aktion fehlgeschlagen.";
+                showStatus(escapeHtml(message), "negative");
+            });
+        }
+
+        function mountSelectedDrive(){
+            const device = currentDevice();
+            if (!device || !device.mountable){
+                return;
+            }
+            if (!confirm(`Laufwerk ${device.device} jetzt mounten?`)){
+                return;
+            }
+            performDriveAction(`../../system/disk/alpnas/mount?dev=${encodeURIComponent(device.device)}`, "Laufwerk wurde gemountet.");
+        }
+
+        function unmountSelectedDrive(){
+            const device = currentDevice();
+            if (!device || !device.unmountable){
+                return;
+            }
+            if (!confirm(`Mount ${device.mountpoint} jetzt aushängen?`)){
+                return;
+            }
+            performDriveAction(`../../system/disk/alpnas/unmount?target=${encodeURIComponent(device.mountpoint)}`, "Laufwerk wurde ausgehängt.");
+        }
+
+        function rescanDrives(){
+            if (!driveState.isAdmin){
+                showStatus("Nur Administratoren duerfen einen kompletten Laufwerks-Scan ausfuehren.", "warning");
+                return;
+            }
+            performDriveAction("../../system/disk/alpnas/rescan", "Laufwerke wurden neu gescannt.");
+        }
+
+        $(document).ready(function(){
+            loadDrives();
+        });
+    </script>
+</body>
+</html>
