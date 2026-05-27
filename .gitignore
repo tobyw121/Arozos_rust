@@ -1,5 +1,5 @@
 ```
-# Rust-specific ignores
+# Rust specific ignores
 target/
 Cargo.lock
 
@@ -13,13 +13,11 @@ vendor/
 # Environment
 .env
 .env.local
-.env.*
+*.env.*
 
 # Editors
 .vscode/
 .idea/
-*.swp
-*.swo
 
 # OS generated files
 .DS_Store
