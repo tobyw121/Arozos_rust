@@ -1,25 +1,65 @@
 ```
-# Rust specific ignores
+# Rust-specific ignores
 target/
 Cargo.lock
 
 # Dependencies
 vendor/
 
-# Logs and temp files
+# Build artifacts
+**/*.rs.bk
+**/*.rlib
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
 *.log
-*.tmp
 
 # Environment
 .env
 .env.local
 *.env.*
 
-# Editors
-.vscode/
-.idea/
-
-# OS generated files
+# OS
 .DS_Store
 Thumbs.db
+
+# Coverage
+coverage/
+htmlcov/
+.coverage
+
+# Python (if co-existing)
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+.tox/
+.coverage*
+nosetests.xml
+coverage.xml
+*.cover
+*.log
+.git/
+!.git/config
+.hg/
+!.hg/dirstate
+.hgcheck
+.hgsigs
+.svn/
+.CVS/
+.CVSROOT/
+.cvsignore
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
 ```
