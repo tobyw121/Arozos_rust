@@ -44,14 +44,14 @@ pub struct ModuleInfo {
 /// Handler für Modul-Verwaltung
 pub struct ModuleHandler {
     loaded_modules: Arc<RwLock<Vec<ModuleInfo>>>,
-    user_handler: Arc<crate::mod::user::UserHandler>,
+    user_handler: Arc<crate::modules_core::user::UserHandler>,
     tmp_directory: String,
 }
 
 impl ModuleHandler {
     /// Erstellt einen neuen ModuleHandler
     pub fn new(
-        user_handler: Arc<crate::mod::user::UserHandler>,
+        user_handler: Arc<crate::modules_core::user::UserHandler>,
         tmp_directory: &str,
     ) -> Self {
         ModuleHandler {

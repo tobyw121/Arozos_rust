@@ -5,7 +5,7 @@
 use std::sync::{Arc, RwLock};
 use serde::{Serialize, Deserialize};
 use crate::error::{Result, ArozError};
-use crate::mod::database::Database;
+use crate::modules_core::database::Database;
 
 /// Benutzer-Informationen
 #[derive(Clone, Debug, Serialize, Deserialize)]

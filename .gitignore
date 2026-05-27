@@ -6,23 +6,22 @@ Cargo.lock
 # Dependencies
 vendor/
 
-# Build artifacts
-**/*.rs.bk
-**/*.rlib
-
-# IDE
-.vscode/
-.idea/
-
-# Logs
+# Logs and temp files
 *.log
+*.tmp
 
 # Environment
 .env
 .env.local
 *.env.*
 
-# OS
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS generated files
 .DS_Store
 Thumbs.db
 
@@ -31,35 +30,11 @@ coverage/
 htmlcov/
 .coverage
 
-# Python (if co-existing)
+# Python-related (if any mixed projects)
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
-.Python
-env/
-venv/
-.venv/
-pip-log.txt
-pip-delete-this-directory.txt
-.tox/
-.coverage*
-nosetests.xml
-coverage.xml
-*.cover
-*.log
-.git/
-!.git/config
-.hg/
-!.hg/dirstate
-.hgcheck
-.hgsigs
-.svn/
-.CVS/
-.CVSROOT/
-.cvsignore
-.Rproj.user/
-.Rhistory
-.RData
-.Ruserdata
+.pytest_cache/
+.mypy_cache/
 ```

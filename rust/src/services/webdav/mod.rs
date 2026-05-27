@@ -22,8 +22,8 @@ use std::sync::Arc;
 use tokio::sync::RwLock;
 use tracing::{info, warn, debug};
 
-use crate::mod::auth;
-use crate::mod::filesystem;
+use crate::modules_core::auth;
+use crate::modules_core::filesystem;
 
 /// WebDAV Server Configuration
 #[derive(Clone)]
