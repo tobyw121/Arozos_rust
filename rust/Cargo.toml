@@ -19,7 +19,7 @@ hyper = { version = "1.1", features = ["full"] }
 # TLS Support
 rustls = "0.22"
 tokio-rustls = "0.25"
-acme2 = "0.8"
+acme2 = "0.5"
 
 # Database (BoltDB equivalent)
 sled = "0.34"
