@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>AlpNAS Installer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../script/semantic/semantic.min.css">
+    <link rel="stylesheet" href="../../script/ao.css">
+    <script src="../../script/jquery.min.js"></script>
+    <script src="../../script/semantic/semantic.min.js"></script>
+    <script src="../../script/ao_module.js"></script>
+    <style>
+        :root {
+            --bg: #eef3f8;
+            --panel: rgba(255, 255, 255, 0.94);
+            --border: #d7e1ea;
+            --hero: linear-gradient(135deg, #11293f 0%, #1f4a68 48%, #2e7f8f 100%);
+            --hero-text: #f8fcff;
+            --accent: #1f7a8c;
+            --good: #21824d;
+            --warn: #c27b12;
+            --bad: #b84232;
+            --muted: #607588;
+        }
+
+        html, body {
+            margin: 0;
+            min-height: 100%;
+            background:
+                radial-gradient(circle at top left, rgba(41, 107, 160, 0.14), transparent 34rem),
+                linear-gradient(180deg, #f7fbff 0%, var(--bg) 100%);
+            color: #17222d;
+            font-family: "Segoe UI", "Noto Sans", sans-serif;
+        }
+
+        .page {
+            min-height: 100%;
+            padding: 20px;
+        }
+
+        .hero, .panel {
+            border-radius: 24px;
+            border: 1px solid var(--border);
+            box-shadow: 0 22px 52px rgba(24, 49, 76, 0.08);
+        }
+
+        .hero {
+            background: var(--hero);
+            color: var(--hero-text);
+            padding: 28px;
+            border: none;
+            box-shadow: 0 28px 60px rgba(17, 41, 63, 0.22);
+        }
+
+        .hero h1 {
+            margin: 0 0 10px;
+            font-size: 2.2rem;
+        }
+
+        .hero p {
+            margin: 0;
+            max-width: 74ch;
+            line-height: 1.6;
+            color: rgba(248, 252, 255, 0.86);
+        }
+
+        .hero-grid {
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 14px;
+        }
+
+        .hero-stat {
+            background: rgba(255, 255, 255, 0.12);
+            border-radius: 18px;
+            padding: 14px 16px;
+            border: 1px solid rgba(255, 255, 255, 0.14);
+        }
+
+        .hero-stat small {
+            display: block;
+            opacity: 0.82;
+            margin-bottom: 6px;
+        }
+
+        .hero-stat strong {
+            font-size: 1.25rem;
+        }
+
+        .workspace {
+            display: grid;
+            grid-template-columns: 1.05fr 0.95fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .panel {
+            background: var(--panel);
+            overflow: hidden;
+        }
+
+        .panel-head {
+            padding: 18px 22px 14px;
+            border-bottom: 1px solid #e8eef4;
+            background: linear-gradient(180deg, rgba(251, 253, 255, 0.98) 0%, rgba(245, 249, 253, 0.98) 100%);
+        }
+
+        .panel-head h2 {
+            margin: 0;
+            font-size: 1.08rem;
+        }
+
+        .panel-head p {
+            margin: 6px 0 0;
+            color: var(--muted);
+        }
+
+        .panel-body {
+            padding: 20px 22px 24px;
+        }
+
+        .target-list {
+            display: grid;
+            gap: 12px;
+            max-height: 620px;
+            overflow-y: auto;
+        }
+
+        .target {
+            border: 1px solid #dfe7ef;
+            border-radius: 18px;
+            padding: 14px 16px;
+            background: #fff;
+            cursor: pointer;
+            transition: transform 0.12s ease, border-color 0.12s ease, box-shadow 0.12s ease;
+        }
+
+        .target:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 12px 24px rgba(21, 48, 78, 0.08);
+        }
+
+        .target.active {
+            border-color: #73b5c3;
+            background: linear-gradient(180deg, #ffffff 0%, #f4fbfc 100%);
+            box-shadow: 0 14px 30px rgba(31, 122, 140, 0.12);
+        }
+
+        .target-title {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .target-name {
+            font-weight: 700;
+        }
+
+        .target-meta {
+            margin-top: 6px;
+            color: var(--muted);
+            font-size: 0.94rem;
+        }
+
+        .badge-row {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .badge {
+            border-radius: 999px;
+            padding: 5px 10px;
+            font-size: 0.82rem;
+            border: 1px solid #d5e0ea;
+            background: #f6fafc;
+            color: #416176;
+        }
+
+        .badge.warn {
+            background: #fff6e7;
+            color: var(--warn);
+            border-color: #ebd8a7;
+        }
+
+        .badge.good {
+            background: #edf8f1;
+            color: var(--good);
+            border-color: #c3dfcb;
+        }
+
+        .field-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+        }
+
+        .field {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .field label {
+            font-size: 0.84rem;
+            font-weight: 700;
+            color: #5f7385;
+        }
+
+        .field input, .field select, .field textarea {
+            border: 1px solid #d5dee8;
+            border-radius: 14px;
+            padding: 11px 12px;
+            background: #fff;
+            font: inherit;
+        }
+
+        .summary {
+            margin-top: 16px;
+            border: 1px solid #e2e9ef;
+            border-radius: 18px;
+            background: #f8fbfd;
+            padding: 16px;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 8px 0;
+            border-bottom: 1px solid #e5edf3;
+        }
+
+        .summary-row:last-child {
+            border-bottom: none;
+        }
+
+        .status {
+            margin-top: 16px;
+        }
+
+        .status .ui.message {
+            border-radius: 16px;
+        }
+
+        .logbox {
+            margin-top: 16px;
+            background: #0f1d2d;
+            color: #dce9f4;
+            border-radius: 18px;
+            padding: 16px;
+            min-height: 280px;
+            max-height: 420px;
+            overflow-y: auto;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+            font-size: 0.86rem;
+            line-height: 1.55;
+            white-space: pre-wrap;
+        }
+
+        .actions {
+            margin-top: 18px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .actions .ui.button {
+            border-radius: 14px;
+        }
+
+        .danger-note {
+            margin-top: 14px;
+            padding: 14px 16px;
+            border-radius: 18px;
+            background: #fff5f3;
+            border: 1px solid #f0d3cd;
+            color: #7a3d35;
+        }
+
+        @media (max-width: 1080px) {
+            .workspace {
+                grid-template-columns: 1fr;
+            }
+
+            .field-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <section class="hero">
+            <h1>AlpNAS Installer</h1>
+            <p>
+                Installiere AlpNAS direkt aus dem Live-System auf eine lokale SSD oder HDD.
+                Der Ziel-Datentraeger wird dabei neu partitioniert, Alpine wird klassisch auf die Platte installiert
+                und GRUB fuer BIOS und UEFI eingerichtet. Auf installierten Systemen erscheint dieses Modul nicht mehr.
+            </p>
+            <div class="hero-grid">
+                <div class="hero-stat">
+                    <small>Modus</small>
+                    <strong id="heroMode">Live-System</strong>
+                </div>
+                <div class="hero-stat">
+                    <small>Erkannte Ziele</small>
+                    <strong id="heroTargets">0</strong>
+                </div>
+                <div class="hero-stat">
+                    <small>Status</small>
+                    <strong id="heroStatus">Bereit</strong>
+                </div>
+            </div>
+        </section>
+
+        <section class="workspace">
+            <article class="panel">
+                <div class="panel-head">
+                    <h2>Ziel-Laufwerk</h2>
+                    <p>Waehle die SSD oder HDD, auf die AlpNAS installiert werden soll.</p>
+                </div>
+                <div class="panel-body">
+                    <div id="targetList" class="target-list">
+                        <div class="ui active inline loader"></div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="panel">
+                <div class="panel-head">
+                    <h2>Installationsprofil</h2>
+                    <p>Die Installation verwendet ein klassisches Festplatten-Layout: BIOS-Boot, EFI und Root-Dateisystem.</p>
+                </div>
+                <div class="panel-body">
+                    <div class="field-grid">
+                        <div class="field">
+                            <label for="hostname">Hostname</label>
+                            <input id="hostname" value="alpnas">
+                        </div>
+                        <div class="field">
+                            <label for="timezone">Zeitzone</label>
+                            <input id="timezone" value="Europe/Berlin">
+                        </div>
+                        <div class="field" style="grid-column: 1 / -1;">
+                            <label for="password">ArozOS-Passwort bestaetigen</label>
+                            <input id="password" type="password" placeholder="Zur Sicherheitsbestaetigung eingeben">
+                        </div>
+                        <div class="field" style="grid-column: 1 / -1;">
+                            <label for="confirmDisk">Zielpfad zur Bestaetigung eingeben</label>
+                            <input id="confirmDisk" placeholder="z. B. /dev/sda">
+                        </div>
+                    </div>
+
+                    <div class="summary">
+                        <div class="summary-row"><span>Partition 1</span><strong>BIOS boot (ca. 2 MiB)</strong></div>
+                        <div class="summary-row"><span>Partition 2</span><strong>EFI System Partition (512 MiB, FAT32)</strong></div>
+                        <div class="summary-row"><span>Partition 3</span><strong>AlpNAS Root (Rest der Platte, ext4)</strong></div>
+                        <div class="summary-row"><span>Bootloader</span><strong>GRUB fuer BIOS und UEFI</strong></div>
+                    </div>
+
+                    <div class="danger-note">
+                        Das gewaehlte Laufwerk wird komplett geloescht. Vorhandene Partitionen und Daten darauf gehen verloren.
+                    </div>
+
+                    <div class="actions">
+                        <button class="ui basic button" onclick="loadTargets()">
+                            <i class="refresh icon"></i> Laufwerke neu laden
+                        </button>
+                        <button id="startBtn" class="ui teal button" onclick="startInstall()">
+                            <i class="download icon"></i> Installation starten
+                        </button>
+                    </div>
+
+                    <div class="status">
+                        <div id="statusBox" class="ui info message">Status wird geladen ...</div>
+                    </div>
+
+                    <div id="logBox" class="logbox">Noch keine Installationsausgabe vorhanden.</div>
+                </div>
+            </article>
+        </section>
+    </div>
+
+    <script>
+        let installerState = {
+            targets: [],
+            selectedDisk: "",
+            running: false
+        };
+
+        function escapeHtml(value) {
+            return $("<div>").text(value == null ? "" : String(value)).html();
+        }
+
+        function formatBytes(bytes) {
+            const value = Number(bytes || 0);
+            if (!value) return "0 B";
+            const units = ["B", "KB", "MB", "GB", "TB", "PB"];
+            let size = value;
+            let index = 0;
+            while (size >= 1024 && index < units.length - 1) {
+                size /= 1024;
+                index++;
+            }
+            const precision = size >= 100 ? 0 : size >= 10 ? 1 : 2;
+            return `${size.toFixed(precision)} ${units[index]}`;
+        }
+
+        function selectedTarget() {
+            return installerState.targets.find(target => target.device === installerState.selectedDisk) || null;
+        }
+
+        function setStatus(message, mode) {
+            const box = $("#statusBox");
+            box.removeClass("info positive negative warning");
+            box.addClass(mode || "info");
+            box.html(message);
+        }
+
+        function renderTargets() {
+            const root = $("#targetList");
+            root.empty();
+
+            $("#heroTargets").text(installerState.targets.length);
+
+            if (!installerState.targets.length) {
+                root.html('<div class="ui warning message">Keine installierbaren Ziel-Laufwerke gefunden.</div>');
+                return;
+            }
+
+            if (!installerState.selectedDisk) {
+                installerState.selectedDisk = installerState.targets[0].device;
+            }
+
+            installerState.targets.forEach(target => {
+                const active = target.device === installerState.selectedDisk ? " active" : "";
+                const fsHints = (target.filesystemHints || []).map(fs => `<span class="badge">${escapeHtml(fs.toUpperCase())}</span>`).join("");
+                const mountBadge = target.mountedChildren > 0
+                    ? `<span class="badge warn">${target.mountedChildren} gemountete Partition(en)</span>`
+                    : '<span class="badge good">Nicht gemountet</span>';
+                const partitionBadge = target.partitionCount > 0
+                    ? `<span class="badge warn">${target.partitionCount} Partition(en)</span>`
+                    : '<span class="badge good">Leer/ohne Partitionen</span>';
+
+                root.append(`
+                    <div class="target${active}" onclick="selectTarget('${encodeURIComponent(target.device)}')">
+                        <div class="target-title">
+                            <div class="target-name">${escapeHtml(target.name || target.device)}</div>
+                            <div class="badge">${formatBytes(target.size)}</div>
+                        </div>
+                        <div class="target-meta">${escapeHtml(target.device)}${target.model ? ` · ${escapeHtml(target.model)}` : ""}</div>
+                        <div class="badge-row">
+                            ${mountBadge}
+                            ${partitionBadge}
+                            ${target.removable || target.hotplug ? '<span class="badge warn">Wechselmedium</span>' : '<span class="badge good">Fest eingebaut</span>'}
+                            ${target.readOnly ? '<span class="badge warn">Schreibgeschuetzt</span>' : ""}
+                            ${target.transport ? `<span class="badge">${escapeHtml(target.transport)}</span>` : ""}
+                            ${fsHints}
+                        </div>
+                    </div>
+                `);
+            });
+        }
+
+        function selectTarget(encodedDisk) {
+            installerState.selectedDisk = decodeURIComponent(encodedDisk);
+            $("#confirmDisk").attr("placeholder", installerState.selectedDisk);
+            renderTargets();
+        }
+
+        function refreshState() {
+            $.get("../../system/installer/alpnas/state", function(data) {
+                installerState.running = !!data.running;
+                $("#heroMode").text(data.liveMode ? "Live-System" : "Installiert");
+                $("#heroStatus").text(data.message || data.status || "Bereit");
+                $("#startBtn").prop("disabled", installerState.running || !installerState.selectedDisk);
+
+                if (!data.available) {
+                    $("#startBtn").prop("disabled", true);
+                    setStatus("Der Installer ist nur im Live-Modus verfuegbar.", "warning");
+                } else if (data.status === "done") {
+                    setStatus("Installation abgeschlossen. System kann jetzt neu gestartet werden.", "positive");
+                } else if (data.status === "error") {
+                    setStatus(escapeHtml(data.message || "Installation fehlgeschlagen."), "negative");
+                } else if (data.running) {
+                    setStatus(`Installation laeuft: ${escapeHtml(data.phase || "arbeite...")}`, "warning");
+                } else {
+                    setStatus("Bereit fuer die Installation.", "info");
+                }
+
+                const logTail = Array.isArray(data.logTail) && data.logTail.length
+                    ? data.logTail.map(line => escapeHtml(line)).join("\n")
+                    : "Noch keine Installationsausgabe vorhanden.";
+                $("#logBox").html(logTail);
+            }).fail(function(xhr) {
+                const message = xhr.responseText || "Installationsstatus konnte nicht geladen werden.";
+                setStatus(escapeHtml(message), "negative");
+            });
+        }
+
+        function loadTargets() {
+            setStatus("Installationsziele werden geladen ...", "info");
+            $.get("../../system/installer/alpnas/targets", function(data) {
+                installerState.targets = Array.isArray(data.targets) ? data.targets : [];
+                if (!installerState.targets.find(target => target.device === installerState.selectedDisk)) {
+                    installerState.selectedDisk = installerState.targets.length ? installerState.targets[0].device : "";
+                }
+                renderTargets();
+                refreshState();
+            }).fail(function(xhr) {
+                const message = xhr.responseText || "Ziel-Laufwerke konnten nicht geladen werden.";
+                setStatus(escapeHtml(message), "negative");
+                $("#targetList").html('<div class="ui negative message">Ziel-Laufwerke konnten nicht geladen werden.</div>');
+            });
+        }
+
+        function startInstall() {
+            const target = selectedTarget();
+            if (!target) {
+                setStatus("Bitte zuerst ein Ziel-Laufwerk waehlen.", "warning");
+                return;
+            }
+
+            const password = $("#password").val();
+            if (!password) {
+                setStatus("Bitte bestaetige die Installation mit deinem ArozOS-Passwort.", "warning");
+                return;
+            }
+
+            const hostname = ($("#hostname").val() || "alpnas").trim();
+            const timezone = ($("#timezone").val() || "UTC").trim();
+            const confirmedDisk = ($("#confirmDisk").val() || "").trim();
+
+            if (!/^[A-Za-z0-9-]{1,63}$/.test(hostname) || hostname[0] === "-" || hostname[hostname.length - 1] === "-") {
+                setStatus("Hostname ist ungueltig. Erlaubt sind Buchstaben, Zahlen und Bindestriche.", "warning");
+                return;
+            }
+
+            if (confirmedDisk !== target.device) {
+                setStatus("Bitte den Zielpfad exakt eingeben: " + escapeHtml(target.device), "warning");
+                return;
+            }
+
+            if (!confirm(`AlpNAS jetzt auf ${target.device} installieren? Alle Daten auf diesem Laufwerk werden geloescht.`)) {
+                return;
+            }
+
+            $("#startBtn").prop("disabled", true);
+            setStatus(`Installation auf ${escapeHtml(target.device)} wird gestartet ...`, "warning");
+
+            $.post("../../system/installer/alpnas/start", {
+                disk: target.device,
+                hostname: hostname,
+                timezone: timezone,
+                password: password
+            }, function() {
+                $("#password").val("");
+                refreshState();
+            }).fail(function(xhr) {
+                $("#startBtn").prop("disabled", false);
+                const message = xhr.responseText || "Installation konnte nicht gestartet werden.";
+                setStatus(escapeHtml(message.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim()), "negative");
+            });
+        }
+
+        if (typeof ao_module_setWindowTitle === "function") {
+            ao_module_setWindowTitle("AlpNAS Installer");
+        }
+
+        $("#confirmDisk").attr("placeholder", "Zuerst Laufwerk auswaehlen");
+        loadTargets();
+        window.setInterval(refreshState, 3000);
+    </script>
+</body>
+</html>
