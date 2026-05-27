@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<head>
+    <title>System Info</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+    <link rel="stylesheet" href="../../script/semantic/semantic.min.css">
+    <script type="text/javascript" src="../../script/jquery.min.js"></script>
+    <script type="text/javascript" src="../../script/semantic/semantic.min.js"></script>
+    <!-- <script type="text/javascript" src="../../script/ao_module.js"></script> -->
+</head>
+
+<body>
+    <div class="ui container">
+        <div class="ui basic segment" style="text-align:left">
+            <h2 class="ui header">
+                AlpNAS Desktop
+                <div class="sub header">Native web desktop and control shell for AlpNAS</div>
+            </h2>
+            <div class="ui divider"></div>
+            <p style="margin-top:-12px;">System Version: <span id="vcode"></span></p>
+            <p style="margin-top:-12px;">System UUID: <span id="sysuuid"></span></p>
+            <img src="../info/img/banner.jpg" class="ui fluid image"></img>
+            <br>
+            <p>AlpNAS integrates the ArozOS desktop stack as its native management shell.<br>
+               Core desktop technology by the ArOZ Project and upstream contributors, integrated and adapted for AlpNAS.</p>
+            <div class="ui divider"></div>
+            <a href="mailto:admin@alpnas.local" target="_blank"><i class="mail outline icon"></i>admin@alpnas.local</a>
+            /
+            <a href="/"><i class="home icon"></i>https://alpnas.local</a>
+            <br>
+            <small>AlpNAS ships with adapted ArozOS components. Upstream ArozOS code and artwork remain the work of their respective authors. Visit the <a href="https://github.com/tobychui/arozos" target="_blank">ArozOS repository</a> for upstream project details.</small>
+            <br>
+        </div>
+    </div>
+</body>
+<script>
+    $.get("../../system/id/requestInfo",function(data){
+        $("#sysuuid").text(data.SystemUUID);
+        $("#vcode").text(data.Build + " v" + data.Version);
+    });
+
+
+</script>
+</html>
