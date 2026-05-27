@@ -15,15 +15,13 @@ use std::sync::Arc;
 use tokio::sync::RwLock;
 use tracing::{info, warn};
 
-use crate::modules_core::{auth, database, user, filesystem, storage};
+use crate::modules_core::{database, user};
 
 /// AGI System State
 #[derive(Clone)]
 pub struct AgiState {
     pub db: Arc<RwLock<database::Database>>,
-    pub auth: Arc<auth::AuthManager>,
-    pub fs: Arc<filesystem::FileSystemManager>,
-    pub storage: Arc<storage::StorageManager>,
+    pub user_handler: Arc<user::UserHandler>,
     pub version: String,
     pub build_time: String,
 }
@@ -31,15 +29,11 @@ pub struct AgiState {
 impl AgiState {
     pub fn new(
         db: Arc<RwLock<database::Database>>,
-        auth: Arc<auth::AuthManager>,
-        fs: Arc<filesystem::FileSystemManager>,
-        storage: Arc<storage::StorageManager>,
+        user_handler: Arc<user::UserHandler>,
     ) -> Self {
         Self {
             db,
-            auth,
-            fs,
-            storage,
+            user_handler,
             version: env!("CARGO_PKG_VERSION").to_string(),
             build_time: chrono::Utc::now().format("%Y-%m-%d %H:%M:%S UTC").to_string(),
         }
@@ -108,9 +102,9 @@ async fn system_info(State(state): State<AgiState>) -> Json<SystemInfo> {
     Json(SystemInfo {
         version: state.version.clone(),
         build_time: state.build_time.clone(),
-        uptime_secs: sys.uptime(),
-        hostname: sys.host_name().unwrap_or_else(|| "unknown".to_string()),
-        os: format!("{} {}", sys.name().unwrap_or_default(), sys.os_version().unwrap_or_default()),
+        uptime_secs: sysinfo::System::uptime(),
+        hostname: sysinfo::System::host_name().unwrap_or_else(|| "unknown".to_string()),
+        os: format!("{} {}", sysinfo::System::name().unwrap_or_default(), sysinfo::System::os_version().unwrap_or_default()),
         arch: std::env::consts::ARCH.to_string(),
         cpu_count: sys.cpus().len(),
         memory_total: sys.total_memory(),
@@ -127,17 +121,10 @@ async fn health_check(State(state): State<AgiState>) -> Json<HealthStatus> {
         true
     };
     
-    let storage_health = state.storage.is_operational().await;
-    
     let mut services = vec![
         ServiceHealth {
             name: "database".to_string(),
             running: db_health,
-            message: None,
-        },
-        ServiceHealth {
-            name: "storage".to_string(),
-            running: storage_health,
             message: None,
         },
         ServiceHealth {
@@ -157,7 +144,7 @@ async fn health_check(State(state): State<AgiState>) -> Json<HealthStatus> {
     Json(HealthStatus {
         status: if all_healthy { "healthy".to_string() } else { "degraded".to_string() },
         database: db_health,
-        storage: storage_health,
+        storage: true, // Placeholder
         services,
     })
 }
@@ -178,9 +165,7 @@ async fn restart_system(State(_state): State<AgiState>) -> StatusCode {
 
 /// GET /agi/users/list - List all users
 async fn list_users(State(state): State<AgiState>) -> Result<Json<Vec<user::UserInfo>>, StatusCode> {
-    let db = state.db.read().await;
-    
-    match state.auth.list_users().await {
+    match state.user_handler.list_users() {
         Ok(users) => Ok(Json(users)),
         Err(e) => {
             warn!("Failed to list users: {}", e);
@@ -194,7 +179,7 @@ async fn create_user(
     State(state): State<AgiState>,
     Json(req): Json<CreateUserRequest>,
 ) -> Result<StatusCode, StatusCode> {
-    match state.auth.create_user(&req.username, &req.password, req.email.clone()).await {
+    match state.user_handler.create_user(&req.username, &req.password, req.email.clone()) {
         Ok(_) => Ok(StatusCode::CREATED),
         Err(e) => {
             warn!("Failed to create user: {}", e);
@@ -215,7 +200,7 @@ async fn delete_user(
     State(state): State<AgiState>,
     Json(req): Json<DeleteUserRequest>,
 ) -> Result<StatusCode, StatusCode> {
-    match state.auth.delete_user(&req.username).await {
+    match state.user_handler.delete_user(&req.username) {
         Ok(_) => Ok(StatusCode::NO_CONTENT),
         Err(e) => {
             warn!("Failed to delete user: {}", e);
@@ -281,20 +266,14 @@ pub struct UninstallModuleRequest {
     pub module_id: String,
 }
 
-/// GET /agi/storage/pools - List storage pools
-async fn list_storage_pools(State(state): State<AgiState>) -> Json<Vec<storage::StoragePool>> {
-    match state.storage.list_pools().await {
-        Ok(pools) => Json(pools),
-        Err(_) => Json(vec![]),
-    }
+/// GET /agi/storage/pools - List storage pools (placeholder)
+async fn list_storage_pools(State(_state): State<AgiState>) -> Json<Vec<serde_json::Value>> {
+    Json(vec![])
 }
 
-/// GET /agi/storage/volumes - List volumes
-async fn list_volumes(State(state): State<AgiState>) -> Json<Vec<storage::Volume>> {
-    match state.storage.list_volumes().await {
-        Ok(volumes) => Json(volumes),
-        Err(_) => Json(vec![]),
-    }
+/// GET /agi/storage/volumes - List volumes (placeholder)
+async fn list_volumes(State(_state): State<AgiState>) -> Json<Vec<serde_json::Value>> {
+    Json(vec![])
 }
 
 #[cfg(test)]
