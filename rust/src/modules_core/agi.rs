@@ -15,7 +15,7 @@ use std::sync::Arc;
 use tokio::sync::RwLock;
 use tracing::{info, warn};
 
-use crate::mod::{auth, database, user, filesystem, storage};
+use crate::modules_core::{auth, database, user, filesystem, storage};
 
 /// AGI System State
 #[derive(Clone)]

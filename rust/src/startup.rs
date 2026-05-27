@@ -13,9 +13,9 @@ use crate::main::Args;
 #[derive(Clone)]
 pub struct AppState {
     pub config: AppConfig,
-    pub database: Arc<crate::mod::database::Database>,
-    pub user_handler: Arc<crate::mod::user::UserHandler>,
-    pub module_handler: Arc<crate::mod::modules::ModuleHandler>,
+    pub database: Arc<crate::modules_core::database::Database>,
+    pub user_handler: Arc<crate::modules_core::user::UserHandler>,
+    pub module_handler: Arc<crate::modules_core::modules::ModuleHandler>,
     // pub auth_agent: Arc<AuthAgent>,
     // pub storage_manager: Arc<StorageManager>,
     // pub logger: Arc<SystemLogger>,
@@ -61,18 +61,18 @@ pub async fn initialize_system(args: &Args) -> Result<Arc<AppState>> {
 
     // Initialisiere Datenbank
     info!("Initializing database...");
-    let database = Arc::new(crate::mod::database::Database::new("./system/sysdb").await?);
+    let database = Arc::new(crate::modules_core::database::Database::new("./system/sysdb").await?);
 
     // Initialisiere User Handler
     info!("Initializing user handler...");
     let user_handler = Arc::new(
-        crate::mod::user::UserHandler::new(database.clone(), &config.tmp_directory).await?
+        crate::modules_core::user::UserHandler::new(database.clone(), &config.tmp_directory).await?
     );
 
     // Initialisiere Module Handler
     info!("Initializing module handler...");
     let module_handler = Arc::new(
-        crate::mod::modules::ModuleHandler::new(user_handler.clone(), &config.tmp_directory)
+        crate::modules_core::modules::ModuleHandler::new(user_handler.clone(), &config.tmp_directory)
     );
 
     // Erstelle AppState
@@ -114,12 +114,12 @@ async fn cleanup_tmp_directory(tmp_dir: &str) -> Result<()> {
 /// Führt die Initialisierung aller Module durch
 async fn run_module_initialization(state: &AppState) -> Result<()> {
     // Initialisiere Module-Service
-    crate::mod::modules::module_service_init(state)?;
+    crate::modules_core::modules::module_service_init(state)?;
     
     // Initialisiere weitere Module hier
-    // crate::mod::auth::auth_init(state)?;
-    // crate::mod::storage::storage_init(state)?;
-    // crate::mod::network::network_init(state)?;
+    // crate::modules_core::auth::auth_init(state)?;
+    // crate::modules_core::storage::storage_init(state)?;
+    // crate::modules_core::network::network_init(state)?;
     
     Ok(())
 }

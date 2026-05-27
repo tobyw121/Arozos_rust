@@ -23,7 +23,7 @@ pub enum ArozError {
     #[error("Authentifizierungs-Fehler: {0}")]
     Auth(String),
     
-    #[error("Berechtigungs-Fehler: {1}")]
+    #[error("Berechtigungs-Fehler: {0}")]
     PermissionDenied(String),
     
     #[error("Modul-Fehler: {0}")]
