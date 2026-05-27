@@ -124,13 +124,13 @@ impl ModuleHandler {
     }
 }
 
-// Globale Initialisierungsfunktion
-pub fn module_service_init(state: &crate::startup::AppState) -> Result<()> {
-    // Datenbank-Tabelle für Module erstellen
-    state.database.create_table("module")?;
-    
-    Ok(())
-}
+// TODO: Globale Initialisierungsfunktion muss noch implementiert werden
+// pub fn module_service_init(state: &crate::startup::AppState) -> Result<()> {
+//     // Datenbank-Tabelle für Module erstellen
+//     state.database.create_table("module")?;
+//     
+//     Ok(())
+// }
 
 // TODO: Weitere Modul-Funktionen portieren:
 // - HandleDefaultLauncher
