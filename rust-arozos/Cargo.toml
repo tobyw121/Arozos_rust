@@ -1,0 +1,149 @@
+[package]
+name = "rust-arozos"
+version = "1.0.0"
+edition = "2021"
+authors = ["tobychui (original Go author), Rust Port Contributors"]
+description = "AlpNAS Desktop - A web-based desktop operating system (Rust port)"
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/rust-arozos/rust-arozos"
+
+[dependencies]
+# Web Server & HTTP
+tokio = { version = "1.35", features = ["full"] }
+axum = { version = "0.7", features = ["macros"] }
+tower = "0.4"
+tower-http = { version = "0.5", features = ["fs", "trace", "cors", "compression-gzip"] }
+hyper = { version = "1.1", features = ["full"] }
+
+# TLS Support
+rustls = "0.22"
+tokio-rustls = "0.25"
+acme2 = "0.8"
+
+# Database (BoltDB equivalent)
+sled = "0.34"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# File System Operations
+tokio-fs = "0.1"
+notify = "6.1"
+walkdir = "2.4"
+mime_guess = "2.0"
+glob = "0.3"
+async-trait = "0.1"
+futures = "0.3"
+
+# Networking
+reqwest = { version = "0.11", features = ["json", "rustls-tls"] }
+mdns-sd = "0.10"
+upnp-client = "0.2"
+get_if = "0.1"
+
+# FTP Server
+suppaftp = "5.3"
+async-std = "1.12"
+
+# WebDAV
+dav-server = "0.7"
+futures-util = "0.3"
+
+# WebSocket
+tokio-tungstenite = "0.21"
+warp = "0.3"
+
+# Authentication & Security
+argon2 = "0.5"
+jsonwebtoken = "9.2"
+uuid = { version = "1.6", features = ["v4"] }
+csrf = "0.5"
+sha2 = "0.10"
+hex = "0.4"
+rand = "0.8"
+
+# User Management
+bcrypt = "0.15"
+
+# Logging
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+log = "0.4"
+
+# Configuration
+config = "0.14"
+toml = "0.8"
+
+# CLI Argument Parsing
+clap = { version = "4.4", features = ["derive"] }
+
+# Signal Handling
+ctrlc = { version = "3.4", features = ["termination"] }
+
+# Compression
+flate2 = "1.0"
+zip = "0.6"
+tar = "0.4"
+brotli = "3.4"
+
+# Image Processing
+image = "0.24"
+
+# Audio/Video Metadata
+lofty = "0.15"
+
+# Hardware Info
+sysinfo = "0.30"
+
+# Geolocation
+maxminddb = "0.24"
+
+# Email (SMTP)
+lettre = { version = "0.11", features = ["tokio1-rustls-tls"] }
+
+# Cron/Scheduling
+cron = "0.12"
+
+# Git Operations (for module installation)
+git2 = "0.18"
+
+# IoT & MQTT
+rumqttc = "0.23"
+
+# Media Processing (Transcoder)
+ffmpeg-next = "7"
+
+# Clustering & Consensus
+raft = "0.7"
+bytes = "1"
+
+# Self Updater
+self_update = { version = "0.40", features = ["archive-zip"] }
+
+# Error Handling
+anyhow = "1.0"
+thiserror = "1.0"
+
+# Utilities
+chrono = { version = "0.4", features = ["serde"] }
+regex = "1.10"
+lazy_static = "1.4"
+once_cell = "1.19"
+
+[dev-dependencies]
+tokio-test = "0.4"
+tempfile = "3.9"
+
+[[bin]]
+name = "arozos"
+path = "src/main.rs"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+strip = true
+
+[profile.dev]
+opt-level = 0
+debug = true
