@@ -1,0 +1,32 @@
+{
+  "name": "sftp",
+  "enabled": false,
+  "port": null,
+  "upnp": false,
+  "options": {
+    "lastNativeAction": {
+      "action": "stop",
+      "command": [
+        "systemctl",
+        "stop",
+        "ssh"
+      ],
+      "executed": false,
+      "id": "sftp",
+      "message": "native service control requires root/Administrator or AROZOS_RS_ENABLE_SYSTEM_SERVICE_OPS=1; configuration was saved but the OS daemon was not started",
+      "ok": false,
+      "status": null,
+      "stderr": "",
+      "stdout": ""
+    },
+    "lastRuntimeAction": {
+      "action": "disable",
+      "builtin": false,
+      "message": "SFTP is implemented through the OS sshd subsystem. Use the native service adapter/config plan; no HTTP alias is used.",
+      "ok": true,
+      "port": 22,
+      "running": false,
+      "service": "sftp"
+    }
+  }
+}

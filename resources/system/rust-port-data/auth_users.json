@@ -1,0 +1,16 @@
+{
+  "users": {
+    "ssc": {
+      "username": "ssc",
+      "display_name": "ssc",
+      "group": "administrator",
+      "is_admin": true,
+      "disabled": false,
+      "profile_image": "img/desktop/system_icon/user.svg",
+      "created_unix": 1779904500
+    }
+  },
+  "passwords": {
+    "ssc": "92ca8a7cb509ba4740f022ab051b6ce392a1d9e54b127d4a280c85dbc1766462"
+  }
+}

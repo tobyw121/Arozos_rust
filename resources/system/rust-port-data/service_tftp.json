@@ -1,0 +1,32 @@
+{
+  "name": "tftp",
+  "enabled": false,
+  "port": 6969,
+  "upnp": false,
+  "options": {
+    "lastNativeAction": {
+      "action": "stop",
+      "command": [
+        "systemctl",
+        "stop",
+        "tftpd-hpa"
+      ],
+      "executed": false,
+      "id": "tftp",
+      "message": "native service control requires root/Administrator or AROZOS_RS_ENABLE_SYSTEM_SERVICE_OPS=1; configuration was saved but the OS daemon was not started",
+      "ok": false,
+      "status": null,
+      "stderr": "",
+      "stdout": ""
+    },
+    "lastRuntimeAction": {
+      "action": "stop",
+      "builtin": true,
+      "message": "built-in Rust TFTP server stopped",
+      "ok": true,
+      "port": 6969,
+      "running": false,
+      "service": "tftp"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "webdav",
+  "enabled": true,
+  "port": null,
+  "upnp": false,
+  "options": {
+    "lastNativeAction": {
+      "action": "start",
+      "command": [],
+      "executed": false,
+      "id": "webdav",
+      "message": "WebDAV is served by the built-in Rust /webdav endpoint; no external daemon is required",
+      "ok": true,
+      "status": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    "lastRuntimeAction": {
+      "action": "enable",
+      "builtin": true,
+      "message": "WebDAV is served natively by the Rust HTTP router at /webdav/.",
+      "ok": true,
+      "port": 8080,
+      "running": true,
+      "service": "webdav"
+    }
+  }
+}

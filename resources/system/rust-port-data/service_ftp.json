@@ -1,0 +1,32 @@
+{
+  "name": "ftp",
+  "enabled": false,
+  "port": null,
+  "upnp": false,
+  "options": {
+    "lastNativeAction": {
+      "action": "stop",
+      "command": [
+        "systemctl",
+        "stop",
+        "vsftpd"
+      ],
+      "executed": false,
+      "id": "ftp",
+      "message": "native service control requires root/Administrator or AROZOS_RS_ENABLE_SYSTEM_SERVICE_OPS=1; configuration was saved but the OS daemon was not started",
+      "ok": false,
+      "status": null,
+      "stderr": "",
+      "stdout": ""
+    },
+    "lastRuntimeAction": {
+      "action": "stop",
+      "builtin": true,
+      "message": "built-in Rust FTP server stopped",
+      "ok": true,
+      "port": 2121,
+      "running": false,
+      "service": "ftp"
+    }
+  }
+}
