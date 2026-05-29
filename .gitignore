@@ -1,0 +1,7 @@
+/target
+/.idea
+/.vscode
+*.log
+/resources/system/db
+/resources/system/tmp
+github_uploader.sh
