@@ -1,0 +1,38 @@
+{
+  "version": "0.8.0",
+  "native_app_backend_dispatcher": "src/app_api.rs",
+  "websocket_speedtest": "src/http_api/router.rs",
+  "icons_source": "resources/web/* original ArozOS asset paths",
+  "apps_native_backend_handlers": [
+    "Browser",
+    "Camera",
+    "Clock/static",
+    "Code Studio",
+    "MDEditor",
+    "Management Gateway/static",
+    "Manga",
+    "Memo",
+    "Music",
+    "NotepadA",
+    "OfficeViewer/static",
+    "OnScreenKeyboard/static",
+    "PDF Viewer/static",
+    "Paint/static",
+    "Photo",
+    "Recorder",
+    "Serverless",
+    "Speedtest",
+    "Timer/static",
+    "UnitTest",
+    "Video",
+    "Web Builder",
+    "Web Downloader"
+  ],
+  "safety_gates": [
+    "arbitrary AGI execution",
+    "external process execution",
+    "destructive disk/RAID mutation",
+    "poweroff/reboot",
+    "unattended remote downloads"
+  ]
+}

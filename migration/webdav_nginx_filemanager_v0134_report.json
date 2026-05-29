@@ -1,0 +1,13 @@
+{
+  "version": "0.13.4",
+  "fixes": [
+    "registered webdav access-control routes explicitly",
+    "registered nginx reverse proxy routes explicitly",
+    "registered file manager host mount route explicitly",
+    "made nginx setup script portable across sites-available and conf.d layouts",
+    "added Unix host filesystem root fallback for Thunar-like browsing",
+    "updated test script to distinguish WebDAV 401 authentication from endpoint failure"
+  ],
+  "canonical_webdav_mount": "/webdav/",
+  "no_webdave_alias": true
+}

@@ -1,0 +1,11 @@
+{
+  "go_files": 308,
+  "all_files": 2943,
+  "functions": 2222,
+  "types": 406,
+  "endpoints": 255,
+  "route_occurrences": 260,
+  "loc": 71664,
+  "native_rust_endpoint_implementations": 25,
+  "original_go_source_reference": "migration/original_go_source"
+}

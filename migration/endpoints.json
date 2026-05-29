@@ -1,0 +1,4628 @@
+[
+  {
+    "path": "/",
+    "access": "public",
+    "routers": [
+      "http",
+      "mux2"
+    ],
+    "handlers": [
+      "mrouter(fs",
+      "h",
+      "http.HandlerFunc(func(w http.ResponseWriter, r *http.Request",
+      "func(w http.ResponseWriter, r *http.Request"
+    ],
+    "sources": [
+      {
+        "file": "main.go",
+        "line": 114,
+        "router": "http",
+        "handler": "mrouter(fs"
+      },
+      {
+        "file": "mod/network/webdav/litmus_test_server.go",
+        "line": 59,
+        "router": "http",
+        "handler": "h"
+      },
+      {
+        "file": "mod/network/webdav/litmus_test_server.go",
+        "line": 83,
+        "router": "http",
+        "handler": "http.HandlerFunc(func(w http.ResponseWriter, r *http.Request"
+      },
+      {
+        "file": "mod/network/websocketproxy/websocketproxy_test.go",
+        "line": 47,
+        "router": "mux2",
+        "handler": "func(w http.ResponseWriter, r *http.Request"
+      }
+    ]
+  },
+  {
+    "path": "/AOB/",
+    "access": "public",
+    "routers": [
+      "http"
+    ],
+    "handlers": [
+      "func(w http.ResponseWriter, r *http.Request"
+    ],
+    "sources": [
+      {
+        "file": "system.go",
+        "line": 41,
+        "router": "http",
+        "handler": "func(w http.ResponseWriter, r *http.Request"
+      }
+    ]
+  },
+  {
+    "path": "/AOB/SystemAOB/functions/info/version.inf",
+    "access": "public",
+    "routers": [
+      "http"
+    ],
+    "handlers": [
+      "systemIdServeVersonNumber"
+    ],
+    "sources": [
+      {
+        "file": "system.go",
+        "line": 44,
+        "router": "http",
+        "handler": "systemIdServeVersonNumber"
+      }
+    ]
+  },
+  {
+    "path": "/AOB/SystemAOB/functions/system_statistic/getDriveStat.php",
+    "access": "public",
+    "routers": [
+      "http"
+    ],
+    "handlers": [
+      "systemIdGetDriveStates"
+    ],
+    "sources": [
+      {
+        "file": "system.go",
+        "line": 45,
+        "router": "http",
+        "handler": "systemIdGetDriveStates"
+      }
+    ]
+  },
+  {
+    "path": "/AOB/hb.php",
+    "access": "public",
+    "routers": [
+      "http"
+    ],
+    "handlers": [
+      "systemIdResponseBetaScan"
+    ],
+    "sources": [
+      {
+        "file": "system.go",
+        "line": 40,
+        "router": "http",
+        "handler": "systemIdResponseBetaScan"
+      }
+    ]
+  },
+  {
+    "path": "/alpnas/auth/admin",
+    "access": "public",
+    "routers": [
+      "http"
+    ],
+    "handlers": [
+      "func(w http.ResponseWriter, r *http.Request"
+    ],
+    "sources": [
+      {
+        "file": "auth.go",
+        "line": 81,
+        "router": "http",
+        "handler": "func(w http.ResponseWriter, r *http.Request"
+      }
+    ]
+  },
+  {
+    "path": "/api/ajgi/addExt",
+    "access": "authenticated",
+    "routers": [
+      "externalAGIRouter"
+    ],
+    "handlers": [
+      "gw.AddExternalEndPoint"
+    ],
+    "sources": [
+      {
+        "file": "agi.go",
+        "line": 88,
+        "router": "externalAGIRouter",
+        "handler": "gw.AddExternalEndPoint"
+      }
+    ]
+  },
+  {
+    "path": "/api/ajgi/exec",
+    "access": "public",
+    "routers": [
+      "http"
+    ],
+    "handlers": [
+      "gw.HandleAgiExecutionRequestWithToken"
+    ],
+    "sources": [
+      {
+        "file": "agi.go",
+        "line": 76,
+        "router": "http",
+        "handler": "gw.HandleAgiExecutionRequestWithToken"
+      }
+    ]
+  },
+  {
+    "path": "/api/ajgi/interface",
+    "access": "public",
+    "routers": [
+      "http"
+    ],
+    "handlers": [
+      "func(w http.ResponseWriter, r *http.Request"
+    ],
+    "sources": [
+      {
+        "file": "agi.go",
+        "line": 47,
+        "router": "http",
+        "handler": "func(w http.ResponseWriter, r *http.Request"
+      }
+    ]
+  },
+  {
+    "path": "/api/ajgi/listExt",
+    "access": "authenticated",
+    "routers": [
+      "externalAGIRouter"
+    ],
+    "handlers": [
+      "gw.ListExternalEndpoint"
+    ],
+    "sources": [
+      {
+        "file": "agi.go",
+        "line": 87,
+        "router": "externalAGIRouter",
+        "handler": "gw.ListExternalEndpoint"
+      }
+    ]
+  },
+  {
+    "path": "/api/ajgi/rmExt",
+    "access": "authenticated",
+    "routers": [
+      "externalAGIRouter"
+    ],
+    "handlers": [
+      "gw.RemoveExternalEndPoint"
+    ],
+    "sources": [
+      {
+        "file": "agi.go",
+        "line": 89,
+        "router": "externalAGIRouter",
+        "handler": "gw.RemoveExternalEndPoint"
+      }
+    ]
+  },
+  {
+    "path": "/api/auth/login",
+    "access": "public-or-token",
+    "routers": [
+      "http"
+    ],
+    "handlers": [
+      "authAgent.HandleAutologinTokenLogin"
+    ],
+    "sources": [
+      {
+        "file": "auth.go",
+        "line": 62,
+        "router": "http",
+        "handler": "authAgent.HandleAutologinTokenLogin"
+      }
+    ]
+  },
+  {
+    "path": "/ldapLogin.html",
+    "access": "public-or-token",
+    "routers": [
+      "http"
+    ],
+    "handlers": [
+      "ldapHandler.HandleLoginPage"
+    ],
+    "sources": [
+      {
+        "file": "ldap.go",
+        "line": 47,
+        "router": "http",
+        "handler": "ldapHandler.HandleLoginPage"
+      }
+    ]
+  },
+  {
+    "path": "/media/",
+    "access": "public-or-token",
+    "routers": [
+      "http"
+    ],
+    "handlers": [
+      "mediaServer.ServerMedia"
+    ],
+    "sources": [
+      {
+        "file": "mediaServer.go",
+        "line": 40,
+        "router": "http",
+        "handler": "mediaServer.ServerMedia"
+      }
+    ]
+  },
+  {
+    "path": "/media/download/",
+    "access": "public-or-token",
+    "routers": [
+      "http"
+    ],
+    "handlers": [
+      "mediaServer.ServerMedia"
+    ],
+    "sources": [
+      {
+        "file": "mediaServer.go",
+        "line": 41,
+        "router": "http",
+        "handler": "mediaServer.ServerMedia"
+      }
+    ]
+  },
+  {
+    "path": "/media/getMime/",
+    "access": "public-or-token",
+    "routers": [
+      "http"
+    ],
+    "handlers": [
+      "mediaServer.ServeMediaMime"
+    ],
+    "sources": [
+      {
+        "file": "mediaServer.go",
+        "line": 42,
+        "router": "http",
+        "handler": "mediaServer.ServeMediaMime"
+      }
+    ]
+  },
+  {
+    "path": "/media/transcode/",
+    "access": "public-or-token",
+    "routers": [
+      "http"
+    ],
+    "handlers": [
+      "mediaServer.ServeVideoWithTranscode",
+      "func(w http.ResponseWriter, r *http.Request"
+    ],
+    "sources": [
+      {
+        "file": "mediaServer.go",
+        "line": 48,
+        "router": "http",
+        "handler": "mediaServer.ServeVideoWithTranscode"
+      },
+      {
+        "file": "mediaServer.go",
+        "line": 51,
+        "router": "http",
+        "handler": "func(w http.ResponseWriter, r *http.Request"
+      }
+    ]
+  },
+  {
+    "path": "/public/register/checkPublicRegister",
+    "access": "public",
+    "routers": [
+      "http"
+    ],
+    "handlers": [
+      "registerHandler.HandleRegisterCheck"
+    ],
+    "sources": [
+      {
+        "file": "register.go",
+        "line": 42,
+        "router": "http",
+        "handler": "registerHandler.HandleRegisterCheck"
+      }
+    ]
+  },
+  {
+    "path": "/public/register/handleRegister.html",
+    "access": "public",
+    "routers": [
+      "http"
+    ],
+    "handlers": [
+      "registerHandler.HandleRegisterRequest"
+    ],
+    "sources": [
+      {
+        "file": "register.go",
+        "line": 41,
+        "router": "http",
+        "handler": "registerHandler.HandleRegisterRequest"
+      }
+    ]
+  },
+  {
+    "path": "/public/register/register.html",
+    "access": "public",
+    "routers": [
+      "http"
+    ],
+    "handlers": [
+      "registerHandler.HandleRegisterInterface"
+    ],
+    "sources": [
+      {
+        "file": "register.go",
+        "line": 40,
+        "router": "http",
+        "handler": "registerHandler.HandleRegisterInterface"
+      }
+    ]
+  },
+  {
+    "path": "/reset.system",
+    "access": "public",
+    "routers": [
+      "http"
+    ],
+    "handlers": [
+      "system_resetpw_alpnasResetSystem"
+    ],
+    "sources": [
+      {
+        "file": "system.resetpw.go",
+        "line": 27,
+        "router": "http",
+        "handler": "system_resetpw_alpnasResetSystem"
+      }
+    ]
+  },
+  {
+    "path": "/share",
+    "access": "public-or-token",
+    "routers": [
+      "http"
+    ],
+    "handlers": [
+      "shareManager.HandleShareAccess"
+    ],
+    "sources": [
+      {
+        "file": "file_system.go",
+        "line": 210,
+        "router": "http",
+        "handler": "shareManager.HandleShareAccess"
+      }
+    ]
+  },
+  {
+    "path": "/ssdp.xml",
+    "access": "public",
+    "routers": [
+      "http"
+    ],
+    "handlers": [
+      "a.handleSSDP"
+    ],
+    "sources": [
+      {
+        "file": "mod/network/ssdp/ssdp.go",
+        "line": 75,
+        "router": "http",
+        "handler": "a.handleSSDP"
+      }
+    ]
+  },
+  {
+    "path": "/system/ajgi/interface",
+    "access": "public",
+    "routers": [
+      "http"
+    ],
+    "handlers": [
+      "func(w http.ResponseWriter, r *http.Request"
+    ],
+    "sources": [
+      {
+        "file": "agi.go",
+        "line": 37,
+        "router": "http",
+        "handler": "func(w http.ResponseWriter, r *http.Request"
+      }
+    ]
+  },
+  {
+    "path": "/system/apt/list",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "apt.HandlePackageListRequest"
+    ],
+    "sources": [
+      {
+        "file": "apt.go",
+        "line": 28,
+        "router": "router",
+        "handler": "apt.HandlePackageListRequest"
+      }
+    ]
+  },
+  {
+    "path": "/system/arsm/aecron/add",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "systemScheduler.HandleAddJob"
+    ],
+    "sources": [
+      {
+        "file": "scheduler.go",
+        "line": 91,
+        "router": "router",
+        "handler": "systemScheduler.HandleAddJob"
+      }
+    ]
+  },
+  {
+    "path": "/system/arsm/aecron/list",
+    "access": "public",
+    "routers": [
+      "http"
+    ],
+    "handlers": [
+      "func(w http.ResponseWriter, r *http.Request"
+    ],
+    "sources": [
+      {
+        "file": "scheduler.go",
+        "line": 82,
+        "router": "http",
+        "handler": "func(w http.ResponseWriter, r *http.Request"
+      }
+    ]
+  },
+  {
+    "path": "/system/arsm/aecron/listlog",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "systemScheduler.HandleShowLog"
+    ],
+    "sources": [
+      {
+        "file": "scheduler.go",
+        "line": 93,
+        "router": "router",
+        "handler": "systemScheduler.HandleShowLog"
+      }
+    ]
+  },
+  {
+    "path": "/system/arsm/aecron/remove",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "systemScheduler.HandleJobRemoval"
+    ],
+    "sources": [
+      {
+        "file": "scheduler.go",
+        "line": 92,
+        "router": "router",
+        "handler": "systemScheduler.HandleJobRemoval"
+      }
+    ]
+  },
+  {
+    "path": "/system/auth/blacklist/ban",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "authAgent.BlacklistManager.HandleAddBannedIP"
+    ],
+    "sources": [
+      {
+        "file": "auth.go",
+        "line": 131,
+        "router": "adminRouter",
+        "handler": "authAgent.BlacklistManager.HandleAddBannedIP"
+      }
+    ]
+  },
+  {
+    "path": "/system/auth/blacklist/enable",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "authAgent.BlacklistManager.HandleSetBlacklistEnable"
+    ],
+    "sources": [
+      {
+        "file": "auth.go",
+        "line": 129,
+        "router": "adminRouter",
+        "handler": "authAgent.BlacklistManager.HandleSetBlacklistEnable"
+      }
+    ]
+  },
+  {
+    "path": "/system/auth/blacklist/list",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "authAgent.BlacklistManager.HandleListBannedIPs"
+    ],
+    "sources": [
+      {
+        "file": "auth.go",
+        "line": 130,
+        "router": "adminRouter",
+        "handler": "authAgent.BlacklistManager.HandleListBannedIPs"
+      }
+    ]
+  },
+  {
+    "path": "/system/auth/blacklist/unban",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "authAgent.BlacklistManager.HandleRemoveBannedIP"
+    ],
+    "sources": [
+      {
+        "file": "auth.go",
+        "line": 132,
+        "router": "adminRouter",
+        "handler": "authAgent.BlacklistManager.HandleRemoveBannedIP"
+      }
+    ]
+  },
+  {
+    "path": "/system/auth/checkLogin",
+    "access": "public",
+    "routers": [
+      "http"
+    ],
+    "handlers": [
+      "authAgent.CheckLogin"
+    ],
+    "sources": [
+      {
+        "file": "auth.go",
+        "line": 61,
+        "router": "http",
+        "handler": "authAgent.CheckLogin"
+      }
+    ]
+  },
+  {
+    "path": "/system/auth/csvimport",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "authAgent.HandleCreateUserAccountsFromCSV"
+    ],
+    "sources": [
+      {
+        "file": "auth.go",
+        "line": 96,
+        "router": "adminRouter",
+        "handler": "authAgent.HandleCreateUserAccountsFromCSV"
+      }
+    ]
+  },
+  {
+    "path": "/system/auth/groupdel",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "authAgent.HandleUserDeleteByGroup"
+    ],
+    "sources": [
+      {
+        "file": "auth.go",
+        "line": 97,
+        "router": "adminRouter",
+        "handler": "authAgent.HandleUserDeleteByGroup"
+      }
+    ]
+  },
+  {
+    "path": "/system/auth/ldap/checkldap",
+    "access": "public",
+    "routers": [
+      "http"
+    ],
+    "handlers": [
+      "ldapHandler.HandleCheckLDAP"
+    ],
+    "sources": [
+      {
+        "file": "ldap.go",
+        "line": 48,
+        "router": "http",
+        "handler": "ldapHandler.HandleCheckLDAP"
+      }
+    ]
+  },
+  {
+    "path": "/system/auth/ldap/config/read",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "ldapHandler.ReadConfig"
+    ],
+    "sources": [
+      {
+        "file": "ldap.go",
+        "line": 38,
+        "router": "adminRouter",
+        "handler": "ldapHandler.ReadConfig"
+      }
+    ]
+  },
+  {
+    "path": "/system/auth/ldap/config/syncorizeUser",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "ldapHandler.SynchronizeUser"
+    ],
+    "sources": [
+      {
+        "file": "ldap.go",
+        "line": 41,
+        "router": "adminRouter",
+        "handler": "ldapHandler.SynchronizeUser"
+      }
+    ]
+  },
+  {
+    "path": "/system/auth/ldap/config/testConnection",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "ldapHandler.TestConnection"
+    ],
+    "sources": [
+      {
+        "file": "ldap.go",
+        "line": 40,
+        "router": "adminRouter",
+        "handler": "ldapHandler.TestConnection"
+      }
+    ]
+  },
+  {
+    "path": "/system/auth/ldap/config/write",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "ldapHandler.WriteConfig"
+    ],
+    "sources": [
+      {
+        "file": "ldap.go",
+        "line": 39,
+        "router": "adminRouter",
+        "handler": "ldapHandler.WriteConfig"
+      }
+    ]
+  },
+  {
+    "path": "/system/auth/ldap/login",
+    "access": "public",
+    "routers": [
+      "http"
+    ],
+    "handlers": [
+      "ldapHandler.HandleLogin"
+    ],
+    "sources": [
+      {
+        "file": "ldap.go",
+        "line": 44,
+        "router": "http",
+        "handler": "ldapHandler.HandleLogin"
+      }
+    ]
+  },
+  {
+    "path": "/system/auth/ldap/newPassword",
+    "access": "public",
+    "routers": [
+      "http"
+    ],
+    "handlers": [
+      "ldapHandler.HandleNewPasswordPage"
+    ],
+    "sources": [
+      {
+        "file": "ldap.go",
+        "line": 46,
+        "router": "http",
+        "handler": "ldapHandler.HandleNewPasswordPage"
+      }
+    ]
+  },
+  {
+    "path": "/system/auth/ldap/setPassword",
+    "access": "public",
+    "routers": [
+      "http"
+    ],
+    "handlers": [
+      "ldapHandler.HandleSetPassword"
+    ],
+    "sources": [
+      {
+        "file": "ldap.go",
+        "line": 45,
+        "router": "http",
+        "handler": "ldapHandler.HandleSetPassword"
+      }
+    ]
+  },
+  {
+    "path": "/system/auth/logger/index",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "authAgent.Logger.HandleIndexListing"
+    ],
+    "sources": [
+      {
+        "file": "auth.go",
+        "line": 109,
+        "router": "adminRouter",
+        "handler": "authAgent.Logger.HandleIndexListing"
+      }
+    ]
+  },
+  {
+    "path": "/system/auth/logger/list",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "authAgent.Logger.HandleTableListing"
+    ],
+    "sources": [
+      {
+        "file": "auth.go",
+        "line": 110,
+        "router": "adminRouter",
+        "handler": "authAgent.Logger.HandleTableListing"
+      }
+    ]
+  },
+  {
+    "path": "/system/auth/login",
+    "access": "public-or-token",
+    "routers": [
+      "http"
+    ],
+    "handlers": [
+      "authAgent.HandleLogin"
+    ],
+    "sources": [
+      {
+        "file": "auth.go",
+        "line": 58,
+        "router": "http",
+        "handler": "authAgent.HandleLogin"
+      }
+    ]
+  },
+  {
+    "path": "/system/auth/logout",
+    "access": "public",
+    "routers": [
+      "http"
+    ],
+    "handlers": [
+      "authAgent.HandleLogout"
+    ],
+    "sources": [
+      {
+        "file": "auth.go",
+        "line": 59,
+        "router": "http",
+        "handler": "authAgent.HandleLogout"
+      }
+    ]
+  },
+  {
+    "path": "/system/auth/oauth/authorize",
+    "access": "public",
+    "routers": [
+      "http"
+    ],
+    "handlers": [
+      "oAuthHandler.HandleAuthorize"
+    ],
+    "sources": [
+      {
+        "file": "oauth.go",
+        "line": 23,
+        "router": "http",
+        "handler": "oAuthHandler.HandleAuthorize"
+      }
+    ]
+  },
+  {
+    "path": "/system/auth/oauth/checkoauth",
+    "access": "public",
+    "routers": [
+      "http"
+    ],
+    "handlers": [
+      "oAuthHandler.CheckOAuth"
+    ],
+    "sources": [
+      {
+        "file": "oauth.go",
+        "line": 24,
+        "router": "http",
+        "handler": "oAuthHandler.CheckOAuth"
+      }
+    ]
+  },
+  {
+    "path": "/system/auth/oauth/config/read",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "oAuthHandler.ReadConfig"
+    ],
+    "sources": [
+      {
+        "file": "oauth.go",
+        "line": 25,
+        "router": "adminRouter",
+        "handler": "oAuthHandler.ReadConfig"
+      }
+    ]
+  },
+  {
+    "path": "/system/auth/oauth/config/write",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "oAuthHandler.WriteConfig"
+    ],
+    "sources": [
+      {
+        "file": "oauth.go",
+        "line": 26,
+        "router": "adminRouter",
+        "handler": "oAuthHandler.WriteConfig"
+      }
+    ]
+  },
+  {
+    "path": "/system/auth/oauth/login",
+    "access": "public",
+    "routers": [
+      "http"
+    ],
+    "handlers": [
+      "oAuthHandler.HandleLogin"
+    ],
+    "sources": [
+      {
+        "file": "oauth.go",
+        "line": 22,
+        "router": "http",
+        "handler": "oAuthHandler.HandleLogin"
+      }
+    ]
+  },
+  {
+    "path": "/system/auth/register",
+    "access": "public",
+    "routers": [
+      "http"
+    ],
+    "handlers": [
+      "authAgent.HandleRegister"
+    ],
+    "sources": [
+      {
+        "file": "auth.go",
+        "line": 60,
+        "router": "http",
+        "handler": "authAgent.HandleRegister"
+      }
+    ]
+  },
+  {
+    "path": "/system/auth/u/list",
+    "access": "authenticated",
+    "routers": [
+      "userRouter"
+    ],
+    "handlers": [
+      "authAgent.SwitchableAccountManager.HandleSwitchableAccountListing"
+    ],
+    "sources": [
+      {
+        "file": "auth.go",
+        "line": 153,
+        "router": "userRouter",
+        "handler": "authAgent.SwitchableAccountManager.HandleSwitchableAccountListing"
+      }
+    ]
+  },
+  {
+    "path": "/system/auth/u/logoutAll",
+    "access": "authenticated",
+    "routers": [
+      "userRouter"
+    ],
+    "handlers": [
+      "authAgent.SwitchableAccountManager.HandleLogoutAllAccounts"
+    ],
+    "sources": [
+      {
+        "file": "auth.go",
+        "line": 155,
+        "router": "userRouter",
+        "handler": "authAgent.SwitchableAccountManager.HandleLogoutAllAccounts"
+      }
+    ]
+  },
+  {
+    "path": "/system/auth/u/p/list",
+    "access": "public",
+    "routers": [
+      "http"
+    ],
+    "handlers": [
+      "func(w http.ResponseWriter, r *http.Request"
+    ],
+    "sources": [
+      {
+        "file": "auth.go",
+        "line": 158,
+        "router": "http",
+        "handler": "func(w http.ResponseWriter, r *http.Request"
+      }
+    ]
+  },
+  {
+    "path": "/system/auth/u/switch",
+    "access": "authenticated",
+    "routers": [
+      "userRouter"
+    ],
+    "handlers": [
+      "authAgent.SwitchableAccountManager.HandleAccountSwitch"
+    ],
+    "sources": [
+      {
+        "file": "auth.go",
+        "line": 154,
+        "router": "userRouter",
+        "handler": "authAgent.SwitchableAccountManager.HandleAccountSwitch"
+      }
+    ]
+  },
+  {
+    "path": "/system/auth/unregister",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "authAgent.HandleUnregister"
+    ],
+    "sources": [
+      {
+        "file": "user.go",
+        "line": 98,
+        "router": "adminRouter",
+        "handler": "authAgent.HandleUnregister"
+      }
+    ]
+  },
+  {
+    "path": "/system/auth/whitelist/enable",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "authAgent.WhitelistManager.HandleSetWhitelistEnable"
+    ],
+    "sources": [
+      {
+        "file": "auth.go",
+        "line": 123,
+        "router": "adminRouter",
+        "handler": "authAgent.WhitelistManager.HandleSetWhitelistEnable"
+      }
+    ]
+  },
+  {
+    "path": "/system/auth/whitelist/list",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "authAgent.WhitelistManager.HandleListWhitelistedIPs"
+    ],
+    "sources": [
+      {
+        "file": "auth.go",
+        "line": 124,
+        "router": "adminRouter",
+        "handler": "authAgent.WhitelistManager.HandleListWhitelistedIPs"
+      }
+    ]
+  },
+  {
+    "path": "/system/auth/whitelist/set",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "authAgent.WhitelistManager.HandleAddWhitelistedIP"
+    ],
+    "sources": [
+      {
+        "file": "auth.go",
+        "line": 125,
+        "router": "adminRouter",
+        "handler": "authAgent.WhitelistManager.HandleAddWhitelistedIP"
+      }
+    ]
+  },
+  {
+    "path": "/system/auth/whitelist/unset",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "authAgent.WhitelistManager.HandleRemoveWhitelistedIP"
+    ],
+    "sources": [
+      {
+        "file": "auth.go",
+        "line": 126,
+        "router": "adminRouter",
+        "handler": "authAgent.WhitelistManager.HandleRemoveWhitelistedIP"
+      }
+    ]
+  },
+  {
+    "path": "/system/autologin/create",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "autoLoginHandler.HandleUserTokenCreation"
+    ],
+    "sources": [
+      {
+        "file": "setting.advance.go",
+        "line": 49,
+        "router": "adminRouter",
+        "handler": "autoLoginHandler.HandleUserTokenCreation"
+      }
+    ]
+  },
+  {
+    "path": "/system/autologin/delete",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "autoLoginHandler.HandleUserTokenRemoval"
+    ],
+    "sources": [
+      {
+        "file": "setting.advance.go",
+        "line": 50,
+        "router": "adminRouter",
+        "handler": "autoLoginHandler.HandleUserTokenRemoval"
+      }
+    ]
+  },
+  {
+    "path": "/system/autologin/list",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "autoLoginHandler.HandleUserTokensListing"
+    ],
+    "sources": [
+      {
+        "file": "setting.advance.go",
+        "line": 48,
+        "router": "adminRouter",
+        "handler": "autoLoginHandler.HandleUserTokensListing"
+      }
+    ]
+  },
+  {
+    "path": "/system/bootflags",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "handleBootFlagsFunction"
+    ],
+    "sources": [
+      {
+        "file": "startup.flags.go",
+        "line": 39,
+        "router": "adminRouter",
+        "handler": "handleBootFlagsFunction"
+      }
+    ]
+  },
+  {
+    "path": "/system/cluster/record",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "NeighbourDiscoverer.HandleScanRecord"
+    ],
+    "sources": [
+      {
+        "file": "cluster.go",
+        "line": 57,
+        "router": "router",
+        "handler": "NeighbourDiscoverer.HandleScanRecord"
+      }
+    ]
+  },
+  {
+    "path": "/system/cluster/scan",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "NeighbourDiscoverer.HandleScanningRequest"
+    ],
+    "sources": [
+      {
+        "file": "cluster.go",
+        "line": 56,
+        "router": "router",
+        "handler": "NeighbourDiscoverer.HandleScanningRequest"
+      }
+    ]
+  },
+  {
+    "path": "/system/cluster/wol",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "NeighbourDiscoverer.HandleWakeOnLan"
+    ],
+    "sources": [
+      {
+        "file": "cluster.go",
+        "line": 58,
+        "router": "router",
+        "handler": "NeighbourDiscoverer.HandleWakeOnLan"
+      }
+    ]
+  },
+  {
+    "path": "/system/csrf/new",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "CSRFTokenManager.HandleNewToken"
+    ],
+    "sources": [
+      {
+        "file": "security.go",
+        "line": 42,
+        "router": "router",
+        "handler": "CSRFTokenManager.HandleNewToken"
+      }
+    ]
+  },
+  {
+    "path": "/system/desktop/createShortcut",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "desktop_shortcutHandler"
+    ],
+    "sources": [
+      {
+        "file": "desktop.go",
+        "line": 42,
+        "router": "router",
+        "handler": "desktop_shortcutHandler"
+      }
+    ]
+  },
+  {
+    "path": "/system/desktop/files",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "desktop_fileLocation_handler"
+    ],
+    "sources": [
+      {
+        "file": "desktop.go",
+        "line": 38,
+        "router": "router",
+        "handler": "desktop_fileLocation_handler"
+      }
+    ]
+  },
+  {
+    "path": "/system/desktop/host",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "desktop_hostdetailHandler"
+    ],
+    "sources": [
+      {
+        "file": "desktop.go",
+        "line": 39,
+        "router": "router",
+        "handler": "desktop_hostdetailHandler"
+      }
+    ]
+  },
+  {
+    "path": "/system/desktop/listDesktop",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "desktop_listFiles"
+    ],
+    "sources": [
+      {
+        "file": "desktop.go",
+        "line": 36,
+        "router": "router",
+        "handler": "desktop_listFiles"
+      }
+    ]
+  },
+  {
+    "path": "/system/desktop/opr/renameShortcut",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "desktop_handleShortcutRename"
+    ],
+    "sources": [
+      {
+        "file": "desktop.go",
+        "line": 45,
+        "router": "router",
+        "handler": "desktop_handleShortcutRename"
+      }
+    ]
+  },
+  {
+    "path": "/system/desktop/preference",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "desktop_preference_handler"
+    ],
+    "sources": [
+      {
+        "file": "desktop.go",
+        "line": 41,
+        "router": "router",
+        "handler": "desktop_preference_handler"
+      }
+    ]
+  },
+  {
+    "path": "/system/desktop/theme",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "desktop_theme_handler"
+    ],
+    "sources": [
+      {
+        "file": "desktop.go",
+        "line": 37,
+        "router": "router",
+        "handler": "desktop_theme_handler"
+      }
+    ]
+  },
+  {
+    "path": "/system/desktop/user",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "desktop_handleUserInfo"
+    ],
+    "sources": [
+      {
+        "file": "desktop.go",
+        "line": 40,
+        "router": "router",
+        "handler": "desktop_handleUserInfo"
+      }
+    ]
+  },
+  {
+    "path": "/system/disk/alpnas/list",
+    "access": "authenticated",
+    "routers": [
+      "authRouter"
+    ],
+    "handlers": [
+      "alpnasHandleDriveList"
+    ],
+    "sources": [
+      {
+        "file": "disk_alpnas.go",
+        "line": 78,
+        "router": "authRouter",
+        "handler": "alpnasHandleDriveList"
+      }
+    ]
+  },
+  {
+    "path": "/system/disk/alpnas/mount",
+    "access": "authenticated",
+    "routers": [
+      "authRouter"
+    ],
+    "handlers": [
+      "alpnasHandleDriveMount"
+    ],
+    "sources": [
+      {
+        "file": "disk_alpnas.go",
+        "line": 80,
+        "router": "authRouter",
+        "handler": "alpnasHandleDriveMount"
+      }
+    ]
+  },
+  {
+    "path": "/system/disk/alpnas/rescan",
+    "access": "authenticated",
+    "routers": [
+      "authRouter"
+    ],
+    "handlers": [
+      "alpnasHandleDriveRescan"
+    ],
+    "sources": [
+      {
+        "file": "disk_alpnas.go",
+        "line": 79,
+        "router": "authRouter",
+        "handler": "alpnasHandleDriveRescan"
+      }
+    ]
+  },
+  {
+    "path": "/system/disk/alpnas/unmount",
+    "access": "authenticated",
+    "routers": [
+      "authRouter"
+    ],
+    "handlers": [
+      "alpnasHandleDriveUnmount"
+    ],
+    "sources": [
+      {
+        "file": "disk_alpnas.go",
+        "line": 81,
+        "router": "authRouter",
+        "handler": "alpnasHandleDriveUnmount"
+      }
+    ]
+  },
+  {
+    "path": "/system/disk/devices/list",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "raidManager.HandleListUsableDevices"
+    ],
+    "sources": [
+      {
+        "file": "disk.go",
+        "line": 186,
+        "router": "adminRouter",
+        "handler": "raidManager.HandleListUsableDevices"
+      }
+    ]
+  },
+  {
+    "path": "/system/disk/devices/model",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "raidManager.HandleResolveDiskModelLabel"
+    ],
+    "sources": [
+      {
+        "file": "disk.go",
+        "line": 187,
+        "router": "adminRouter",
+        "handler": "raidManager.HandleResolveDiskModelLabel"
+      }
+    ]
+  },
+  {
+    "path": "/system/disk/diskmg/format",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "func(w http.ResponseWriter, r *http.Request"
+    ],
+    "sources": [
+      {
+        "file": "disk.go",
+        "line": 210,
+        "router": "adminRouter",
+        "handler": "func(w http.ResponseWriter, r *http.Request"
+      }
+    ]
+  },
+  {
+    "path": "/system/disk/diskmg/mount",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "func(w http.ResponseWriter, r *http.Request"
+    ],
+    "sources": [
+      {
+        "file": "disk.go",
+        "line": 205,
+        "router": "adminRouter",
+        "handler": "func(w http.ResponseWriter, r *http.Request"
+      }
+    ]
+  },
+  {
+    "path": "/system/disk/diskmg/mpt",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "diskmg.HandleListMountPoints"
+    ],
+    "sources": [
+      {
+        "file": "disk.go",
+        "line": 229,
+        "router": "adminRouter",
+        "handler": "diskmg.HandleListMountPoints"
+      }
+    ]
+  },
+  {
+    "path": "/system/disk/diskmg/platform",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "diskmg.HandlePlatform"
+    ],
+    "sources": [
+      {
+        "file": "disk.go",
+        "line": 204,
+        "router": "adminRouter",
+        "handler": "diskmg.HandlePlatform"
+      }
+    ]
+  },
+  {
+    "path": "/system/disk/diskmg/view",
+    "access": "authenticated",
+    "routers": [
+      "authRouter"
+    ],
+    "handlers": [
+      "diskmg.HandleView"
+    ],
+    "sources": [
+      {
+        "file": "disk.go",
+        "line": 203,
+        "router": "authRouter",
+        "handler": "diskmg.HandleView"
+      }
+    ]
+  },
+  {
+    "path": "/system/disk/quota/quotaDist",
+    "access": "public",
+    "routers": [
+      "http"
+    ],
+    "handlers": [
+      "system_disk_quota_handleFileDistributionView"
+    ],
+    "sources": [
+      {
+        "file": "quota.go",
+        "line": 21,
+        "router": "http",
+        "handler": "system_disk_quota_handleFileDistributionView"
+      }
+    ]
+  },
+  {
+    "path": "/system/disk/quota/quotaInfo",
+    "access": "public",
+    "routers": [
+      "http"
+    ],
+    "handlers": [
+      "system_disk_quota_handleQuotaInfo"
+    ],
+    "sources": [
+      {
+        "file": "quota.go",
+        "line": 20,
+        "router": "http",
+        "handler": "system_disk_quota_handleQuotaInfo"
+      }
+    ]
+  },
+  {
+    "path": "/system/disk/quota/setQuota",
+    "access": "public",
+    "routers": [
+      "http"
+    ],
+    "handlers": [
+      "system_disk_quota_setQuota"
+    ],
+    "sources": [
+      {
+        "file": "quota.go",
+        "line": 19,
+        "router": "http",
+        "handler": "system_disk_quota_setQuota"
+      }
+    ]
+  },
+  {
+    "path": "/system/disk/raid/addMemeber",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "raidManager.HandleAddDiskToRAIDVol"
+    ],
+    "sources": [
+      {
+        "file": "disk.go",
+        "line": 182,
+        "router": "adminRouter",
+        "handler": "raidManager.HandleAddDiskToRAIDVol"
+      }
+    ]
+  },
+  {
+    "path": "/system/disk/raid/assemble",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "func(w http.ResponseWriter, r *http.Request",
+      "raidManager.HandleRaidDevicesAssemble"
+    ],
+    "sources": [
+      {
+        "file": "disk.go",
+        "line": 172,
+        "router": "adminRouter",
+        "handler": "func(w http.ResponseWriter, r *http.Request"
+      },
+      {
+        "file": "disk.go",
+        "line": 190,
+        "router": "adminRouter",
+        "handler": "raidManager.HandleRaidDevicesAssemble"
+      }
+    ]
+  },
+  {
+    "path": "/system/disk/raid/detail",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "raidManager.HandleLoadArrayDetail"
+    ],
+    "sources": [
+      {
+        "file": "disk.go",
+        "line": 180,
+        "router": "adminRouter",
+        "handler": "raidManager.HandleLoadArrayDetail"
+      }
+    ]
+  },
+  {
+    "path": "/system/disk/raid/devinfo",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "raidManager.HandlListChildrenDeviceInfo"
+    ],
+    "sources": [
+      {
+        "file": "disk.go",
+        "line": 181,
+        "router": "adminRouter",
+        "handler": "raidManager.HandlListChildrenDeviceInfo"
+      }
+    ]
+  },
+  {
+    "path": "/system/disk/raid/format",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "raidManager.HandleFormatRaidDevice"
+    ],
+    "sources": [
+      {
+        "file": "disk.go",
+        "line": 179,
+        "router": "adminRouter",
+        "handler": "raidManager.HandleFormatRaidDevice"
+      }
+    ]
+  },
+  {
+    "path": "/system/disk/raid/grow",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "raidManager.HandleGrowRAIDArray"
+    ],
+    "sources": [
+      {
+        "file": "disk.go",
+        "line": 178,
+        "router": "adminRouter",
+        "handler": "raidManager.HandleGrowRAIDArray"
+      }
+    ]
+  },
+  {
+    "path": "/system/disk/raid/list",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "raidManager.HandleListRaidDevices"
+    ],
+    "sources": [
+      {
+        "file": "disk.go",
+        "line": 164,
+        "router": "adminRouter",
+        "handler": "raidManager.HandleListRaidDevices"
+      }
+    ]
+  },
+  {
+    "path": "/system/disk/raid/new",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "raidManager.HandleCreateRAIDDevice"
+    ],
+    "sources": [
+      {
+        "file": "disk.go",
+        "line": 165,
+        "router": "adminRouter",
+        "handler": "raidManager.HandleCreateRAIDDevice"
+      }
+    ]
+  },
+  {
+    "path": "/system/disk/raid/overview",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "raidManager.HandleRenderOverview"
+    ],
+    "sources": [
+      {
+        "file": "disk.go",
+        "line": 163,
+        "router": "adminRouter",
+        "handler": "raidManager.HandleRenderOverview"
+      }
+    ]
+  },
+  {
+    "path": "/system/disk/raid/reload",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "raidManager.HandleMdadmFlushReload"
+    ],
+    "sources": [
+      {
+        "file": "disk.go",
+        "line": 191,
+        "router": "adminRouter",
+        "handler": "raidManager.HandleMdadmFlushReload"
+      }
+    ]
+  },
+  {
+    "path": "/system/disk/raid/remove",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "func(w http.ResponseWriter, r *http.Request"
+    ],
+    "sources": [
+      {
+        "file": "disk.go",
+        "line": 166,
+        "router": "adminRouter",
+        "handler": "func(w http.ResponseWriter, r *http.Request"
+      }
+    ]
+  },
+  {
+    "path": "/system/disk/raid/removeMemeber",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "raidManager.HandleRemoveDiskFromRAIDVol"
+    ],
+    "sources": [
+      {
+        "file": "disk.go",
+        "line": 183,
+        "router": "adminRouter",
+        "handler": "raidManager.HandleRemoveDiskFromRAIDVol"
+      }
+    ]
+  },
+  {
+    "path": "/system/disk/smart/getSMART",
+    "access": "authenticated",
+    "routers": [
+      "authRouter"
+    ],
+    "handlers": [
+      "smartListener.GetSMART"
+    ],
+    "sources": [
+      {
+        "file": "disk.go",
+        "line": 145,
+        "router": "authRouter",
+        "handler": "smartListener.GetSMART"
+      }
+    ]
+  },
+  {
+    "path": "/system/disk/space/largeFiles",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "lfs.HandleLargeFileList"
+    ],
+    "sources": [
+      {
+        "file": "disk.go",
+        "line": 87,
+        "router": "router",
+        "handler": "lfs.HandleLargeFileList"
+      }
+    ]
+  },
+  {
+    "path": "/system/disk/space/list",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "diskspace.HandleDiskSpaceList"
+    ],
+    "sources": [
+      {
+        "file": "disk.go",
+        "line": 78,
+        "router": "router",
+        "handler": "diskspace.HandleDiskSpaceList"
+      }
+    ]
+  },
+  {
+    "path": "/system/disk/space/resolve",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "dc.HandleCapacityResolving"
+    ],
+    "sources": [
+      {
+        "file": "disk.go",
+        "line": 82,
+        "router": "router",
+        "handler": "dc.HandleCapacityResolving"
+      }
+    ]
+  },
+  {
+    "path": "/system/disk/space/tmp",
+    "access": "authenticated",
+    "routers": [
+      "authRouter"
+    ],
+    "handlers": [
+      "dc.HandleTmpCapacityResolving"
+    ],
+    "sources": [
+      {
+        "file": "disk.go",
+        "line": 83,
+        "router": "authRouter",
+        "handler": "dc.HandleTmpCapacityResolving"
+      }
+    ]
+  },
+  {
+    "path": "/system/file_system/clearTrash",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "system_fs_clearTrashBin"
+    ],
+    "sources": [
+      {
+        "file": "file_system.go",
+        "line": 101,
+        "router": "router",
+        "handler": "system_fs_clearTrashBin"
+      }
+    ]
+  },
+  {
+    "path": "/system/file_system/fileOpr",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "system_fs_handleOpr"
+    ],
+    "sources": [
+      {
+        "file": "file_system.go",
+        "line": 91,
+        "router": "router",
+        "handler": "system_fs_handleOpr"
+      }
+    ]
+  },
+  {
+    "path": "/system/file_system/getProperties",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "system_fs_getFileProperties"
+    ],
+    "sources": [
+      {
+        "file": "file_system.go",
+        "line": 104,
+        "router": "router",
+        "handler": "system_fs_getFileProperties"
+      }
+    ]
+  },
+  {
+    "path": "/system/file_system/handleCacheRender",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "system_fs_handleCacheRender"
+    ],
+    "sources": [
+      {
+        "file": "file_system.go",
+        "line": 112,
+        "router": "router",
+        "handler": "system_fs_handleCacheRender"
+      }
+    ]
+  },
+  {
+    "path": "/system/file_system/handleFilePermission",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "system_fs_handleFilePermission"
+    ],
+    "sources": [
+      {
+        "file": "file_system.go",
+        "line": 107,
+        "router": "router",
+        "handler": "system_fs_handleFilePermission"
+      }
+    ]
+  },
+  {
+    "path": "/system/file_system/handleFolderCache",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "system_fs_handleFolderCache"
+    ],
+    "sources": [
+      {
+        "file": "file_system.go",
+        "line": 111,
+        "router": "router",
+        "handler": "system_fs_handleFolderCache"
+      }
+    ]
+  },
+  {
+    "path": "/system/file_system/listDir",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "system_fs_handleList"
+    ],
+    "sources": [
+      {
+        "file": "file_system.go",
+        "line": 93,
+        "router": "router",
+        "handler": "system_fs_handleList"
+      }
+    ]
+  },
+  {
+    "path": "/system/file_system/listDirHash",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "system_fs_handleDirHash"
+    ],
+    "sources": [
+      {
+        "file": "file_system.go",
+        "line": 94,
+        "router": "router",
+        "handler": "system_fs_handleDirHash"
+      }
+    ]
+  },
+  {
+    "path": "/system/file_system/listDrives",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "system_fs_listDrives"
+    ],
+    "sources": [
+      {
+        "file": "file_system.go",
+        "line": 96,
+        "router": "router",
+        "handler": "system_fs_listDrives"
+      }
+    ]
+  },
+  {
+    "path": "/system/file_system/listRoots",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "system_fs_listRoot"
+    ],
+    "sources": [
+      {
+        "file": "file_system.go",
+        "line": 95,
+        "router": "router",
+        "handler": "system_fs_listRoot"
+      }
+    ]
+  },
+  {
+    "path": "/system/file_system/listTrash",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "system_fs_scanTrashBin"
+    ],
+    "sources": [
+      {
+        "file": "file_system.go",
+        "line": 99,
+        "router": "router",
+        "handler": "system_fs_scanTrashBin"
+      }
+    ]
+  },
+  {
+    "path": "/system/file_system/loadThumbnail",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "system_fs_handleThumbnailLoad"
+    ],
+    "sources": [
+      {
+        "file": "file_system.go",
+        "line": 113,
+        "router": "router",
+        "handler": "system_fs_handleThumbnailLoad"
+      }
+    ]
+  },
+  {
+    "path": "/system/file_system/lowmemUpload",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "system_fs_handleLowMemoryUpload"
+    ],
+    "sources": [
+      {
+        "file": "file_system.go",
+        "line": 87,
+        "router": "router",
+        "handler": "system_fs_handleLowMemoryUpload"
+      }
+    ]
+  },
+  {
+    "path": "/system/file_system/newItem",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "system_fs_handleNewObjects"
+    ],
+    "sources": [
+      {
+        "file": "file_system.go",
+        "line": 97,
+        "router": "router",
+        "handler": "system_fs_handleNewObjects"
+      }
+    ]
+  },
+  {
+    "path": "/system/file_system/ongoing",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "system_fs_HandleOnGoingTasks"
+    ],
+    "sources": [
+      {
+        "file": "file_system.go",
+        "line": 217,
+        "router": "router",
+        "handler": "system_fs_HandleOnGoingTasks"
+      }
+    ]
+  },
+  {
+    "path": "/system/file_system/preference",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "system_fs_handleUserPreference"
+    ],
+    "sources": [
+      {
+        "file": "file_system.go",
+        "line": 98,
+        "router": "router",
+        "handler": "system_fs_handleUserPreference"
+      }
+    ]
+  },
+  {
+    "path": "/system/file_system/restoreTrash",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "system_fs_restoreFile"
+    ],
+    "sources": [
+      {
+        "file": "file_system.go",
+        "line": 102,
+        "router": "router",
+        "handler": "system_fs_restoreFile"
+      }
+    ]
+  },
+  {
+    "path": "/system/file_system/search",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "system_fs_handleFileSearch"
+    ],
+    "sources": [
+      {
+        "file": "file_system.go",
+        "line": 108,
+        "router": "router",
+        "handler": "system_fs_handleFileSearch"
+      }
+    ]
+  },
+  {
+    "path": "/system/file_system/share/checkShared",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "shareManager.HandleShareCheck"
+    ],
+    "sources": [
+      {
+        "file": "file_system.go",
+        "line": 205,
+        "router": "router",
+        "handler": "shareManager.HandleShareCheck"
+      }
+    ]
+  },
+  {
+    "path": "/system/file_system/share/delete",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "shareManager.HandleDeleteShare"
+    ],
+    "sources": [
+      {
+        "file": "file_system.go",
+        "line": 203,
+        "router": "router",
+        "handler": "shareManager.HandleDeleteShare"
+      }
+    ]
+  },
+  {
+    "path": "/system/file_system/share/edit",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "shareManager.HandleEditShare"
+    ],
+    "sources": [
+      {
+        "file": "file_system.go",
+        "line": 204,
+        "router": "router",
+        "handler": "shareManager.HandleEditShare"
+      }
+    ]
+  },
+  {
+    "path": "/system/file_system/share/list",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "shareManager.HandleListAllShares"
+    ],
+    "sources": [
+      {
+        "file": "file_system.go",
+        "line": 206,
+        "router": "router",
+        "handler": "shareManager.HandleListAllShares"
+      }
+    ]
+  },
+  {
+    "path": "/system/file_system/share/new",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "shareManager.HandleCreateNewShare"
+    ],
+    "sources": [
+      {
+        "file": "file_system.go",
+        "line": 202,
+        "router": "router",
+        "handler": "shareManager.HandleCreateNewShare"
+      }
+    ]
+  },
+  {
+    "path": "/system/file_system/sortMode",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "system_fs_handleFolderSortModePreference"
+    ],
+    "sources": [
+      {
+        "file": "file_system.go",
+        "line": 116,
+        "router": "router",
+        "handler": "system_fs_handleFolderSortModePreference"
+      }
+    ]
+  },
+  {
+    "path": "/system/file_system/upload",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "system_fs_handleUpload"
+    ],
+    "sources": [
+      {
+        "file": "file_system.go",
+        "line": 86,
+        "router": "router",
+        "handler": "system_fs_handleUpload"
+      }
+    ]
+  },
+  {
+    "path": "/system/file_system/validateFileOpr",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "system_fs_validateFileOpr"
+    ],
+    "sources": [
+      {
+        "file": "file_system.go",
+        "line": 90,
+        "router": "router",
+        "handler": "system_fs_validateFileOpr"
+      }
+    ]
+  },
+  {
+    "path": "/system/file_system/versionHistory",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "system_fs_FileVersionHistory"
+    ],
+    "sources": [
+      {
+        "file": "file_system.go",
+        "line": 105,
+        "router": "router",
+        "handler": "system_fs_FileVersionHistory"
+      }
+    ]
+  },
+  {
+    "path": "/system/file_system/ws/fileOpr",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "system_fs_handleWebSocketOpr"
+    ],
+    "sources": [
+      {
+        "file": "file_system.go",
+        "line": 92,
+        "router": "router",
+        "handler": "system_fs_handleWebSocketOpr"
+      }
+    ]
+  },
+  {
+    "path": "/system/file_system/ws/listTrash",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "system_fs_WebSocketScanTrashBin"
+    ],
+    "sources": [
+      {
+        "file": "file_system.go",
+        "line": 100,
+        "router": "router",
+        "handler": "system_fs_WebSocketScanTrashBin"
+      }
+    ]
+  },
+  {
+    "path": "/system/file_system/zipHandler",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "system_fs_zipHandler"
+    ],
+    "sources": [
+      {
+        "file": "file_system.go",
+        "line": 103,
+        "router": "router",
+        "handler": "system_fs_zipHandler"
+      }
+    ]
+  },
+  {
+    "path": "/system/id/ping",
+    "access": "public",
+    "routers": [
+      "http"
+    ],
+    "handlers": [
+      "systemIdHandlePing"
+    ],
+    "sources": [
+      {
+        "file": "system.go",
+        "line": 79,
+        "router": "http",
+        "handler": "systemIdHandlePing"
+      }
+    ]
+  },
+  {
+    "path": "/system/id/requestInfo",
+    "access": "public",
+    "routers": [
+      "http"
+    ],
+    "handlers": [
+      "systemIdHandleRequest"
+    ],
+    "sources": [
+      {
+        "file": "system.go",
+        "line": 36,
+        "router": "http",
+        "handler": "systemIdHandleRequest"
+      }
+    ]
+  },
+  {
+    "path": "/system/info/getArOZInfo",
+    "access": "public",
+    "routers": [
+      "http"
+    ],
+    "handlers": [
+      "infoServer.GetArOZInfo"
+    ],
+    "sources": [
+      {
+        "file": "system.info.go",
+        "line": 132,
+        "router": "http",
+        "handler": "infoServer.GetArOZInfo"
+      }
+    ]
+  },
+  {
+    "path": "/system/info/getCPUinfo",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "info.GetCPUInfo"
+    ],
+    "sources": [
+      {
+        "file": "system.info.go",
+        "line": 82,
+        "router": "router",
+        "handler": "info.GetCPUInfo"
+      }
+    ]
+  },
+  {
+    "path": "/system/info/getDriveStat",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "info.GetDriveStat"
+    ],
+    "sources": [
+      {
+        "file": "system.info.go",
+        "line": 84,
+        "router": "router",
+        "handler": "info.GetDriveStat"
+      }
+    ]
+  },
+  {
+    "path": "/system/info/getRAMinfo",
+    "access": "authenticated",
+    "routers": [
+      "authRouter"
+    ],
+    "handlers": [
+      "info.GetRamInfo"
+    ],
+    "sources": [
+      {
+        "file": "system.info.go",
+        "line": 88,
+        "router": "authRouter",
+        "handler": "info.GetRamInfo"
+      }
+    ]
+  },
+  {
+    "path": "/system/info/getRuntimeInfo",
+    "access": "authenticated",
+    "routers": [
+      "authRouter"
+    ],
+    "handlers": [
+      "InfoHandleGetRuntimeInfo"
+    ],
+    "sources": [
+      {
+        "file": "system.info.go",
+        "line": 129,
+        "router": "authRouter",
+        "handler": "InfoHandleGetRuntimeInfo"
+      }
+    ]
+  },
+  {
+    "path": "/system/info/getUsageInfo",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "InfoHandleTaskInfo"
+    ],
+    "sources": [
+      {
+        "file": "system.info.go",
+        "line": 112,
+        "router": "router",
+        "handler": "InfoHandleTaskInfo"
+      }
+    ]
+  },
+  {
+    "path": "/system/info/ifconfig",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "info.Ifconfig"
+    ],
+    "sources": [
+      {
+        "file": "system.info.go",
+        "line": 83,
+        "router": "router",
+        "handler": "info.Ifconfig"
+      }
+    ]
+  },
+  {
+    "path": "/system/info/license",
+    "access": "public",
+    "routers": [
+      "http"
+    ],
+    "handlers": [
+      "systemHandleListLicense"
+    ],
+    "sources": [
+      {
+        "file": "system.go",
+        "line": 76,
+        "router": "http",
+        "handler": "systemHandleListLicense"
+      }
+    ]
+  },
+  {
+    "path": "/system/info/usbPorts",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "info.GetUSB"
+    ],
+    "sources": [
+      {
+        "file": "system.info.go",
+        "line": 85,
+        "router": "router",
+        "handler": "info.GetUSB"
+      }
+    ]
+  },
+  {
+    "path": "/system/info/wallpaper.jpg",
+    "access": "public",
+    "routers": [
+      "http"
+    ],
+    "handlers": [
+      "func(w http.ResponseWriter, r *http.Request"
+    ],
+    "sources": [
+      {
+        "file": "system.info.go",
+        "line": 135,
+        "router": "http",
+        "handler": "func(w http.ResponseWriter, r *http.Request"
+      }
+    ]
+  },
+  {
+    "path": "/system/installer/alpnas/start",
+    "access": "authenticated",
+    "routers": [
+      "authRouter"
+    ],
+    "handlers": [
+      "alpnasHandleInstallerStart"
+    ],
+    "sources": [
+      {
+        "file": "installer_alpnas.go",
+        "line": 73,
+        "router": "authRouter",
+        "handler": "alpnasHandleInstallerStart"
+      }
+    ]
+  },
+  {
+    "path": "/system/installer/alpnas/state",
+    "access": "authenticated",
+    "routers": [
+      "authRouter"
+    ],
+    "handlers": [
+      "alpnasHandleInstallerState"
+    ],
+    "sources": [
+      {
+        "file": "installer_alpnas.go",
+        "line": 71,
+        "router": "authRouter",
+        "handler": "alpnasHandleInstallerState"
+      }
+    ]
+  },
+  {
+    "path": "/system/installer/alpnas/targets",
+    "access": "authenticated",
+    "routers": [
+      "authRouter"
+    ],
+    "handlers": [
+      "alpnasHandleInstallerTargets"
+    ],
+    "sources": [
+      {
+        "file": "installer_alpnas.go",
+        "line": 72,
+        "router": "authRouter",
+        "handler": "alpnasHandleInstallerTargets"
+      }
+    ]
+  },
+  {
+    "path": "/system/iot/execute",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "iotManager.HandleExecute"
+    ],
+    "sources": [
+      {
+        "file": "iot.go",
+        "line": 77,
+        "router": "router",
+        "handler": "iotManager.HandleExecute"
+      }
+    ]
+  },
+  {
+    "path": "/system/iot/icon",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "iotManager.HandleIconLoad"
+    ],
+    "sources": [
+      {
+        "file": "iot.go",
+        "line": 78,
+        "router": "router",
+        "handler": "iotManager.HandleIconLoad"
+      }
+    ]
+  },
+  {
+    "path": "/system/iot/list",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "iotManager.HandleListing"
+    ],
+    "sources": [
+      {
+        "file": "iot.go",
+        "line": 75,
+        "router": "router",
+        "handler": "iotManager.HandleListing"
+      }
+    ]
+  },
+  {
+    "path": "/system/iot/listScanner",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "iotManager.HandleScannerList"
+    ],
+    "sources": [
+      {
+        "file": "iot.go",
+        "line": 82,
+        "router": "adminRouter",
+        "handler": "iotManager.HandleScannerList"
+      }
+    ]
+  },
+  {
+    "path": "/system/iot/nickname",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "iotManager.HandleNickName"
+    ],
+    "sources": [
+      {
+        "file": "iot.go",
+        "line": 79,
+        "router": "router",
+        "handler": "iotManager.HandleNickName"
+      }
+    ]
+  },
+  {
+    "path": "/system/iot/scan",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "iotManager.HandleScanning"
+    ],
+    "sources": [
+      {
+        "file": "iot.go",
+        "line": 74,
+        "router": "router",
+        "handler": "iotManager.HandleScanning"
+      }
+    ]
+  },
+  {
+    "path": "/system/iot/status",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "iotManager.HandleGetDeviceStatus"
+    ],
+    "sources": [
+      {
+        "file": "iot.go",
+        "line": 76,
+        "router": "router",
+        "handler": "iotManager.HandleGetDeviceStatus"
+      }
+    ]
+  },
+  {
+    "path": "/system/log/list",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "logViewer.HandleListLog"
+    ],
+    "sources": [
+      {
+        "file": "system.info.go",
+        "line": 193,
+        "router": "adminRouter",
+        "handler": "logViewer.HandleListLog"
+      }
+    ]
+  },
+  {
+    "path": "/system/log/read",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "logViewer.HandleReadLog"
+    ],
+    "sources": [
+      {
+        "file": "system.info.go",
+        "line": 194,
+        "router": "adminRouter",
+        "handler": "logViewer.HandleReadLog"
+      }
+    ]
+  },
+  {
+    "path": "/system/module/install",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "HandleModuleInstall"
+    ],
+    "sources": [
+      {
+        "file": "module.go",
+        "line": 148,
+        "router": "router",
+        "handler": "HandleModuleInstall"
+      }
+    ]
+  },
+  {
+    "path": "/system/modules/getDefault",
+    "access": "public",
+    "routers": [
+      "http"
+    ],
+    "handlers": [
+      "func(w http.ResponseWriter, r *http.Request"
+    ],
+    "sources": [
+      {
+        "file": "module.go",
+        "line": 34,
+        "router": "http",
+        "handler": "func(w http.ResponseWriter, r *http.Request"
+      }
+    ]
+  },
+  {
+    "path": "/system/modules/getLaunchPara",
+    "access": "public",
+    "routers": [
+      "http"
+    ],
+    "handlers": [
+      "func(w http.ResponseWriter, r *http.Request"
+    ],
+    "sources": [
+      {
+        "file": "module.go",
+        "line": 37,
+        "router": "http",
+        "handler": "func(w http.ResponseWriter, r *http.Request"
+      }
+    ]
+  },
+  {
+    "path": "/system/modules/installViaZip",
+    "access": "public",
+    "routers": [
+      "http"
+    ],
+    "handlers": [
+      "func(w http.ResponseWriter, r *http.Request"
+    ],
+    "sources": [
+      {
+        "file": "module.go",
+        "line": 47,
+        "router": "http",
+        "handler": "func(w http.ResponseWriter, r *http.Request"
+      }
+    ]
+  },
+  {
+    "path": "/system/modules/list",
+    "access": "public",
+    "routers": [
+      "http"
+    ],
+    "handlers": [
+      "func(w http.ResponseWriter, r *http.Request"
+    ],
+    "sources": [
+      {
+        "file": "module.go",
+        "line": 31,
+        "router": "http",
+        "handler": "func(w http.ResponseWriter, r *http.Request"
+      }
+    ]
+  },
+  {
+    "path": "/system/modules/reload",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "func(w http.ResponseWriter, r *http.Request"
+    ],
+    "sources": [
+      {
+        "file": "module.go",
+        "line": 41,
+        "router": "adminRouter",
+        "handler": "func(w http.ResponseWriter, r *http.Request"
+      }
+    ]
+  },
+  {
+    "path": "/system/network/connectWifi",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "network_wifi_handleConnect"
+    ],
+    "sources": [
+      {
+        "file": "wifi.go",
+        "line": 43,
+        "router": "router",
+        "handler": "network_wifi_handleConnect"
+      }
+    ]
+  },
+  {
+    "path": "/system/network/getNICUsage",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "netstat.HandleGetNetworkInterfaceStats"
+    ],
+    "sources": [
+      {
+        "file": "network.go",
+        "line": 76,
+        "router": "router",
+        "handler": "netstat.HandleGetNetworkInterfaceStats"
+      }
+    ]
+  },
+  {
+    "path": "/system/network/getNICinfo",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "network.GetNICInfo"
+    ],
+    "sources": [
+      {
+        "file": "network.go",
+        "line": 63,
+        "router": "router",
+        "handler": "network.GetNICInfo"
+      }
+    ]
+  },
+  {
+    "path": "/system/network/getPing",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "network.GetPing"
+    ],
+    "sources": [
+      {
+        "file": "network.go",
+        "line": 64,
+        "router": "router",
+        "handler": "network.GetPing"
+      }
+    ]
+  },
+  {
+    "path": "/system/network/portforward",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "portforward_handleForward"
+    ],
+    "sources": [
+      {
+        "file": "network.forward.go",
+        "line": 61,
+        "router": "router",
+        "handler": "portforward_handleForward"
+      }
+    ]
+  },
+  {
+    "path": "/system/network/power",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "network_wifi_handleWiFiPower"
+    ],
+    "sources": [
+      {
+        "file": "wifi.go",
+        "line": 49,
+        "router": "router",
+        "handler": "network_wifi_handleWiFiPower"
+      }
+    ]
+  },
+  {
+    "path": "/system/network/removeWifi",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "network_wifi_handleWiFiRemove"
+    ],
+    "sources": [
+      {
+        "file": "wifi.go",
+        "line": 44,
+        "router": "router",
+        "handler": "network_wifi_handleWiFiRemove"
+      }
+    ]
+  },
+  {
+    "path": "/system/network/scanWifi",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "network_wifi_handleScan"
+    ],
+    "sources": [
+      {
+        "file": "wifi.go",
+        "line": 42,
+        "router": "router",
+        "handler": "network_wifi_handleScan"
+      }
+    ]
+  },
+  {
+    "path": "/system/network/server/endpoints",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "NetworkHandleGetFileServerEndpoints"
+    ],
+    "sources": [
+      {
+        "file": "network.go",
+        "line": 498,
+        "router": "router",
+        "handler": "NetworkHandleGetFileServerEndpoints"
+      }
+    ]
+  },
+  {
+    "path": "/system/network/server/list",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "NetworkHandleGetFileServerServiceList"
+    ],
+    "sources": [
+      {
+        "file": "network.go",
+        "line": 497,
+        "router": "router",
+        "handler": "NetworkHandleGetFileServerServiceList"
+      }
+    ]
+  },
+  {
+    "path": "/system/network/server/status",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "NetworkHandleGetFileServerStatus"
+    ],
+    "sources": [
+      {
+        "file": "network.go",
+        "line": 499,
+        "router": "router",
+        "handler": "NetworkHandleGetFileServerStatus"
+      }
+    ]
+  },
+  {
+    "path": "/system/network/server/toggle",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "NetworkHandleFileServerToggle"
+    ],
+    "sources": [
+      {
+        "file": "network.go",
+        "line": 500,
+        "router": "adminRouter",
+        "handler": "NetworkHandleFileServerToggle"
+      }
+    ]
+  },
+  {
+    "path": "/system/network/webdav/clear",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "WebDAVManager.HandleClearAllPending"
+    ],
+    "sources": [
+      {
+        "file": "network.go",
+        "line": 353,
+        "router": "router",
+        "handler": "WebDAVManager.HandleClearAllPending"
+      }
+    ]
+  },
+  {
+    "path": "/system/network/webdav/edit",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "WebDAVManager.HandlePermissionEdit"
+    ],
+    "sources": [
+      {
+        "file": "network.go",
+        "line": 352,
+        "router": "router",
+        "handler": "WebDAVManager.HandlePermissionEdit"
+      }
+    ]
+  },
+  {
+    "path": "/system/network/webdav/list",
+    "access": "public",
+    "routers": [
+      "http"
+    ],
+    "handlers": [
+      "WebDAVManager.HandleConnectionList"
+    ],
+    "sources": [
+      {
+        "file": "network.go",
+        "line": 351,
+        "router": "http",
+        "handler": "WebDAVManager.HandleConnectionList"
+      }
+    ]
+  },
+  {
+    "path": "/system/network/webdav/status",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "WebDAVManager.HandleStatusChange"
+    ],
+    "sources": [
+      {
+        "file": "network.go",
+        "line": 354,
+        "router": "router",
+        "handler": "WebDAVManager.HandleStatusChange"
+      }
+    ]
+  },
+  {
+    "path": "/system/network/wifiinfo",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "network_wifi_handleWiFiInfo"
+    ],
+    "sources": [
+      {
+        "file": "wifi.go",
+        "line": 45,
+        "router": "router",
+        "handler": "network_wifi_handleWiFiInfo"
+      }
+    ]
+  },
+  {
+    "path": "/system/network/www/toggle",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "userWwwHandler.HandleToggleHomepage"
+    ],
+    "sources": [
+      {
+        "file": "network.go",
+        "line": 93,
+        "router": "router",
+        "handler": "userWwwHandler.HandleToggleHomepage"
+      }
+    ]
+  },
+  {
+    "path": "/system/network/www/webRoot",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "userWwwHandler.HandleSetWebRoot"
+    ],
+    "sources": [
+      {
+        "file": "network.go",
+        "line": 94,
+        "router": "router",
+        "handler": "userWwwHandler.HandleSetWebRoot"
+      }
+    ]
+  },
+  {
+    "path": "/system/permission/delgroup",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "permissionHandler.HandleGroupRemove"
+    ],
+    "sources": [
+      {
+        "file": "permission.go",
+        "line": 60,
+        "router": "adminRouter",
+        "handler": "permissionHandler.HandleGroupRemove"
+      }
+    ]
+  },
+  {
+    "path": "/system/permission/editgroup",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "permissionHandler.HandleGroupEdit"
+    ],
+    "sources": [
+      {
+        "file": "permission.go",
+        "line": 59,
+        "router": "adminRouter",
+        "handler": "permissionHandler.HandleGroupEdit"
+      }
+    ]
+  },
+  {
+    "path": "/system/permission/listgroup",
+    "access": "public",
+    "routers": [
+      "http"
+    ],
+    "handlers": [
+      "func(w http.ResponseWriter, r *http.Request"
+    ],
+    "sources": [
+      {
+        "file": "permission.go",
+        "line": 35,
+        "router": "http",
+        "handler": "func(w http.ResponseWriter, r *http.Request"
+      }
+    ]
+  },
+  {
+    "path": "/system/permission/newgroup",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "permissionHandler.HandleGroupCreate"
+    ],
+    "sources": [
+      {
+        "file": "permission.go",
+        "line": 58,
+        "router": "adminRouter",
+        "handler": "permissionHandler.HandleGroupCreate"
+      }
+    ]
+  },
+  {
+    "path": "/system/power/accessCheck",
+    "access": "public",
+    "routers": [
+      "http"
+    ],
+    "handlers": [
+      "hardware_power_checkIfHardware"
+    ],
+    "sources": [
+      {
+        "file": "hardware.power.go",
+        "line": 29,
+        "router": "http",
+        "handler": "hardware_power_checkIfHardware"
+      }
+    ]
+  },
+  {
+    "path": "/system/power/restart",
+    "access": "public",
+    "routers": [
+      "http"
+    ],
+    "handlers": [
+      "hardware_power_restart"
+    ],
+    "sources": [
+      {
+        "file": "hardware.power.go",
+        "line": 16,
+        "router": "http",
+        "handler": "hardware_power_restart"
+      }
+    ]
+  },
+  {
+    "path": "/system/power/shutdown",
+    "access": "public",
+    "routers": [
+      "http"
+    ],
+    "handlers": [
+      "hardware_power_poweroff"
+    ],
+    "sources": [
+      {
+        "file": "hardware.power.go",
+        "line": 15,
+        "router": "http",
+        "handler": "hardware_power_poweroff"
+      }
+    ]
+  },
+  {
+    "path": "/system/register/cleanUserRegisterInfo",
+    "access": "admin",
+    "routers": [
+      "adminrouter"
+    ],
+    "handlers": [
+      "register_handleRegisterCleaning"
+    ],
+    "sources": [
+      {
+        "file": "register.go",
+        "line": 89,
+        "router": "adminrouter",
+        "handler": "register_handleRegisterCleaning"
+      }
+    ]
+  },
+  {
+    "path": "/system/register/email",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "registerHandler.HandleEmailChange"
+    ],
+    "sources": [
+      {
+        "file": "register.go",
+        "line": 53,
+        "router": "router",
+        "handler": "registerHandler.HandleEmailChange"
+      }
+    ]
+  },
+  {
+    "path": "/system/register/getAllowRegistry",
+    "access": "admin",
+    "routers": [
+      "adminrouter"
+    ],
+    "handlers": [
+      "register_handleGetAllowRegistry"
+    ],
+    "sources": [
+      {
+        "file": "register.go",
+        "line": 80,
+        "router": "adminrouter",
+        "handler": "register_handleGetAllowRegistry"
+      }
+    ]
+  },
+  {
+    "path": "/system/register/listUserEmails",
+    "access": "admin",
+    "routers": [
+      "adminrouter"
+    ],
+    "handlers": [
+      "register_handleEmailListing"
+    ],
+    "sources": [
+      {
+        "file": "register.go",
+        "line": 86,
+        "router": "adminrouter",
+        "handler": "register_handleEmailListing"
+      }
+    ]
+  },
+  {
+    "path": "/system/register/setAllowRegistry",
+    "access": "admin",
+    "routers": [
+      "adminrouter"
+    ],
+    "handlers": [
+      "register_handleToggleRegistry"
+    ],
+    "sources": [
+      {
+        "file": "register.go",
+        "line": 83,
+        "router": "adminrouter",
+        "handler": "register_handleToggleRegistry"
+      }
+    ]
+  },
+  {
+    "path": "/system/register/setDefaultGroup",
+    "access": "admin",
+    "routers": [
+      "adminrouter"
+    ],
+    "handlers": [
+      "register_handleSetDefaultGroup"
+    ],
+    "sources": [
+      {
+        "file": "register.go",
+        "line": 77,
+        "router": "adminrouter",
+        "handler": "register_handleSetDefaultGroup"
+      }
+    ]
+  },
+  {
+    "path": "/system/reset/confirmPasswordReset",
+    "access": "public",
+    "routers": [
+      "http"
+    ],
+    "handlers": [
+      "system_resetpw_confirmReset"
+    ],
+    "sources": [
+      {
+        "file": "system.resetpw.go",
+        "line": 26,
+        "router": "http",
+        "handler": "system_resetpw_confirmReset"
+      }
+    ]
+  },
+  {
+    "path": "/system/reset/validateResetKey",
+    "access": "public",
+    "routers": [
+      "http"
+    ],
+    "handlers": [
+      "system_resetpw_validateResetKeyHandler"
+    ],
+    "sources": [
+      {
+        "file": "system.resetpw.go",
+        "line": 25,
+        "router": "http",
+        "handler": "system_resetpw_validateResetKeyHandler"
+      }
+    ]
+  },
+  {
+    "path": "/system/setting/list",
+    "access": "public",
+    "routers": [
+      "http"
+    ],
+    "handlers": [
+      "system_setting_handleListing"
+    ],
+    "sources": [
+      {
+        "file": "setting.go",
+        "line": 34,
+        "router": "http",
+        "handler": "system_setting_handleListing"
+      }
+    ]
+  },
+  {
+    "path": "/system/storage/ftp/passivemode",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "FTPManager.HandleFTPPassiveModeSettings"
+    ],
+    "sources": [
+      {
+        "file": "network.go",
+        "line": 368,
+        "router": "adminRouter",
+        "handler": "FTPManager.HandleFTPPassiveModeSettings"
+      }
+    ]
+  },
+  {
+    "path": "/system/storage/ftp/setPort",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "FTPManager.HandleFTPSetPort"
+    ],
+    "sources": [
+      {
+        "file": "network.go",
+        "line": 367,
+        "router": "adminRouter",
+        "handler": "FTPManager.HandleFTPSetPort"
+      }
+    ]
+  },
+  {
+    "path": "/system/storage/ftp/start",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "FTPManager.HandleFTPServerStart"
+    ],
+    "sources": [
+      {
+        "file": "network.go",
+        "line": 362,
+        "router": "adminRouter",
+        "handler": "FTPManager.HandleFTPServerStart"
+      }
+    ]
+  },
+  {
+    "path": "/system/storage/ftp/status",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "FTPManager.HandleFTPServerStatus"
+    ],
+    "sources": [
+      {
+        "file": "network.go",
+        "line": 365,
+        "router": "adminRouter",
+        "handler": "FTPManager.HandleFTPServerStatus"
+      }
+    ]
+  },
+  {
+    "path": "/system/storage/ftp/stop",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "FTPManager.HandleFTPServerStop"
+    ],
+    "sources": [
+      {
+        "file": "network.go",
+        "line": 363,
+        "router": "adminRouter",
+        "handler": "FTPManager.HandleFTPServerStop"
+      }
+    ]
+  },
+  {
+    "path": "/system/storage/ftp/updateGroups",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "FTPManager.HandleFTPAccessUpdate"
+    ],
+    "sources": [
+      {
+        "file": "network.go",
+        "line": 366,
+        "router": "adminRouter",
+        "handler": "FTPManager.HandleFTPAccessUpdate"
+      }
+    ]
+  },
+  {
+    "path": "/system/storage/ftp/upnp",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "FTPManager.HandleFTPUPnP"
+    ],
+    "sources": [
+      {
+        "file": "network.go",
+        "line": 364,
+        "router": "adminRouter",
+        "handler": "FTPManager.HandleFTPUPnP"
+      }
+    ]
+  },
+  {
+    "path": "/system/storage/pool/bridge",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "HandleFSHBridging"
+    ],
+    "sources": [
+      {
+        "file": "storage.pool.go",
+        "line": 55,
+        "router": "adminRouter",
+        "handler": "HandleFSHBridging"
+      }
+    ]
+  },
+  {
+    "path": "/system/storage/pool/checkBridge",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "HandleFSHBridgeCheck"
+    ],
+    "sources": [
+      {
+        "file": "storage.pool.go",
+        "line": 56,
+        "router": "adminRouter",
+        "handler": "HandleFSHBridgeCheck"
+      }
+    ]
+  },
+  {
+    "path": "/system/storage/pool/edit",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "HandleFSHEdit"
+    ],
+    "sources": [
+      {
+        "file": "storage.pool.go",
+        "line": 54,
+        "router": "adminRouter",
+        "handler": "HandleFSHEdit"
+      }
+    ]
+  },
+  {
+    "path": "/system/storage/pool/list",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "HandleListStoragePools"
+    ],
+    "sources": [
+      {
+        "file": "storage.pool.go",
+        "line": 48,
+        "router": "adminRouter",
+        "handler": "HandleListStoragePools"
+      }
+    ]
+  },
+  {
+    "path": "/system/storage/pool/listraw",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "HandleListStoragePoolsConfig"
+    ],
+    "sources": [
+      {
+        "file": "storage.pool.go",
+        "line": 49,
+        "router": "adminRouter",
+        "handler": "HandleListStoragePoolsConfig"
+      }
+    ]
+  },
+  {
+    "path": "/system/storage/pool/newHandler",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "HandleStorageNewFsHandler"
+    ],
+    "sources": [
+      {
+        "file": "storage.pool.go",
+        "line": 50,
+        "router": "adminRouter",
+        "handler": "HandleStorageNewFsHandler"
+      }
+    ]
+  },
+  {
+    "path": "/system/storage/pool/reload",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "HandleStoragePoolReload"
+    ],
+    "sources": [
+      {
+        "file": "storage.pool.go",
+        "line": 52,
+        "router": "adminRouter",
+        "handler": "HandleStoragePoolReload"
+      }
+    ]
+  },
+  {
+    "path": "/system/storage/pool/removeHandler",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "HandleStoragePoolRemove"
+    ],
+    "sources": [
+      {
+        "file": "storage.pool.go",
+        "line": 51,
+        "router": "adminRouter",
+        "handler": "HandleStoragePoolRemove"
+      }
+    ]
+  },
+  {
+    "path": "/system/storage/pool/toggle",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "HandleFSHToggle"
+    ],
+    "sources": [
+      {
+        "file": "storage.pool.go",
+        "line": 53,
+        "router": "adminRouter",
+        "handler": "HandleFSHToggle"
+      }
+    ]
+  },
+  {
+    "path": "/system/storage/samba/activate",
+    "access": "authenticated",
+    "routers": [
+      "router"
+    ],
+    "handlers": [
+      "func(w http.ResponseWriter, r *http.Request"
+    ],
+    "sources": [
+      {
+        "file": "network.go",
+        "line": 378,
+        "router": "router",
+        "handler": "func(w http.ResponseWriter, r *http.Request"
+      }
+    ]
+  },
+  {
+    "path": "/system/storage/samba/add",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "SambaShareManager.AddSambaShare"
+    ],
+    "sources": [
+      {
+        "file": "network.go",
+        "line": 395,
+        "router": "adminRouter",
+        "handler": "SambaShareManager.AddSambaShare"
+      }
+    ]
+  },
+  {
+    "path": "/system/storage/samba/addUser",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "SambaShareManager.NewSambaUser"
+    ],
+    "sources": [
+      {
+        "file": "network.go",
+        "line": 398,
+        "router": "adminRouter",
+        "handler": "SambaShareManager.NewSambaUser"
+      }
+    ]
+  },
+  {
+    "path": "/system/storage/samba/deactivate",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "SambaShareManager.DeactiveUserAccount"
+    ],
+    "sources": [
+      {
+        "file": "network.go",
+        "line": 390,
+        "router": "adminRouter",
+        "handler": "SambaShareManager.DeactiveUserAccount"
+      }
+    ]
+  },
+  {
+    "path": "/system/storage/samba/delUser",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "SambaShareManager.DelSambaUser"
+    ],
+    "sources": [
+      {
+        "file": "network.go",
+        "line": 399,
+        "router": "adminRouter",
+        "handler": "SambaShareManager.DelSambaUser"
+      }
+    ]
+  },
+  {
+    "path": "/system/storage/samba/editPath",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "SambaShareManager.HandleSharePathChange"
+    ],
+    "sources": [
+      {
+        "file": "network.go",
+        "line": 396,
+        "router": "adminRouter",
+        "handler": "SambaShareManager.HandleSharePathChange"
+      }
+    ]
+  },
+  {
+    "path": "/system/storage/samba/list",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "SambaShareManager.ListSambaShares"
+    ],
+    "sources": [
+      {
+        "file": "network.go",
+        "line": 394,
+        "router": "adminRouter",
+        "handler": "SambaShareManager.ListSambaShares"
+      }
+    ]
+  },
+  {
+    "path": "/system/storage/samba/listUsers",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "SambaShareManager.ListSambaUsers"
+    ],
+    "sources": [
+      {
+        "file": "network.go",
+        "line": 400,
+        "router": "adminRouter",
+        "handler": "SambaShareManager.ListSambaUsers"
+      }
+    ]
+  },
+  {
+    "path": "/system/storage/samba/myshare",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "SambaShareManager.HandleUserSmbStatusList"
+    ],
+    "sources": [
+      {
+        "file": "network.go",
+        "line": 391,
+        "router": "adminRouter",
+        "handler": "SambaShareManager.HandleUserSmbStatusList"
+      }
+    ]
+  },
+  {
+    "path": "/system/storage/samba/myshare/delete",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "SambaShareManager.DelUserSambaShare"
+    ],
+    "sources": [
+      {
+        "file": "network.go",
+        "line": 392,
+        "router": "adminRouter",
+        "handler": "SambaShareManager.DelUserSambaShare"
+      }
+    ]
+  },
+  {
+    "path": "/system/storage/samba/remove",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "SambaShareManager.DelSambaShare"
+    ],
+    "sources": [
+      {
+        "file": "network.go",
+        "line": 397,
+        "router": "adminRouter",
+        "handler": "SambaShareManager.DelSambaShare"
+      }
+    ]
+  },
+  {
+    "path": "/system/storage/samba/status",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "SambaShareManager.SmbdStates"
+    ],
+    "sources": [
+      {
+        "file": "network.go",
+        "line": 393,
+        "router": "adminRouter",
+        "handler": "SambaShareManager.SmbdStates"
+      }
+    ]
+  },
+  {
+    "path": "/system/storage/samba/updateShareUsers",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "SambaShareManager.HandleAccessUserUpdate"
+    ],
+    "sources": [
+      {
+        "file": "network.go",
+        "line": 401,
+        "router": "adminRouter",
+        "handler": "SambaShareManager.HandleAccessUserUpdate"
+      }
+    ]
+  },
+  {
+    "path": "/system/storage/sftp/port",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "SFTPManager.HandleListeningPort"
+    ],
+    "sources": [
+      {
+        "file": "network.go",
+        "line": 357,
+        "router": "adminRouter",
+        "handler": "SFTPManager.HandleListeningPort"
+      }
+    ]
+  },
+  {
+    "path": "/system/storage/sftp/upnp",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "SFTPManager.HandleToogleUPnP"
+    ],
+    "sources": [
+      {
+        "file": "network.go",
+        "line": 358,
+        "router": "adminRouter",
+        "handler": "SFTPManager.HandleToogleUPnP"
+      }
+    ]
+  },
+  {
+    "path": "/system/storage/sftp/users",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "SFTPManager.HandleGetConnectedClients"
+    ],
+    "sources": [
+      {
+        "file": "network.go",
+        "line": 359,
+        "router": "adminRouter",
+        "handler": "SFTPManager.HandleGetConnectedClients"
+      }
+    ]
+  },
+  {
+    "path": "/system/storage/tftp/defaultUser",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "TFTPManager.HandleTFTPDefaultUser"
+    ],
+    "sources": [
+      {
+        "file": "network.go",
+        "line": 373,
+        "router": "adminRouter",
+        "handler": "TFTPManager.HandleTFTPDefaultUser"
+      }
+    ]
+  },
+  {
+    "path": "/system/storage/tftp/setPort",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "TFTPManager.HandleTFTPPort"
+    ],
+    "sources": [
+      {
+        "file": "network.go",
+        "line": 372,
+        "router": "adminRouter",
+        "handler": "TFTPManager.HandleTFTPPort"
+      }
+    ]
+  },
+  {
+    "path": "/system/storage/tftp/status",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "TFTPManager.HandleTFTPServerStatus"
+    ],
+    "sources": [
+      {
+        "file": "network.go",
+        "line": 371,
+        "router": "adminRouter",
+        "handler": "TFTPManager.HandleTFTPServerStatus"
+      }
+    ]
+  },
+  {
+    "path": "/system/subservice/kill",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "ssRouter.HandleKillSubService"
+    ],
+    "sources": [
+      {
+        "file": "subservice.go",
+        "line": 61,
+        "router": "adminRouter",
+        "handler": "ssRouter.HandleKillSubService"
+      }
+    ]
+  },
+  {
+    "path": "/system/subservice/list",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "ssRouter.HandleListing"
+    ],
+    "sources": [
+      {
+        "file": "subservice.go",
+        "line": 60,
+        "router": "adminRouter",
+        "handler": "ssRouter.HandleListing"
+      }
+    ]
+  },
+  {
+    "path": "/system/subservice/start",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "ssRouter.HandleStartSubService"
+    ],
+    "sources": [
+      {
+        "file": "subservice.go",
+        "line": 62,
+        "router": "adminRouter",
+        "handler": "ssRouter.HandleStartSubService"
+      }
+    ]
+  },
+  {
+    "path": "/system/update/checkpending",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "updates.HandlePendingCheck"
+    ],
+    "sources": [
+      {
+        "file": "system.info.go",
+        "line": 158,
+        "router": "adminRouter",
+        "handler": "updates.HandlePendingCheck"
+      }
+    ]
+  },
+  {
+    "path": "/system/update/checksize",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "updates.HandleUpdateCheckSize"
+    ],
+    "sources": [
+      {
+        "file": "system.info.go",
+        "line": 157,
+        "router": "adminRouter",
+        "handler": "updates.HandleUpdateCheckSize"
+      }
+    ]
+  },
+  {
+    "path": "/system/update/download",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "updates.HandleUpdateDownloadRequest"
+    ],
+    "sources": [
+      {
+        "file": "system.info.go",
+        "line": 156,
+        "router": "adminRouter",
+        "handler": "updates.HandleUpdateDownloadRequest"
+      }
+    ]
+  },
+  {
+    "path": "/system/update/platform",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "updates.HandleGetUpdatePlatformInfo"
+    ],
+    "sources": [
+      {
+        "file": "system.info.go",
+        "line": 159,
+        "router": "adminRouter",
+        "handler": "updates.HandleGetUpdatePlatformInfo"
+      }
+    ]
+  },
+  {
+    "path": "/system/update/restart",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "func(w http.ResponseWriter, r *http.Request"
+    ],
+    "sources": [
+      {
+        "file": "system.info.go",
+        "line": 162,
+        "router": "adminRouter",
+        "handler": "func(w http.ResponseWriter, r *http.Request"
+      }
+    ]
+  },
+  {
+    "path": "/system/users/editUser",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "user_handleUserEdit"
+    ],
+    "sources": [
+      {
+        "file": "user.go",
+        "line": 99,
+        "router": "adminRouter",
+        "handler": "user_handleUserEdit"
+      }
+    ]
+  },
+  {
+    "path": "/system/users/interfaceinfo",
+    "access": "public",
+    "routers": [
+      "http"
+    ],
+    "handlers": [
+      "func(w http.ResponseWriter, r *http.Request"
+    ],
+    "sources": [
+      {
+        "file": "user.go",
+        "line": 59,
+        "router": "http",
+        "handler": "func(w http.ResponseWriter, r *http.Request"
+      }
+    ]
+  },
+  {
+    "path": "/system/users/list",
+    "access": "public",
+    "routers": [
+      "http"
+    ],
+    "handlers": [
+      "user_handleList"
+    ],
+    "sources": [
+      {
+        "file": "user.go",
+        "line": 51,
+        "router": "http",
+        "handler": "user_handleList"
+      }
+    ]
+  },
+  {
+    "path": "/system/users/profilepic",
+    "access": "public",
+    "routers": [
+      "http"
+    ],
+    "handlers": [
+      "func(w http.ResponseWriter, r *http.Request"
+    ],
+    "sources": [
+      {
+        "file": "user.go",
+        "line": 64,
+        "router": "http",
+        "handler": "func(w http.ResponseWriter, r *http.Request"
+      }
+    ]
+  },
+  {
+    "path": "/system/users/removeUser",
+    "access": "admin",
+    "routers": [
+      "adminRouter"
+    ],
+    "handlers": [
+      "user_handleUserRemove"
+    ],
+    "sources": [
+      {
+        "file": "user.go",
+        "line": 100,
+        "router": "adminRouter",
+        "handler": "user_handleUserRemove"
+      }
+    ]
+  },
+  {
+    "path": "/system/users/userinfo",
+    "access": "public",
+    "routers": [
+      "http"
+    ],
+    "handlers": [
+      "func(w http.ResponseWriter, r *http.Request"
+    ],
+    "sources": [
+      {
+        "file": "user.go",
+        "line": 54,
+        "router": "http",
+        "handler": "func(w http.ResponseWriter, r *http.Request"
+      }
+    ]
+  },
+  {
+    "path": "/system/ws",
+    "access": "authenticated",
+    "routers": [
+      "userRouter"
+    ],
+    "handlers": [
+      "WebSocketRouter.HandleWebSocketRouting"
+    ],
+    "sources": [
+      {
+        "file": "network.go",
+        "line": 116,
+        "router": "userRouter",
+        "handler": "WebSocketRouter.HandleWebSocketRouting"
+      }
+    ]
+  }
+]

@@ -1,0 +1,7 @@
+{
+  "go_files": 0,
+  "rust_source_files": 323,
+  "web_asset_files": 3115,
+  "native_app_modules": 24,
+  "note": "Standalone Rust runtime; no Go source is required to start the server."
+}

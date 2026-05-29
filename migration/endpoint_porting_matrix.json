@@ -1,0 +1,1787 @@
+[
+  {
+    "path": "/",
+    "access": "public",
+    "handler": "mrouter(fs;h;http.HandlerFunc(func(w http.ResponseWriter, r *http.Request;func(w http.ResponseWriter, r *http.Request",
+    "status": "native redirect",
+    "maturity": "native"
+  },
+  {
+    "path": "/AOB/",
+    "access": "public",
+    "handler": "func(w http.ResponseWriter, r *http.Request",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/AOB/SystemAOB/functions/info/version.inf",
+    "access": "public",
+    "handler": "systemIdServeVersonNumber",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/AOB/SystemAOB/functions/system_statistic/getDriveStat.php",
+    "access": "public",
+    "handler": "systemIdGetDriveStates",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/AOB/hb.php",
+    "access": "public",
+    "handler": "systemIdResponseBetaScan",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/alpnas/auth/admin",
+    "access": "public",
+    "handler": "func(w http.ResponseWriter, r *http.Request",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/api/ajgi/addExt",
+    "access": "authenticated",
+    "handler": "gw.AddExternalEndPoint",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/api/ajgi/exec",
+    "access": "public",
+    "handler": "gw.HandleAgiExecutionRequestWithToken",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/api/ajgi/interface",
+    "access": "public",
+    "handler": "func(w http.ResponseWriter, r *http.Request",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/api/ajgi/listExt",
+    "access": "authenticated",
+    "handler": "gw.ListExternalEndpoint",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/api/ajgi/rmExt",
+    "access": "authenticated",
+    "handler": "gw.RemoveExternalEndPoint",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/api/auth/login",
+    "access": "public-or-token",
+    "handler": "authAgent.HandleAutologinTokenLogin",
+    "status": "native auth/autologin",
+    "maturity": "native"
+  },
+  {
+    "path": "/ldapLogin.html",
+    "access": "public-or-token",
+    "handler": "ldapHandler.HandleLoginPage",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/media/",
+    "access": "public-or-token",
+    "handler": "mediaServer.ServerMedia",
+    "status": "native media compatibility",
+    "maturity": "partial"
+  },
+  {
+    "path": "/media/download/",
+    "access": "public-or-token",
+    "handler": "mediaServer.ServerMedia",
+    "status": "native media compatibility",
+    "maturity": "partial"
+  },
+  {
+    "path": "/media/getMime/",
+    "access": "public-or-token",
+    "handler": "mediaServer.ServeMediaMime",
+    "status": "native media compatibility",
+    "maturity": "partial"
+  },
+  {
+    "path": "/media/transcode/",
+    "access": "public-or-token",
+    "handler": "mediaServer.ServeVideoWithTranscode;func(w http.ResponseWriter, r *http.Request",
+    "status": "native media compatibility",
+    "maturity": "partial"
+  },
+  {
+    "path": "/public/register/checkPublicRegister",
+    "access": "public",
+    "handler": "registerHandler.HandleRegisterCheck",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/public/register/handleRegister.html",
+    "access": "public",
+    "handler": "registerHandler.HandleRegisterRequest",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/public/register/register.html",
+    "access": "public",
+    "handler": "registerHandler.HandleRegisterInterface",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/reset.system",
+    "access": "public",
+    "handler": "system_resetpw_alpnasResetSystem",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/share",
+    "access": "public-or-token",
+    "handler": "shareManager.HandleShareAccess",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/ssdp.xml",
+    "access": "public",
+    "handler": "a.handleSSDP",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/ajgi/interface",
+    "access": "public",
+    "handler": "func(w http.ResponseWriter, r *http.Request",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/apt/list",
+    "access": "authenticated",
+    "handler": "apt.HandlePackageListRequest",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/arsm/aecron/add",
+    "access": "authenticated",
+    "handler": "systemScheduler.HandleAddJob",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/arsm/aecron/list",
+    "access": "public",
+    "handler": "func(w http.ResponseWriter, r *http.Request",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/arsm/aecron/listlog",
+    "access": "authenticated",
+    "handler": "systemScheduler.HandleShowLog",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/arsm/aecron/remove",
+    "access": "authenticated",
+    "handler": "systemScheduler.HandleJobRemoval",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/auth/blacklist/ban",
+    "access": "admin",
+    "handler": "authAgent.BlacklistManager.HandleAddBannedIP",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/auth/blacklist/enable",
+    "access": "admin",
+    "handler": "authAgent.BlacklistManager.HandleSetBlacklistEnable",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/auth/blacklist/list",
+    "access": "admin",
+    "handler": "authAgent.BlacklistManager.HandleListBannedIPs",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/auth/blacklist/unban",
+    "access": "admin",
+    "handler": "authAgent.BlacklistManager.HandleRemoveBannedIP",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/auth/checkLogin",
+    "access": "public",
+    "handler": "authAgent.CheckLogin",
+    "status": "native auth",
+    "maturity": "native"
+  },
+  {
+    "path": "/system/auth/csvimport",
+    "access": "admin",
+    "handler": "authAgent.HandleCreateUserAccountsFromCSV",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/auth/groupdel",
+    "access": "admin",
+    "handler": "authAgent.HandleUserDeleteByGroup",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/auth/ldap/checkldap",
+    "access": "public",
+    "handler": "ldapHandler.HandleCheckLDAP",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/auth/ldap/config/read",
+    "access": "admin",
+    "handler": "ldapHandler.ReadConfig",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/auth/ldap/config/syncorizeUser",
+    "access": "admin",
+    "handler": "ldapHandler.SynchronizeUser",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/auth/ldap/config/testConnection",
+    "access": "admin",
+    "handler": "ldapHandler.TestConnection",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/auth/ldap/config/write",
+    "access": "admin",
+    "handler": "ldapHandler.WriteConfig",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/auth/ldap/login",
+    "access": "public",
+    "handler": "ldapHandler.HandleLogin",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/auth/ldap/newPassword",
+    "access": "public",
+    "handler": "ldapHandler.HandleNewPasswordPage",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/auth/ldap/setPassword",
+    "access": "public",
+    "handler": "ldapHandler.HandleSetPassword",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/auth/logger/index",
+    "access": "admin",
+    "handler": "authAgent.Logger.HandleIndexListing",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/auth/logger/list",
+    "access": "admin",
+    "handler": "authAgent.Logger.HandleTableListing",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/auth/login",
+    "access": "public-or-token",
+    "handler": "authAgent.HandleLogin",
+    "status": "native auth",
+    "maturity": "native"
+  },
+  {
+    "path": "/system/auth/logout",
+    "access": "public",
+    "handler": "authAgent.HandleLogout",
+    "status": "native auth",
+    "maturity": "native"
+  },
+  {
+    "path": "/system/auth/oauth/authorize",
+    "access": "public",
+    "handler": "oAuthHandler.HandleAuthorize",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/auth/oauth/checkoauth",
+    "access": "public",
+    "handler": "oAuthHandler.CheckOAuth",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/auth/oauth/config/read",
+    "access": "admin",
+    "handler": "oAuthHandler.ReadConfig",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/auth/oauth/config/write",
+    "access": "admin",
+    "handler": "oAuthHandler.WriteConfig",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/auth/oauth/login",
+    "access": "public",
+    "handler": "oAuthHandler.HandleLogin",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/auth/register",
+    "access": "public",
+    "handler": "authAgent.HandleRegister",
+    "status": "native auth",
+    "maturity": "native"
+  },
+  {
+    "path": "/system/auth/u/list",
+    "access": "authenticated",
+    "handler": "authAgent.SwitchableAccountManager.HandleSwitchableAccountListing",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/auth/u/logoutAll",
+    "access": "authenticated",
+    "handler": "authAgent.SwitchableAccountManager.HandleLogoutAllAccounts",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/auth/u/p/list",
+    "access": "public",
+    "handler": "func(w http.ResponseWriter, r *http.Request",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/auth/u/switch",
+    "access": "authenticated",
+    "handler": "authAgent.SwitchableAccountManager.HandleAccountSwitch",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/auth/unregister",
+    "access": "admin",
+    "handler": "authAgent.HandleUnregister",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/auth/whitelist/enable",
+    "access": "admin",
+    "handler": "authAgent.WhitelistManager.HandleSetWhitelistEnable",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/auth/whitelist/list",
+    "access": "admin",
+    "handler": "authAgent.WhitelistManager.HandleListWhitelistedIPs",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/auth/whitelist/set",
+    "access": "admin",
+    "handler": "authAgent.WhitelistManager.HandleAddWhitelistedIP",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/auth/whitelist/unset",
+    "access": "admin",
+    "handler": "authAgent.WhitelistManager.HandleRemoveWhitelistedIP",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/autologin/create",
+    "access": "admin",
+    "handler": "autoLoginHandler.HandleUserTokenCreation",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/autologin/delete",
+    "access": "admin",
+    "handler": "autoLoginHandler.HandleUserTokenRemoval",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/autologin/list",
+    "access": "admin",
+    "handler": "autoLoginHandler.HandleUserTokensListing",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/bootflags",
+    "access": "admin",
+    "handler": "handleBootFlagsFunction",
+    "status": "native config",
+    "maturity": "native"
+  },
+  {
+    "path": "/system/cluster/record",
+    "access": "authenticated",
+    "handler": "NeighbourDiscoverer.HandleScanRecord",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/cluster/scan",
+    "access": "authenticated",
+    "handler": "NeighbourDiscoverer.HandleScanningRequest",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/cluster/wol",
+    "access": "authenticated",
+    "handler": "NeighbourDiscoverer.HandleWakeOnLan",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/csrf/new",
+    "access": "authenticated",
+    "handler": "CSRFTokenManager.HandleNewToken",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/desktop/createShortcut",
+    "access": "authenticated",
+    "handler": "desktop_shortcutHandler",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/desktop/files",
+    "access": "authenticated",
+    "handler": "desktop_fileLocation_handler",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/desktop/host",
+    "access": "authenticated",
+    "handler": "desktop_hostdetailHandler",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/desktop/listDesktop",
+    "access": "authenticated",
+    "handler": "desktop_listFiles",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/desktop/opr/renameShortcut",
+    "access": "authenticated",
+    "handler": "desktop_handleShortcutRename",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/desktop/preference",
+    "access": "authenticated",
+    "handler": "desktop_preference_handler",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/desktop/theme",
+    "access": "authenticated",
+    "handler": "desktop_theme_handler",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/desktop/user",
+    "access": "authenticated",
+    "handler": "desktop_handleUserInfo",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/disk/alpnas/list",
+    "access": "authenticated",
+    "handler": "alpnasHandleDriveList",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/disk/alpnas/mount",
+    "access": "authenticated",
+    "handler": "alpnasHandleDriveMount",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/disk/alpnas/rescan",
+    "access": "authenticated",
+    "handler": "alpnasHandleDriveRescan",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/disk/alpnas/unmount",
+    "access": "authenticated",
+    "handler": "alpnasHandleDriveUnmount",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/disk/devices/list",
+    "access": "admin",
+    "handler": "raidManager.HandleListUsableDevices",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/disk/devices/model",
+    "access": "admin",
+    "handler": "raidManager.HandleResolveDiskModelLabel",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/disk/diskmg/format",
+    "access": "admin",
+    "handler": "func(w http.ResponseWriter, r *http.Request",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/disk/diskmg/mount",
+    "access": "admin",
+    "handler": "func(w http.ResponseWriter, r *http.Request",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/disk/diskmg/mpt",
+    "access": "admin",
+    "handler": "diskmg.HandleListMountPoints",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/disk/diskmg/platform",
+    "access": "admin",
+    "handler": "diskmg.HandlePlatform",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/disk/diskmg/view",
+    "access": "authenticated",
+    "handler": "diskmg.HandleView",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/disk/quota/quotaDist",
+    "access": "public",
+    "handler": "system_disk_quota_handleFileDistributionView",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/disk/quota/quotaInfo",
+    "access": "public",
+    "handler": "system_disk_quota_handleQuotaInfo",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/disk/quota/setQuota",
+    "access": "public",
+    "handler": "system_disk_quota_setQuota",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/disk/raid/addMemeber",
+    "access": "admin",
+    "handler": "raidManager.HandleAddDiskToRAIDVol",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/disk/raid/assemble",
+    "access": "admin",
+    "handler": "func(w http.ResponseWriter, r *http.Request;raidManager.HandleRaidDevicesAssemble",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/disk/raid/detail",
+    "access": "admin",
+    "handler": "raidManager.HandleLoadArrayDetail",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/disk/raid/devinfo",
+    "access": "admin",
+    "handler": "raidManager.HandlListChildrenDeviceInfo",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/disk/raid/format",
+    "access": "admin",
+    "handler": "raidManager.HandleFormatRaidDevice",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/disk/raid/grow",
+    "access": "admin",
+    "handler": "raidManager.HandleGrowRAIDArray",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/disk/raid/list",
+    "access": "admin",
+    "handler": "raidManager.HandleListRaidDevices",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/disk/raid/new",
+    "access": "admin",
+    "handler": "raidManager.HandleCreateRAIDDevice",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/disk/raid/overview",
+    "access": "admin",
+    "handler": "raidManager.HandleRenderOverview",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/disk/raid/reload",
+    "access": "admin",
+    "handler": "raidManager.HandleMdadmFlushReload",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/disk/raid/remove",
+    "access": "admin",
+    "handler": "func(w http.ResponseWriter, r *http.Request",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/disk/raid/removeMemeber",
+    "access": "admin",
+    "handler": "raidManager.HandleRemoveDiskFromRAIDVol",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/disk/smart/getSMART",
+    "access": "authenticated",
+    "handler": "smartListener.GetSMART",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/disk/space/largeFiles",
+    "access": "authenticated",
+    "handler": "lfs.HandleLargeFileList",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/disk/space/list",
+    "access": "authenticated",
+    "handler": "diskspace.HandleDiskSpaceList",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/disk/space/resolve",
+    "access": "authenticated",
+    "handler": "dc.HandleCapacityResolving",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/disk/space/tmp",
+    "access": "authenticated",
+    "handler": "dc.HandleTmpCapacityResolving",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/file_system/clearTrash",
+    "access": "authenticated",
+    "handler": "system_fs_clearTrashBin",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/file_system/fileOpr",
+    "access": "authenticated",
+    "handler": "system_fs_handleOpr",
+    "status": "native file api",
+    "maturity": "native"
+  },
+  {
+    "path": "/system/file_system/getProperties",
+    "access": "authenticated",
+    "handler": "system_fs_getFileProperties",
+    "status": "native file api",
+    "maturity": "native"
+  },
+  {
+    "path": "/system/file_system/handleCacheRender",
+    "access": "authenticated",
+    "handler": "system_fs_handleCacheRender",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/file_system/handleFilePermission",
+    "access": "authenticated",
+    "handler": "system_fs_handleFilePermission",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/file_system/handleFolderCache",
+    "access": "authenticated",
+    "handler": "system_fs_handleFolderCache",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/file_system/listDir",
+    "access": "authenticated",
+    "handler": "system_fs_handleList",
+    "status": "native file api",
+    "maturity": "native"
+  },
+  {
+    "path": "/system/file_system/listDirHash",
+    "access": "authenticated",
+    "handler": "system_fs_handleDirHash",
+    "status": "native hash",
+    "maturity": "native"
+  },
+  {
+    "path": "/system/file_system/listDrives",
+    "access": "authenticated",
+    "handler": "system_fs_listDrives",
+    "status": "native file api",
+    "maturity": "native"
+  },
+  {
+    "path": "/system/file_system/listRoots",
+    "access": "authenticated",
+    "handler": "system_fs_listRoot",
+    "status": "native file api",
+    "maturity": "native"
+  },
+  {
+    "path": "/system/file_system/listTrash",
+    "access": "authenticated",
+    "handler": "system_fs_scanTrashBin",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/file_system/loadThumbnail",
+    "access": "authenticated",
+    "handler": "system_fs_handleThumbnailLoad",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/file_system/lowmemUpload",
+    "access": "authenticated",
+    "handler": "system_fs_handleLowMemoryUpload",
+    "status": "native multipart upload",
+    "maturity": "native"
+  },
+  {
+    "path": "/system/file_system/newItem",
+    "access": "authenticated",
+    "handler": "system_fs_handleNewObjects",
+    "status": "native file api",
+    "maturity": "native"
+  },
+  {
+    "path": "/system/file_system/ongoing",
+    "access": "authenticated",
+    "handler": "system_fs_HandleOnGoingTasks",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/file_system/preference",
+    "access": "authenticated",
+    "handler": "system_fs_handleUserPreference",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/file_system/restoreTrash",
+    "access": "authenticated",
+    "handler": "system_fs_restoreFile",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/file_system/search",
+    "access": "authenticated",
+    "handler": "system_fs_handleFileSearch",
+    "status": "native file api",
+    "maturity": "native"
+  },
+  {
+    "path": "/system/file_system/share/checkShared",
+    "access": "authenticated",
+    "handler": "shareManager.HandleShareCheck",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/file_system/share/delete",
+    "access": "authenticated",
+    "handler": "shareManager.HandleDeleteShare",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/file_system/share/edit",
+    "access": "authenticated",
+    "handler": "shareManager.HandleEditShare",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/file_system/share/list",
+    "access": "authenticated",
+    "handler": "shareManager.HandleListAllShares",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/file_system/share/new",
+    "access": "authenticated",
+    "handler": "shareManager.HandleCreateNewShare",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/file_system/sortMode",
+    "access": "authenticated",
+    "handler": "system_fs_handleFolderSortModePreference",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/file_system/upload",
+    "access": "authenticated",
+    "handler": "system_fs_handleUpload",
+    "status": "native multipart upload",
+    "maturity": "native"
+  },
+  {
+    "path": "/system/file_system/validateFileOpr",
+    "access": "authenticated",
+    "handler": "system_fs_validateFileOpr",
+    "status": "native validation",
+    "maturity": "native"
+  },
+  {
+    "path": "/system/file_system/versionHistory",
+    "access": "authenticated",
+    "handler": "system_fs_FileVersionHistory",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/file_system/ws/fileOpr",
+    "access": "authenticated",
+    "handler": "system_fs_handleWebSocketOpr",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/file_system/ws/listTrash",
+    "access": "authenticated",
+    "handler": "system_fs_WebSocketScanTrashBin",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/file_system/zipHandler",
+    "access": "authenticated",
+    "handler": "system_fs_zipHandler",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/id/ping",
+    "access": "public",
+    "handler": "systemIdHandlePing",
+    "status": "native ping",
+    "maturity": "native"
+  },
+  {
+    "path": "/system/id/requestInfo",
+    "access": "public",
+    "handler": "systemIdHandleRequest",
+    "status": "native id info",
+    "maturity": "native"
+  },
+  {
+    "path": "/system/info/getArOZInfo",
+    "access": "public",
+    "handler": "infoServer.GetArOZInfo",
+    "status": "native system info",
+    "maturity": "native"
+  },
+  {
+    "path": "/system/info/getCPUinfo",
+    "access": "authenticated",
+    "handler": "info.GetCPUInfo",
+    "status": "native procfs",
+    "maturity": "native"
+  },
+  {
+    "path": "/system/info/getDriveStat",
+    "access": "authenticated",
+    "handler": "info.GetDriveStat",
+    "status": "native df",
+    "maturity": "native"
+  },
+  {
+    "path": "/system/info/getRAMinfo",
+    "access": "authenticated",
+    "handler": "info.GetRamInfo",
+    "status": "native procfs",
+    "maturity": "native"
+  },
+  {
+    "path": "/system/info/getRuntimeInfo",
+    "access": "authenticated",
+    "handler": "InfoHandleGetRuntimeInfo",
+    "status": "native runtime",
+    "maturity": "native"
+  },
+  {
+    "path": "/system/info/getUsageInfo",
+    "access": "authenticated",
+    "handler": "InfoHandleTaskInfo",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/info/ifconfig",
+    "access": "authenticated",
+    "handler": "info.Ifconfig",
+    "status": "native sysfs",
+    "maturity": "native"
+  },
+  {
+    "path": "/system/info/license",
+    "access": "public",
+    "handler": "systemHandleListLicense",
+    "status": "native license",
+    "maturity": "native"
+  },
+  {
+    "path": "/system/info/usbPorts",
+    "access": "authenticated",
+    "handler": "info.GetUSB",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/info/wallpaper.jpg",
+    "access": "public",
+    "handler": "func(w http.ResponseWriter, r *http.Request",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/installer/alpnas/start",
+    "access": "authenticated",
+    "handler": "alpnasHandleInstallerStart",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/installer/alpnas/state",
+    "access": "authenticated",
+    "handler": "alpnasHandleInstallerState",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/installer/alpnas/targets",
+    "access": "authenticated",
+    "handler": "alpnasHandleInstallerTargets",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/iot/execute",
+    "access": "authenticated",
+    "handler": "iotManager.HandleExecute",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/iot/icon",
+    "access": "authenticated",
+    "handler": "iotManager.HandleIconLoad",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/iot/list",
+    "access": "authenticated",
+    "handler": "iotManager.HandleListing",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/iot/listScanner",
+    "access": "admin",
+    "handler": "iotManager.HandleScannerList",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/iot/nickname",
+    "access": "authenticated",
+    "handler": "iotManager.HandleNickName",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/iot/scan",
+    "access": "authenticated",
+    "handler": "iotManager.HandleScanning",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/iot/status",
+    "access": "authenticated",
+    "handler": "iotManager.HandleGetDeviceStatus",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/log/list",
+    "access": "admin",
+    "handler": "logViewer.HandleListLog",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/log/read",
+    "access": "admin",
+    "handler": "logViewer.HandleReadLog",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/module/install",
+    "access": "authenticated",
+    "handler": "HandleModuleInstall",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/modules/getDefault",
+    "access": "public",
+    "handler": "func(w http.ResponseWriter, r *http.Request",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/modules/getLaunchPara",
+    "access": "public",
+    "handler": "func(w http.ResponseWriter, r *http.Request",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/modules/installViaZip",
+    "access": "public",
+    "handler": "func(w http.ResponseWriter, r *http.Request",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/modules/list",
+    "access": "public",
+    "handler": "func(w http.ResponseWriter, r *http.Request",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/modules/reload",
+    "access": "admin",
+    "handler": "func(w http.ResponseWriter, r *http.Request",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/network/connectWifi",
+    "access": "authenticated",
+    "handler": "network_wifi_handleConnect",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/network/getNICUsage",
+    "access": "authenticated",
+    "handler": "netstat.HandleGetNetworkInterfaceStats",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/network/getNICinfo",
+    "access": "authenticated",
+    "handler": "network.GetNICInfo",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/network/getPing",
+    "access": "authenticated",
+    "handler": "network.GetPing",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/network/portforward",
+    "access": "authenticated",
+    "handler": "portforward_handleForward",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/network/power",
+    "access": "authenticated",
+    "handler": "network_wifi_handleWiFiPower",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/network/removeWifi",
+    "access": "authenticated",
+    "handler": "network_wifi_handleWiFiRemove",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/network/scanWifi",
+    "access": "authenticated",
+    "handler": "network_wifi_handleScan",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/network/server/endpoints",
+    "access": "authenticated",
+    "handler": "NetworkHandleGetFileServerEndpoints",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/network/server/list",
+    "access": "authenticated",
+    "handler": "NetworkHandleGetFileServerServiceList",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/network/server/status",
+    "access": "authenticated",
+    "handler": "NetworkHandleGetFileServerStatus",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/network/server/toggle",
+    "access": "admin",
+    "handler": "NetworkHandleFileServerToggle",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/network/webdav/clear",
+    "access": "authenticated",
+    "handler": "WebDAVManager.HandleClearAllPending",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/network/webdav/edit",
+    "access": "authenticated",
+    "handler": "WebDAVManager.HandlePermissionEdit",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/network/webdav/list",
+    "access": "public",
+    "handler": "WebDAVManager.HandleConnectionList",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/network/webdav/status",
+    "access": "authenticated",
+    "handler": "WebDAVManager.HandleStatusChange",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/network/wifiinfo",
+    "access": "authenticated",
+    "handler": "network_wifi_handleWiFiInfo",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/network/www/toggle",
+    "access": "authenticated",
+    "handler": "userWwwHandler.HandleToggleHomepage",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/network/www/webRoot",
+    "access": "authenticated",
+    "handler": "userWwwHandler.HandleSetWebRoot",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/permission/delgroup",
+    "access": "admin",
+    "handler": "permissionHandler.HandleGroupRemove",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/permission/editgroup",
+    "access": "admin",
+    "handler": "permissionHandler.HandleGroupEdit",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/permission/listgroup",
+    "access": "public",
+    "handler": "func(w http.ResponseWriter, r *http.Request",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/permission/newgroup",
+    "access": "admin",
+    "handler": "permissionHandler.HandleGroupCreate",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/power/accessCheck",
+    "access": "public",
+    "handler": "hardware_power_checkIfHardware",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/power/restart",
+    "access": "public",
+    "handler": "hardware_power_restart",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/power/shutdown",
+    "access": "public",
+    "handler": "hardware_power_poweroff",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/register/cleanUserRegisterInfo",
+    "access": "admin",
+    "handler": "register_handleRegisterCleaning",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/register/email",
+    "access": "authenticated",
+    "handler": "registerHandler.HandleEmailChange",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/register/getAllowRegistry",
+    "access": "admin",
+    "handler": "register_handleGetAllowRegistry",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/register/listUserEmails",
+    "access": "admin",
+    "handler": "register_handleEmailListing",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/register/setAllowRegistry",
+    "access": "admin",
+    "handler": "register_handleToggleRegistry",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/register/setDefaultGroup",
+    "access": "admin",
+    "handler": "register_handleSetDefaultGroup",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/reset/confirmPasswordReset",
+    "access": "public",
+    "handler": "system_resetpw_confirmReset",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/reset/validateResetKey",
+    "access": "public",
+    "handler": "system_resetpw_validateResetKeyHandler",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/setting/list",
+    "access": "public",
+    "handler": "system_setting_handleListing",
+    "status": "native config",
+    "maturity": "native"
+  },
+  {
+    "path": "/system/storage/ftp/passivemode",
+    "access": "admin",
+    "handler": "FTPManager.HandleFTPPassiveModeSettings",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/storage/ftp/setPort",
+    "access": "admin",
+    "handler": "FTPManager.HandleFTPSetPort",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/storage/ftp/start",
+    "access": "admin",
+    "handler": "FTPManager.HandleFTPServerStart",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/storage/ftp/status",
+    "access": "admin",
+    "handler": "FTPManager.HandleFTPServerStatus",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/storage/ftp/stop",
+    "access": "admin",
+    "handler": "FTPManager.HandleFTPServerStop",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/storage/ftp/updateGroups",
+    "access": "admin",
+    "handler": "FTPManager.HandleFTPAccessUpdate",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/storage/ftp/upnp",
+    "access": "admin",
+    "handler": "FTPManager.HandleFTPUPnP",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/storage/pool/bridge",
+    "access": "admin",
+    "handler": "HandleFSHBridging",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/storage/pool/checkBridge",
+    "access": "admin",
+    "handler": "HandleFSHBridgeCheck",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/storage/pool/edit",
+    "access": "admin",
+    "handler": "HandleFSHEdit",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/storage/pool/list",
+    "access": "admin",
+    "handler": "HandleListStoragePools",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/storage/pool/listraw",
+    "access": "admin",
+    "handler": "HandleListStoragePoolsConfig",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/storage/pool/newHandler",
+    "access": "admin",
+    "handler": "HandleStorageNewFsHandler",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/storage/pool/reload",
+    "access": "admin",
+    "handler": "HandleStoragePoolReload",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/storage/pool/removeHandler",
+    "access": "admin",
+    "handler": "HandleStoragePoolRemove",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/storage/pool/toggle",
+    "access": "admin",
+    "handler": "HandleFSHToggle",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/storage/samba/activate",
+    "access": "authenticated",
+    "handler": "func(w http.ResponseWriter, r *http.Request",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/storage/samba/add",
+    "access": "admin",
+    "handler": "SambaShareManager.AddSambaShare",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/storage/samba/addUser",
+    "access": "admin",
+    "handler": "SambaShareManager.NewSambaUser",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/storage/samba/deactivate",
+    "access": "admin",
+    "handler": "SambaShareManager.DeactiveUserAccount",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/storage/samba/delUser",
+    "access": "admin",
+    "handler": "SambaShareManager.DelSambaUser",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/storage/samba/editPath",
+    "access": "admin",
+    "handler": "SambaShareManager.HandleSharePathChange",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/storage/samba/list",
+    "access": "admin",
+    "handler": "SambaShareManager.ListSambaShares",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/storage/samba/listUsers",
+    "access": "admin",
+    "handler": "SambaShareManager.ListSambaUsers",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/storage/samba/myshare",
+    "access": "admin",
+    "handler": "SambaShareManager.HandleUserSmbStatusList",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/storage/samba/myshare/delete",
+    "access": "admin",
+    "handler": "SambaShareManager.DelUserSambaShare",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/storage/samba/remove",
+    "access": "admin",
+    "handler": "SambaShareManager.DelSambaShare",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/storage/samba/status",
+    "access": "admin",
+    "handler": "SambaShareManager.SmbdStates",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/storage/samba/updateShareUsers",
+    "access": "admin",
+    "handler": "SambaShareManager.HandleAccessUserUpdate",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/storage/sftp/port",
+    "access": "admin",
+    "handler": "SFTPManager.HandleListeningPort",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/storage/sftp/upnp",
+    "access": "admin",
+    "handler": "SFTPManager.HandleToogleUPnP",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/storage/sftp/users",
+    "access": "admin",
+    "handler": "SFTPManager.HandleGetConnectedClients",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/storage/tftp/defaultUser",
+    "access": "admin",
+    "handler": "TFTPManager.HandleTFTPDefaultUser",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/storage/tftp/setPort",
+    "access": "admin",
+    "handler": "TFTPManager.HandleTFTPPort",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/storage/tftp/status",
+    "access": "admin",
+    "handler": "TFTPManager.HandleTFTPServerStatus",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/subservice/kill",
+    "access": "admin",
+    "handler": "ssRouter.HandleKillSubService",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/subservice/list",
+    "access": "admin",
+    "handler": "ssRouter.HandleListing",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/subservice/start",
+    "access": "admin",
+    "handler": "ssRouter.HandleStartSubService",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/update/checkpending",
+    "access": "admin",
+    "handler": "updates.HandlePendingCheck",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/update/checksize",
+    "access": "admin",
+    "handler": "updates.HandleUpdateCheckSize",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/update/download",
+    "access": "admin",
+    "handler": "updates.HandleUpdateDownloadRequest",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/update/platform",
+    "access": "admin",
+    "handler": "updates.HandleGetUpdatePlatformInfo",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/update/restart",
+    "access": "admin",
+    "handler": "func(w http.ResponseWriter, r *http.Request",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/users/editUser",
+    "access": "admin",
+    "handler": "user_handleUserEdit",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/users/interfaceinfo",
+    "access": "public",
+    "handler": "func(w http.ResponseWriter, r *http.Request",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/users/list",
+    "access": "public",
+    "handler": "user_handleList",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/users/profilepic",
+    "access": "public",
+    "handler": "func(w http.ResponseWriter, r *http.Request",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/users/removeUser",
+    "access": "admin",
+    "handler": "user_handleUserRemove",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/users/userinfo",
+    "access": "public",
+    "handler": "func(w http.ResponseWriter, r *http.Request",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  },
+  {
+    "path": "/system/ws",
+    "access": "authenticated",
+    "handler": "WebSocketRouter.HandleWebSocketRouting",
+    "status": "compatibility handler",
+    "maturity": "partial"
+  }
+]

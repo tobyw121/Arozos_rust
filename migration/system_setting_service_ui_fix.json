@@ -1,0 +1,18 @@
+{
+  "version": "0.11.1-system-setting-service-ui-fix",
+  "fixed": [
+    "/system/setting/list root group response",
+    "/system/setting/list?listGroup=... module response",
+    "SystemAO service modules launching without style by opening fragments directly",
+    "/system/network/server/list",
+    "/system/network/server/status",
+    "/system/network/server/endpoints",
+    "/system/storage/samba/list",
+    "/system/storage/samba/listUsers",
+    "/system/storage/ftp/status",
+    "/system/network/webdav/status",
+    "/system/disk/space/list",
+    "/system/disk/space/largeFiles",
+    "/system/network/getNICinfo"
+  ]
+}

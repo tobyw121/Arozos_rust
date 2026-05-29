@@ -1,0 +1,261 @@
+path,access,source,router,handler
+/,public,main.go:114,http,mrouter(fs
+/,public,mod/network/webdav/litmus_test_server.go:59,http,h
+/,public,mod/network/webdav/litmus_test_server.go:83,http,"http.HandlerFunc(func(w http.ResponseWriter, r *http.Request"
+/,public,mod/network/websocketproxy/websocketproxy_test.go:47,mux2,"func(w http.ResponseWriter, r *http.Request"
+/AOB/,public,system.go:41,http,"func(w http.ResponseWriter, r *http.Request"
+/AOB/SystemAOB/functions/info/version.inf,public,system.go:44,http,systemIdServeVersonNumber
+/AOB/SystemAOB/functions/system_statistic/getDriveStat.php,public,system.go:45,http,systemIdGetDriveStates
+/AOB/hb.php,public,system.go:40,http,systemIdResponseBetaScan
+/alpnas/auth/admin,public,auth.go:81,http,"func(w http.ResponseWriter, r *http.Request"
+/api/ajgi/addExt,authenticated,agi.go:88,externalAGIRouter,gw.AddExternalEndPoint
+/api/ajgi/exec,public,agi.go:76,http,gw.HandleAgiExecutionRequestWithToken
+/api/ajgi/interface,public,agi.go:47,http,"func(w http.ResponseWriter, r *http.Request"
+/api/ajgi/listExt,authenticated,agi.go:87,externalAGIRouter,gw.ListExternalEndpoint
+/api/ajgi/rmExt,authenticated,agi.go:89,externalAGIRouter,gw.RemoveExternalEndPoint
+/api/auth/login,public-or-token,auth.go:62,http,authAgent.HandleAutologinTokenLogin
+/ldapLogin.html,public-or-token,ldap.go:47,http,ldapHandler.HandleLoginPage
+/media/,public-or-token,mediaServer.go:40,http,mediaServer.ServerMedia
+/media/download/,public-or-token,mediaServer.go:41,http,mediaServer.ServerMedia
+/media/getMime/,public-or-token,mediaServer.go:42,http,mediaServer.ServeMediaMime
+/media/transcode/,public-or-token,mediaServer.go:48,http,mediaServer.ServeVideoWithTranscode
+/media/transcode/,public-or-token,mediaServer.go:51,http,"func(w http.ResponseWriter, r *http.Request"
+/public/register/checkPublicRegister,public,register.go:42,http,registerHandler.HandleRegisterCheck
+/public/register/handleRegister.html,public,register.go:41,http,registerHandler.HandleRegisterRequest
+/public/register/register.html,public,register.go:40,http,registerHandler.HandleRegisterInterface
+/reset.system,public,system.resetpw.go:27,http,system_resetpw_alpnasResetSystem
+/share,public-or-token,file_system.go:210,http,shareManager.HandleShareAccess
+/ssdp.xml,public,mod/network/ssdp/ssdp.go:75,http,a.handleSSDP
+/system/ajgi/interface,public,agi.go:37,http,"func(w http.ResponseWriter, r *http.Request"
+/system/apt/list,authenticated,apt.go:28,router,apt.HandlePackageListRequest
+/system/arsm/aecron/add,authenticated,scheduler.go:91,router,systemScheduler.HandleAddJob
+/system/arsm/aecron/list,public,scheduler.go:82,http,"func(w http.ResponseWriter, r *http.Request"
+/system/arsm/aecron/listlog,authenticated,scheduler.go:93,router,systemScheduler.HandleShowLog
+/system/arsm/aecron/remove,authenticated,scheduler.go:92,router,systemScheduler.HandleJobRemoval
+/system/auth/blacklist/ban,admin,auth.go:131,adminRouter,authAgent.BlacklistManager.HandleAddBannedIP
+/system/auth/blacklist/enable,admin,auth.go:129,adminRouter,authAgent.BlacklistManager.HandleSetBlacklistEnable
+/system/auth/blacklist/list,admin,auth.go:130,adminRouter,authAgent.BlacklistManager.HandleListBannedIPs
+/system/auth/blacklist/unban,admin,auth.go:132,adminRouter,authAgent.BlacklistManager.HandleRemoveBannedIP
+/system/auth/checkLogin,public,auth.go:61,http,authAgent.CheckLogin
+/system/auth/csvimport,admin,auth.go:96,adminRouter,authAgent.HandleCreateUserAccountsFromCSV
+/system/auth/groupdel,admin,auth.go:97,adminRouter,authAgent.HandleUserDeleteByGroup
+/system/auth/ldap/checkldap,public,ldap.go:48,http,ldapHandler.HandleCheckLDAP
+/system/auth/ldap/config/read,admin,ldap.go:38,adminRouter,ldapHandler.ReadConfig
+/system/auth/ldap/config/syncorizeUser,admin,ldap.go:41,adminRouter,ldapHandler.SynchronizeUser
+/system/auth/ldap/config/testConnection,admin,ldap.go:40,adminRouter,ldapHandler.TestConnection
+/system/auth/ldap/config/write,admin,ldap.go:39,adminRouter,ldapHandler.WriteConfig
+/system/auth/ldap/login,public,ldap.go:44,http,ldapHandler.HandleLogin
+/system/auth/ldap/newPassword,public,ldap.go:46,http,ldapHandler.HandleNewPasswordPage
+/system/auth/ldap/setPassword,public,ldap.go:45,http,ldapHandler.HandleSetPassword
+/system/auth/logger/index,admin,auth.go:109,adminRouter,authAgent.Logger.HandleIndexListing
+/system/auth/logger/list,admin,auth.go:110,adminRouter,authAgent.Logger.HandleTableListing
+/system/auth/login,public-or-token,auth.go:58,http,authAgent.HandleLogin
+/system/auth/logout,public,auth.go:59,http,authAgent.HandleLogout
+/system/auth/oauth/authorize,public,oauth.go:23,http,oAuthHandler.HandleAuthorize
+/system/auth/oauth/checkoauth,public,oauth.go:24,http,oAuthHandler.CheckOAuth
+/system/auth/oauth/config/read,admin,oauth.go:25,adminRouter,oAuthHandler.ReadConfig
+/system/auth/oauth/config/write,admin,oauth.go:26,adminRouter,oAuthHandler.WriteConfig
+/system/auth/oauth/login,public,oauth.go:22,http,oAuthHandler.HandleLogin
+/system/auth/register,public,auth.go:60,http,authAgent.HandleRegister
+/system/auth/u/list,authenticated,auth.go:153,userRouter,authAgent.SwitchableAccountManager.HandleSwitchableAccountListing
+/system/auth/u/logoutAll,authenticated,auth.go:155,userRouter,authAgent.SwitchableAccountManager.HandleLogoutAllAccounts
+/system/auth/u/p/list,public,auth.go:158,http,"func(w http.ResponseWriter, r *http.Request"
+/system/auth/u/switch,authenticated,auth.go:154,userRouter,authAgent.SwitchableAccountManager.HandleAccountSwitch
+/system/auth/unregister,admin,user.go:98,adminRouter,authAgent.HandleUnregister
+/system/auth/whitelist/enable,admin,auth.go:123,adminRouter,authAgent.WhitelistManager.HandleSetWhitelistEnable
+/system/auth/whitelist/list,admin,auth.go:124,adminRouter,authAgent.WhitelistManager.HandleListWhitelistedIPs
+/system/auth/whitelist/set,admin,auth.go:125,adminRouter,authAgent.WhitelistManager.HandleAddWhitelistedIP
+/system/auth/whitelist/unset,admin,auth.go:126,adminRouter,authAgent.WhitelistManager.HandleRemoveWhitelistedIP
+/system/autologin/create,admin,setting.advance.go:49,adminRouter,autoLoginHandler.HandleUserTokenCreation
+/system/autologin/delete,admin,setting.advance.go:50,adminRouter,autoLoginHandler.HandleUserTokenRemoval
+/system/autologin/list,admin,setting.advance.go:48,adminRouter,autoLoginHandler.HandleUserTokensListing
+/system/bootflags,admin,startup.flags.go:39,adminRouter,handleBootFlagsFunction
+/system/cluster/record,authenticated,cluster.go:57,router,NeighbourDiscoverer.HandleScanRecord
+/system/cluster/scan,authenticated,cluster.go:56,router,NeighbourDiscoverer.HandleScanningRequest
+/system/cluster/wol,authenticated,cluster.go:58,router,NeighbourDiscoverer.HandleWakeOnLan
+/system/csrf/new,authenticated,security.go:42,router,CSRFTokenManager.HandleNewToken
+/system/desktop/createShortcut,authenticated,desktop.go:42,router,desktop_shortcutHandler
+/system/desktop/files,authenticated,desktop.go:38,router,desktop_fileLocation_handler
+/system/desktop/host,authenticated,desktop.go:39,router,desktop_hostdetailHandler
+/system/desktop/listDesktop,authenticated,desktop.go:36,router,desktop_listFiles
+/system/desktop/opr/renameShortcut,authenticated,desktop.go:45,router,desktop_handleShortcutRename
+/system/desktop/preference,authenticated,desktop.go:41,router,desktop_preference_handler
+/system/desktop/theme,authenticated,desktop.go:37,router,desktop_theme_handler
+/system/desktop/user,authenticated,desktop.go:40,router,desktop_handleUserInfo
+/system/disk/alpnas/list,authenticated,disk_alpnas.go:78,authRouter,alpnasHandleDriveList
+/system/disk/alpnas/mount,authenticated,disk_alpnas.go:80,authRouter,alpnasHandleDriveMount
+/system/disk/alpnas/rescan,authenticated,disk_alpnas.go:79,authRouter,alpnasHandleDriveRescan
+/system/disk/alpnas/unmount,authenticated,disk_alpnas.go:81,authRouter,alpnasHandleDriveUnmount
+/system/disk/devices/list,admin,disk.go:186,adminRouter,raidManager.HandleListUsableDevices
+/system/disk/devices/model,admin,disk.go:187,adminRouter,raidManager.HandleResolveDiskModelLabel
+/system/disk/diskmg/format,admin,disk.go:210,adminRouter,"func(w http.ResponseWriter, r *http.Request"
+/system/disk/diskmg/mount,admin,disk.go:205,adminRouter,"func(w http.ResponseWriter, r *http.Request"
+/system/disk/diskmg/mpt,admin,disk.go:229,adminRouter,diskmg.HandleListMountPoints
+/system/disk/diskmg/platform,admin,disk.go:204,adminRouter,diskmg.HandlePlatform
+/system/disk/diskmg/view,authenticated,disk.go:203,authRouter,diskmg.HandleView
+/system/disk/quota/quotaDist,public,quota.go:21,http,system_disk_quota_handleFileDistributionView
+/system/disk/quota/quotaInfo,public,quota.go:20,http,system_disk_quota_handleQuotaInfo
+/system/disk/quota/setQuota,public,quota.go:19,http,system_disk_quota_setQuota
+/system/disk/raid/addMemeber,admin,disk.go:182,adminRouter,raidManager.HandleAddDiskToRAIDVol
+/system/disk/raid/assemble,admin,disk.go:172,adminRouter,"func(w http.ResponseWriter, r *http.Request"
+/system/disk/raid/assemble,admin,disk.go:190,adminRouter,raidManager.HandleRaidDevicesAssemble
+/system/disk/raid/detail,admin,disk.go:180,adminRouter,raidManager.HandleLoadArrayDetail
+/system/disk/raid/devinfo,admin,disk.go:181,adminRouter,raidManager.HandlListChildrenDeviceInfo
+/system/disk/raid/format,admin,disk.go:179,adminRouter,raidManager.HandleFormatRaidDevice
+/system/disk/raid/grow,admin,disk.go:178,adminRouter,raidManager.HandleGrowRAIDArray
+/system/disk/raid/list,admin,disk.go:164,adminRouter,raidManager.HandleListRaidDevices
+/system/disk/raid/new,admin,disk.go:165,adminRouter,raidManager.HandleCreateRAIDDevice
+/system/disk/raid/overview,admin,disk.go:163,adminRouter,raidManager.HandleRenderOverview
+/system/disk/raid/reload,admin,disk.go:191,adminRouter,raidManager.HandleMdadmFlushReload
+/system/disk/raid/remove,admin,disk.go:166,adminRouter,"func(w http.ResponseWriter, r *http.Request"
+/system/disk/raid/removeMemeber,admin,disk.go:183,adminRouter,raidManager.HandleRemoveDiskFromRAIDVol
+/system/disk/smart/getSMART,authenticated,disk.go:145,authRouter,smartListener.GetSMART
+/system/disk/space/largeFiles,authenticated,disk.go:87,router,lfs.HandleLargeFileList
+/system/disk/space/list,authenticated,disk.go:78,router,diskspace.HandleDiskSpaceList
+/system/disk/space/resolve,authenticated,disk.go:82,router,dc.HandleCapacityResolving
+/system/disk/space/tmp,authenticated,disk.go:83,authRouter,dc.HandleTmpCapacityResolving
+/system/file_system/clearTrash,authenticated,file_system.go:101,router,system_fs_clearTrashBin
+/system/file_system/fileOpr,authenticated,file_system.go:91,router,system_fs_handleOpr
+/system/file_system/getProperties,authenticated,file_system.go:104,router,system_fs_getFileProperties
+/system/file_system/handleCacheRender,authenticated,file_system.go:112,router,system_fs_handleCacheRender
+/system/file_system/handleFilePermission,authenticated,file_system.go:107,router,system_fs_handleFilePermission
+/system/file_system/handleFolderCache,authenticated,file_system.go:111,router,system_fs_handleFolderCache
+/system/file_system/listDir,authenticated,file_system.go:93,router,system_fs_handleList
+/system/file_system/listDirHash,authenticated,file_system.go:94,router,system_fs_handleDirHash
+/system/file_system/listDrives,authenticated,file_system.go:96,router,system_fs_listDrives
+/system/file_system/listRoots,authenticated,file_system.go:95,router,system_fs_listRoot
+/system/file_system/listTrash,authenticated,file_system.go:99,router,system_fs_scanTrashBin
+/system/file_system/loadThumbnail,authenticated,file_system.go:113,router,system_fs_handleThumbnailLoad
+/system/file_system/lowmemUpload,authenticated,file_system.go:87,router,system_fs_handleLowMemoryUpload
+/system/file_system/newItem,authenticated,file_system.go:97,router,system_fs_handleNewObjects
+/system/file_system/ongoing,authenticated,file_system.go:217,router,system_fs_HandleOnGoingTasks
+/system/file_system/preference,authenticated,file_system.go:98,router,system_fs_handleUserPreference
+/system/file_system/restoreTrash,authenticated,file_system.go:102,router,system_fs_restoreFile
+/system/file_system/search,authenticated,file_system.go:108,router,system_fs_handleFileSearch
+/system/file_system/share/checkShared,authenticated,file_system.go:205,router,shareManager.HandleShareCheck
+/system/file_system/share/delete,authenticated,file_system.go:203,router,shareManager.HandleDeleteShare
+/system/file_system/share/edit,authenticated,file_system.go:204,router,shareManager.HandleEditShare
+/system/file_system/share/list,authenticated,file_system.go:206,router,shareManager.HandleListAllShares
+/system/file_system/share/new,authenticated,file_system.go:202,router,shareManager.HandleCreateNewShare
+/system/file_system/sortMode,authenticated,file_system.go:116,router,system_fs_handleFolderSortModePreference
+/system/file_system/upload,authenticated,file_system.go:86,router,system_fs_handleUpload
+/system/file_system/validateFileOpr,authenticated,file_system.go:90,router,system_fs_validateFileOpr
+/system/file_system/versionHistory,authenticated,file_system.go:105,router,system_fs_FileVersionHistory
+/system/file_system/ws/fileOpr,authenticated,file_system.go:92,router,system_fs_handleWebSocketOpr
+/system/file_system/ws/listTrash,authenticated,file_system.go:100,router,system_fs_WebSocketScanTrashBin
+/system/file_system/zipHandler,authenticated,file_system.go:103,router,system_fs_zipHandler
+/system/id/ping,public,system.go:79,http,systemIdHandlePing
+/system/id/requestInfo,public,system.go:36,http,systemIdHandleRequest
+/system/info/getArOZInfo,public,system.info.go:132,http,infoServer.GetArOZInfo
+/system/info/getCPUinfo,authenticated,system.info.go:82,router,info.GetCPUInfo
+/system/info/getDriveStat,authenticated,system.info.go:84,router,info.GetDriveStat
+/system/info/getRAMinfo,authenticated,system.info.go:88,authRouter,info.GetRamInfo
+/system/info/getRuntimeInfo,authenticated,system.info.go:129,authRouter,InfoHandleGetRuntimeInfo
+/system/info/getUsageInfo,authenticated,system.info.go:112,router,InfoHandleTaskInfo
+/system/info/ifconfig,authenticated,system.info.go:83,router,info.Ifconfig
+/system/info/license,public,system.go:76,http,systemHandleListLicense
+/system/info/usbPorts,authenticated,system.info.go:85,router,info.GetUSB
+/system/info/wallpaper.jpg,public,system.info.go:135,http,"func(w http.ResponseWriter, r *http.Request"
+/system/installer/alpnas/start,authenticated,installer_alpnas.go:73,authRouter,alpnasHandleInstallerStart
+/system/installer/alpnas/state,authenticated,installer_alpnas.go:71,authRouter,alpnasHandleInstallerState
+/system/installer/alpnas/targets,authenticated,installer_alpnas.go:72,authRouter,alpnasHandleInstallerTargets
+/system/iot/execute,authenticated,iot.go:77,router,iotManager.HandleExecute
+/system/iot/icon,authenticated,iot.go:78,router,iotManager.HandleIconLoad
+/system/iot/list,authenticated,iot.go:75,router,iotManager.HandleListing
+/system/iot/listScanner,admin,iot.go:82,adminRouter,iotManager.HandleScannerList
+/system/iot/nickname,authenticated,iot.go:79,router,iotManager.HandleNickName
+/system/iot/scan,authenticated,iot.go:74,router,iotManager.HandleScanning
+/system/iot/status,authenticated,iot.go:76,router,iotManager.HandleGetDeviceStatus
+/system/log/list,admin,system.info.go:193,adminRouter,logViewer.HandleListLog
+/system/log/read,admin,system.info.go:194,adminRouter,logViewer.HandleReadLog
+/system/module/install,authenticated,module.go:148,router,HandleModuleInstall
+/system/modules/getDefault,public,module.go:34,http,"func(w http.ResponseWriter, r *http.Request"
+/system/modules/getLaunchPara,public,module.go:37,http,"func(w http.ResponseWriter, r *http.Request"
+/system/modules/installViaZip,public,module.go:47,http,"func(w http.ResponseWriter, r *http.Request"
+/system/modules/list,public,module.go:31,http,"func(w http.ResponseWriter, r *http.Request"
+/system/modules/reload,admin,module.go:41,adminRouter,"func(w http.ResponseWriter, r *http.Request"
+/system/network/connectWifi,authenticated,wifi.go:43,router,network_wifi_handleConnect
+/system/network/getNICUsage,authenticated,network.go:76,router,netstat.HandleGetNetworkInterfaceStats
+/system/network/getNICinfo,authenticated,network.go:63,router,network.GetNICInfo
+/system/network/getPing,authenticated,network.go:64,router,network.GetPing
+/system/network/portforward,authenticated,network.forward.go:61,router,portforward_handleForward
+/system/network/power,authenticated,wifi.go:49,router,network_wifi_handleWiFiPower
+/system/network/removeWifi,authenticated,wifi.go:44,router,network_wifi_handleWiFiRemove
+/system/network/scanWifi,authenticated,wifi.go:42,router,network_wifi_handleScan
+/system/network/server/endpoints,authenticated,network.go:498,router,NetworkHandleGetFileServerEndpoints
+/system/network/server/list,authenticated,network.go:497,router,NetworkHandleGetFileServerServiceList
+/system/network/server/status,authenticated,network.go:499,router,NetworkHandleGetFileServerStatus
+/system/network/server/toggle,admin,network.go:500,adminRouter,NetworkHandleFileServerToggle
+/system/network/webdav/clear,authenticated,network.go:353,router,WebDAVManager.HandleClearAllPending
+/system/network/webdav/edit,authenticated,network.go:352,router,WebDAVManager.HandlePermissionEdit
+/system/network/webdav/list,public,network.go:351,http,WebDAVManager.HandleConnectionList
+/system/network/webdav/status,authenticated,network.go:354,router,WebDAVManager.HandleStatusChange
+/system/network/wifiinfo,authenticated,wifi.go:45,router,network_wifi_handleWiFiInfo
+/system/network/www/toggle,authenticated,network.go:93,router,userWwwHandler.HandleToggleHomepage
+/system/network/www/webRoot,authenticated,network.go:94,router,userWwwHandler.HandleSetWebRoot
+/system/permission/delgroup,admin,permission.go:60,adminRouter,permissionHandler.HandleGroupRemove
+/system/permission/editgroup,admin,permission.go:59,adminRouter,permissionHandler.HandleGroupEdit
+/system/permission/listgroup,public,permission.go:35,http,"func(w http.ResponseWriter, r *http.Request"
+/system/permission/newgroup,admin,permission.go:58,adminRouter,permissionHandler.HandleGroupCreate
+/system/power/accessCheck,public,hardware.power.go:29,http,hardware_power_checkIfHardware
+/system/power/restart,public,hardware.power.go:16,http,hardware_power_restart
+/system/power/shutdown,public,hardware.power.go:15,http,hardware_power_poweroff
+/system/register/cleanUserRegisterInfo,admin,register.go:89,adminrouter,register_handleRegisterCleaning
+/system/register/email,authenticated,register.go:53,router,registerHandler.HandleEmailChange
+/system/register/getAllowRegistry,admin,register.go:80,adminrouter,register_handleGetAllowRegistry
+/system/register/listUserEmails,admin,register.go:86,adminrouter,register_handleEmailListing
+/system/register/setAllowRegistry,admin,register.go:83,adminrouter,register_handleToggleRegistry
+/system/register/setDefaultGroup,admin,register.go:77,adminrouter,register_handleSetDefaultGroup
+/system/reset/confirmPasswordReset,public,system.resetpw.go:26,http,system_resetpw_confirmReset
+/system/reset/validateResetKey,public,system.resetpw.go:25,http,system_resetpw_validateResetKeyHandler
+/system/setting/list,public,setting.go:34,http,system_setting_handleListing
+/system/storage/ftp/passivemode,admin,network.go:368,adminRouter,FTPManager.HandleFTPPassiveModeSettings
+/system/storage/ftp/setPort,admin,network.go:367,adminRouter,FTPManager.HandleFTPSetPort
+/system/storage/ftp/start,admin,network.go:362,adminRouter,FTPManager.HandleFTPServerStart
+/system/storage/ftp/status,admin,network.go:365,adminRouter,FTPManager.HandleFTPServerStatus
+/system/storage/ftp/stop,admin,network.go:363,adminRouter,FTPManager.HandleFTPServerStop
+/system/storage/ftp/updateGroups,admin,network.go:366,adminRouter,FTPManager.HandleFTPAccessUpdate
+/system/storage/ftp/upnp,admin,network.go:364,adminRouter,FTPManager.HandleFTPUPnP
+/system/storage/pool/bridge,admin,storage.pool.go:55,adminRouter,HandleFSHBridging
+/system/storage/pool/checkBridge,admin,storage.pool.go:56,adminRouter,HandleFSHBridgeCheck
+/system/storage/pool/edit,admin,storage.pool.go:54,adminRouter,HandleFSHEdit
+/system/storage/pool/list,admin,storage.pool.go:48,adminRouter,HandleListStoragePools
+/system/storage/pool/listraw,admin,storage.pool.go:49,adminRouter,HandleListStoragePoolsConfig
+/system/storage/pool/newHandler,admin,storage.pool.go:50,adminRouter,HandleStorageNewFsHandler
+/system/storage/pool/reload,admin,storage.pool.go:52,adminRouter,HandleStoragePoolReload
+/system/storage/pool/removeHandler,admin,storage.pool.go:51,adminRouter,HandleStoragePoolRemove
+/system/storage/pool/toggle,admin,storage.pool.go:53,adminRouter,HandleFSHToggle
+/system/storage/samba/activate,authenticated,network.go:378,router,"func(w http.ResponseWriter, r *http.Request"
+/system/storage/samba/add,admin,network.go:395,adminRouter,SambaShareManager.AddSambaShare
+/system/storage/samba/addUser,admin,network.go:398,adminRouter,SambaShareManager.NewSambaUser
+/system/storage/samba/deactivate,admin,network.go:390,adminRouter,SambaShareManager.DeactiveUserAccount
+/system/storage/samba/delUser,admin,network.go:399,adminRouter,SambaShareManager.DelSambaUser
+/system/storage/samba/editPath,admin,network.go:396,adminRouter,SambaShareManager.HandleSharePathChange
+/system/storage/samba/list,admin,network.go:394,adminRouter,SambaShareManager.ListSambaShares
+/system/storage/samba/listUsers,admin,network.go:400,adminRouter,SambaShareManager.ListSambaUsers
+/system/storage/samba/myshare,admin,network.go:391,adminRouter,SambaShareManager.HandleUserSmbStatusList
+/system/storage/samba/myshare/delete,admin,network.go:392,adminRouter,SambaShareManager.DelUserSambaShare
+/system/storage/samba/remove,admin,network.go:397,adminRouter,SambaShareManager.DelSambaShare
+/system/storage/samba/status,admin,network.go:393,adminRouter,SambaShareManager.SmbdStates
+/system/storage/samba/updateShareUsers,admin,network.go:401,adminRouter,SambaShareManager.HandleAccessUserUpdate
+/system/storage/sftp/port,admin,network.go:357,adminRouter,SFTPManager.HandleListeningPort
+/system/storage/sftp/upnp,admin,network.go:358,adminRouter,SFTPManager.HandleToogleUPnP
+/system/storage/sftp/users,admin,network.go:359,adminRouter,SFTPManager.HandleGetConnectedClients
+/system/storage/tftp/defaultUser,admin,network.go:373,adminRouter,TFTPManager.HandleTFTPDefaultUser
+/system/storage/tftp/setPort,admin,network.go:372,adminRouter,TFTPManager.HandleTFTPPort
+/system/storage/tftp/status,admin,network.go:371,adminRouter,TFTPManager.HandleTFTPServerStatus
+/system/subservice/kill,admin,subservice.go:61,adminRouter,ssRouter.HandleKillSubService
+/system/subservice/list,admin,subservice.go:60,adminRouter,ssRouter.HandleListing
+/system/subservice/start,admin,subservice.go:62,adminRouter,ssRouter.HandleStartSubService
+/system/update/checkpending,admin,system.info.go:158,adminRouter,updates.HandlePendingCheck
+/system/update/checksize,admin,system.info.go:157,adminRouter,updates.HandleUpdateCheckSize
+/system/update/download,admin,system.info.go:156,adminRouter,updates.HandleUpdateDownloadRequest
+/system/update/platform,admin,system.info.go:159,adminRouter,updates.HandleGetUpdatePlatformInfo
+/system/update/restart,admin,system.info.go:162,adminRouter,"func(w http.ResponseWriter, r *http.Request"
+/system/users/editUser,admin,user.go:99,adminRouter,user_handleUserEdit
+/system/users/interfaceinfo,public,user.go:59,http,"func(w http.ResponseWriter, r *http.Request"
+/system/users/list,public,user.go:51,http,user_handleList
+/system/users/profilepic,public,user.go:64,http,"func(w http.ResponseWriter, r *http.Request"
+/system/users/removeUser,admin,user.go:100,adminRouter,user_handleUserRemove
+/system/users/userinfo,public,user.go:54,http,"func(w http.ResponseWriter, r *http.Request"
+/system/ws,authenticated,network.go:116,userRouter,WebSocketRouter.HandleWebSocketRouting

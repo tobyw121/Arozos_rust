@@ -1,0 +1,20 @@
+{
+  "version": "0.7.0-go-parity-desktop-apps-auth",
+  "first_run_auth": "Go-like first-run user creation, admin-only later registration, no silent login after registration",
+  "static_router": "Go-like auth gating for desktop/login/user/public assets",
+  "new_app_backend_handlers": [
+    "Browser",
+    "Music",
+    "Photo embedded nearby images",
+    "Code Studio direct store",
+    "NotepadA PHP compatibility",
+    "/media direct endpoint"
+  ],
+  "safety_gates": [
+    "external downloads",
+    "arbitrary AGI execution",
+    "disk/RAID mutations",
+    "power operations",
+    "process execution"
+  ]
+}

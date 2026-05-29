@@ -1,0 +1,43 @@
+{
+  "package": "arozos-rust-app-function-port",
+  "generated_unix": 1779899179,
+  "builtin_apps": [
+    "Browser",
+    "Camera",
+    "Clock",
+    "Code Studio",
+    "MDEditor",
+    "Management Gateway",
+    "Manga",
+    "Memo",
+    "Music",
+    "NotepadA",
+    "OfficeViewer",
+    "OnScreenKeyboard",
+    "PDF Viewer",
+    "Paint",
+    "Photo",
+    "Recorder",
+    "Serverless",
+    "Speedtest",
+    "Timer",
+    "UnitTest",
+    "Video",
+    "Web Builder",
+    "Web Downloader"
+  ],
+  "builtin_app_count": 23,
+  "app_backend_files_detected": 98,
+  "dispatch_entrypoints": [
+    "/system/ajgi/interface?script=...",
+    "/api/ajgi/interface?script=...",
+    "static fallback for app backend paths"
+  ],
+  "new_rust_modules": [
+    "src/app_api.rs"
+  ],
+  "notes": [
+    "system modules list now includes built-in apps",
+    "dangerous external effects remain gated"
+  ]
+}

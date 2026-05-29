@@ -1,0 +1,13 @@
+{
+  "version": "0.10.0",
+  "runtime": "standalone-rust",
+  "go_runtime_required": false,
+  "changes": [
+    "normalizes media/vpath/wildcard app parameters",
+    "adds legacy PHP-to-HTML launch aliases",
+    "makes PDF Viewer directly launchable",
+    "adds Rust-side HTTP-backed Browser/WebDownloader behavior via curl",
+    "uses millisecond memo identifiers",
+    "keeps app backend dispatcher native Rust"
+  ]
+}

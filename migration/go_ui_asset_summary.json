@@ -1,0 +1,94 @@
+[
+  {
+    "app": "Browser",
+    "file_count": 15
+  },
+  {
+    "app": "Camera",
+    "file_count": 27
+  },
+  {
+    "app": "Clock",
+    "file_count": 8
+  },
+  {
+    "app": "Code Studio",
+    "file_count": 206
+  },
+  {
+    "app": "MDEditor",
+    "file_count": 6
+  },
+  {
+    "app": "Management Gateway",
+    "file_count": 7
+  },
+  {
+    "app": "Manga",
+    "file_count": 14
+  },
+  {
+    "app": "Memo",
+    "file_count": 20
+  },
+  {
+    "app": "Music",
+    "file_count": 34
+  },
+  {
+    "app": "NotepadA",
+    "file_count": 396
+  },
+  {
+    "app": "OfficeViewer",
+    "file_count": 309
+  },
+  {
+    "app": "OnScreenKeyboard",
+    "file_count": 10
+  },
+  {
+    "app": "PDF Viewer",
+    "file_count": 341
+  },
+  {
+    "app": "Paint",
+    "file_count": 5
+  },
+  {
+    "app": "Photo",
+    "file_count": 49
+  },
+  {
+    "app": "Recorder",
+    "file_count": 7
+  },
+  {
+    "app": "Serverless",
+    "file_count": 5
+  },
+  {
+    "app": "Speedtest",
+    "file_count": 6
+  },
+  {
+    "app": "Timer",
+    "file_count": 6
+  },
+  {
+    "app": "UnitTest",
+    "file_count": 59
+  },
+  {
+    "app": "Video",
+    "file_count": 186
+  },
+  {
+    "app": "Web Builder",
+    "file_count": 15
+  },
+  {
+    "app": "Web Downloader",
+    "file_count": 5
+  }
+]

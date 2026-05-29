@@ -1,0 +1,12 @@
+{
+  "version": "0.9.0-compile-fix1",
+  "fixed_files": ["src/legacy_api.rs"],
+  "fixes": [
+    {
+      "line": 800,
+      "function": "write_code_php",
+      "issue": "file_api::resolve expects Option<&String>, but the call passed Option<&str>",
+      "resolution": "Create target_owned: String and pass Some(&target_owned)."
+    }
+  ]
+}

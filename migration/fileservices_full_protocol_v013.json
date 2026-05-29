@@ -1,0 +1,32 @@
+{
+  "version": "0.13.0",
+  "webdav": {
+    "native_rust": true,
+    "canonical_path": "/webdav/",
+    "alias_webdave_removed": true,
+    "methods": ["OPTIONS", "PROPFIND", "GET", "HEAD", "PUT", "DELETE", "MKCOL", "MOVE", "COPY"]
+  },
+  "ftp": {
+    "native_rust": true,
+    "default_port": 2121,
+    "auth": "ArozOS Rust auth_users.json",
+    "mode": "passive"
+  },
+  "tftp": {
+    "native_rust": true,
+    "default_port": 6969,
+    "auth": "none; TFTP protocol has no authentication"
+  },
+  "sftp": {
+    "native_rust": false,
+    "integration": "OS sshd SFTP subsystem",
+    "default_port": 22,
+    "reason": "SFTP is SSH subsystem and must integrate with OS sshd/account model"
+  },
+  "samba": {
+    "native_rust": false,
+    "integration": "OS Samba smbd/nmbd",
+    "ports": [445, 139],
+    "reason": "SMB/CIFS requires Samba/OS integration, not HTTP aliasing"
+  }
+}

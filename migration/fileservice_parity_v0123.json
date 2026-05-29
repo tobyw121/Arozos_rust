@@ -1,0 +1,43 @@
+{
+  "version": "0.12.3",
+  "focus": [
+    "FTP",
+    "SFTP",
+    "WebDAV",
+    "Samba",
+    "SystemAO Host Info"
+  ],
+  "changed_endpoints": [
+    "/system/network/server/list",
+    "/system/network/server/status",
+    "/system/network/server/endpoints",
+    "/system/storage/ftp/status",
+    "/system/storage/ftp/start",
+    "/system/storage/ftp/stop",
+    "/system/storage/ftp/setPort",
+    "/system/storage/ftp/passivemode",
+    "/system/storage/ftp/upnp",
+    "/system/storage/sftp/port",
+    "/system/storage/sftp/upnp",
+    "/system/storage/sftp/users",
+    "/system/network/webdav/status",
+    "/system/network/webdav/list",
+    "/system/network/webdav/edit",
+    "/system/network/webdav/clear",
+    "/system/storage/samba/status",
+    "/system/storage/samba/list",
+    "/system/storage/samba/listUsers",
+    "/system/storage/samba/add",
+    "/system/storage/samba/remove",
+    "/system/storage/samba/addUser",
+    "/system/storage/samba/delUser",
+    "/system/storage/samba/updateShareUsers",
+    "/system/storage/samba/editPath",
+    "/system/info/getCPUinfo",
+    "/system/info/getRAMinfo",
+    "/system/info/getDriveStat",
+    "/system/info/ifconfig",
+    "/system/info/usbPorts"
+  ],
+  "note": "The WebUI pages are backed by Rust-native persisted state. Real external daemons still require a privileged adapter."
+}

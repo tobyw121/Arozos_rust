@@ -1,0 +1,24 @@
+{
+  "generated_unix": 1779896314,
+  "registered_http_endpoints": 255,
+  "unique_registered_http_endpoints": 255,
+  "legacy_api_not_implemented_markers": 0,
+  "legacy_api_forbidden_safety_gates": 8,
+  "deep_port_areas": [
+    "ldap local fallback",
+    "oauth config/state",
+    "zip list/extract/create",
+    "module install from zip",
+    "wifi state",
+    "subservice state",
+    "update state",
+    "iot state",
+    "wake-on-lan",
+    "reset keys",
+    "installer plan",
+    "disk/raid command planners",
+    "power gate",
+    "wallpaper asset lookup"
+  ],
+  "source_function_stubs_preserved": "src/ported/*.rs retains generated NotYetPorted markers for Go source coverage; these are not the active REST handlers."
+}

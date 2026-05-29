@@ -1,0 +1,28 @@
+{
+  "version": "0.7.1-app-auth-parity",
+  "created_unix": 1779902364,
+  "fixed": [
+    "First-run password hint in resources/web/user.html",
+    "Server-side password validation in src/auth.rs",
+    "Password policy endpoint /system/auth/passwordPolicy",
+    "System module icon and launch path corrections",
+    "Expanded SystemAO module registrations",
+    "Go-compatible Photo/listFolder backend response",
+    "Go-compatible Music/listSong all response",
+    "Go-compatible Music/getFileInfo response",
+    "Plain-text Photo/getCompressedImg response",
+    "Web Downloader compatibility response"
+  ],
+  "password_policy": {
+    "min_length": 8,
+    "allowed": "letters, numbers, spaces and symbols",
+    "disallowed": "line breaks and control characters"
+  },
+  "gated": [
+    "arbitrary AGI execution",
+    "external process execution",
+    "disk/RAID mutation",
+    "poweroff/reboot",
+    "unattended network download"
+  ]
+}

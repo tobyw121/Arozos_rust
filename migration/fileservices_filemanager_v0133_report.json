@@ -1,0 +1,25 @@
+{
+  "version": "0.13.3",
+  "areas": {
+    "webdav": {
+      "canonical_path": "/webdav/",
+      "configurable_permissions": true,
+      "config_file": "resources/system/rust-port-data/webdav_access.json",
+      "permission_model": ["allowed_paths", "denied_paths", "rules by user/group", "read/write flags", "admin override"],
+      "browser_index": "styled ArozOS-like directory table with open and download buttons"
+    },
+    "nginx_https_proxy": {
+      "config_preview_endpoint": "/system/network/nginx/configPreview",
+      "write_config_endpoint": "/system/network/nginx/writeConfig",
+      "script": "scripts/setup_nginx_https_reverse_proxy.sh"
+    },
+    "file_manager": {
+      "host_drive_roots": true,
+      "virtual_prefixes": ["user:/", "host:/"],
+      "linux": "/proc/self/mountinfo",
+      "macos": "/Volumes",
+      "windows": "drive-letter scan",
+      "host_write_gate": "AROZOS_RS_ENABLE_HOST_FS_WRITE=1"
+    }
+  }
+}
