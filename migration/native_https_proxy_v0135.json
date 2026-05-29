@@ -1,0 +1,28 @@
+{
+  "version": "0.13.5",
+  "feature": "Native Rust HTTPS proxy",
+  "nginx_required": false,
+  "tls_backend": "rustls via axum-server",
+  "auto_certificate": "self-signed local certificate via rcgen",
+  "new_flags": [
+    "--https",
+    "--https-port",
+    "--auto_tls",
+    "--cert-san",
+    "--redirect-http-to-https",
+    "--disable_http",
+    "--cert",
+    "--key"
+  ],
+  "new_endpoints": [
+    "/system/network/https/status",
+    "/system/network/https/configPreview",
+    "/system/network/https/generateSelfSigned",
+    "/system/network/reverseproxy/native"
+  ],
+  "notes": [
+    "Automatic cert generation is self-signed/local; browser trust still requires importing the cert or using a public CA certificate.",
+    "WebDAV is served over the same HTTPS listener.",
+    "Port 443 may require sudo or cap_net_bind_service on Linux."
+  ]
+}

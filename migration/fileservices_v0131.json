@@ -1,0 +1,10 @@
+{
+  "version": "0.13.1",
+  "changes": [
+    "Styled native WebDAV browser directory index with Open/Download buttons",
+    "Separated configured Enabled from native OS NativeActive",
+    "Fixed service off toggles for FTP, TFTP, SFTP, Samba and Telnet UI state",
+    "Kept WebDAV canonical at /webdav/ without /webdave alias",
+    "Added Telnet native-service adapter endpoints for legacy environments"
+  ]
+}

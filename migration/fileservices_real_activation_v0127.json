@@ -1,0 +1,8 @@
+{
+  "version": "0.12.7",
+  "webdav": "built-in Rust WebDAV endpoint at /webdav with basic file operations",
+  "samba": "native OS daemon adapter; requires Samba/smbd and root/admin privilege to start",
+  "ftp": "native OS daemon adapter; requires vsftpd/proftpd/pure-ftpd and root/admin privilege to start",
+  "sftp": "native OS daemon adapter; requires OpenSSH sshd and root/admin privilege to start",
+  "activation_policy": "execute service commands when root/admin or AROZOS_RS_ENABLE_SYSTEM_SERVICE_OPS=1; otherwise save config and return diagnostic plan"
+}

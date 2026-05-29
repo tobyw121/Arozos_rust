@@ -1,0 +1,11 @@
+{
+  "version": "0.12.6",
+  "changes": [
+    "Implemented Go-compatible /system/storage/samba/myshare response",
+    "Separated Samba user activation from global service toggle",
+    "Deduplicated and limited file-service connection endpoint addresses",
+    "Added service configPlan/configPreview endpoints",
+    "Improved local address detection across Linux, macOS and Windows"
+  ],
+  "protected_native_ops": "Native service start/stop requires AROZOS_RS_ENABLE_SYSTEM_SERVICE_OPS=1"
+}

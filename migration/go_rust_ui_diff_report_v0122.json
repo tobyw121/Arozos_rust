@@ -1,0 +1,19 @@
+{
+  "version": "0.12.2",
+  "fixed": [
+    "login service_logo placeholder",
+    "wallpaper image fallback",
+    "getArOZInfo VendorIcon and Go-compatible fields",
+    "getRuntimeInfo StartupTime/ContinuesRuntime",
+    "system/users/userinfo top-level Go fields",
+    "missing SystemAO icon paths"
+  ],
+  "intentionally_gated": [
+    "arbitrary AGI execution",
+    "external process execution",
+    "destructive disk operations",
+    "RAID mutations",
+    "poweroff/reboot",
+    "unattended remote downloads"
+  ]
+}
